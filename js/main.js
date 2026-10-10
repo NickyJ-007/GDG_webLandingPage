@@ -129,50 +129,84 @@
 
   /* ---------------------------- Speakers --------------------------------- */
   const speakerGrid = document.getElementById("speaker-grid");
-  SPEAKERS.forEach((speaker, i) => {
-    const card = document.createElement("div");
-    card.className = "window-card speaker-card reveal";
-    card.style.transitionDelay = `${i * 90}ms`;
+  if (speakerGrid && Array.isArray(SPEAKERS)) {
+    speakerGrid.innerHTML = "";
+    SPEAKERS.forEach((speaker, i) => {
+      const card = document.createElement("div");
+      const colorModifier = speaker.color ? `speaker-card--${speaker.color}` : "";
+      card.className = `window-card speaker-card ${colorModifier} reveal`;
+      card.style.transitionDelay = `${i * 90}ms`;
 
-    let avatarHTML;
-    if (speaker.photo) {
-      avatarHTML = `<img class="speaker-photo" src="${speaker.photo}" alt="${speaker.name}" onerror="this.outerHTML='<div class=&quot;speaker-placeholder&quot;>${speaker.name
-        .split(" ")
-        .map((w) => w[0])
-        .join("")
-        .slice(0, 2)}</div>'" />`;
-    } else {
-      const initials = speaker.name
-        .split(" ")
-        .map((w) => w[0])
-        .join("")
-        .slice(0, 2);
-      avatarHTML = `<div class="speaker-placeholder" aria-hidden="true">${initials}</div>`;
-    }
+      const objPos = speaker.objectPosition || "center 20%";
+      const altText = speaker.alt || `${speaker.name}, speaker for ${speaker.topic}`;
+      const tagText = `speaker_0${i + 1}`;
 
-    card.innerHTML = `
-      <div class="card-window-header">
-        <div class="window-controls" aria-hidden="true">
-          <span class="window-dot window-dot--red"></span>
-          <span class="window-dot window-dot--yellow"></span>
-          <span class="window-dot window-dot--green"></span>
+      let mediaHTML;
+      if (speaker.photo) {
+        mediaHTML = `
+          <div class="speaker-photo-frame speaker-photo-frame--${speaker.color}">
+            <img
+              class="speaker-photo"
+              src="${speaker.photo}"
+              alt="${altText}"
+              style="object-position: ${objPos};"
+              loading="lazy"
+              onerror="this.parentElement.innerHTML='<div class=&quot;speaker-placeholder&quot;>${speaker.name.slice(0, 2).toUpperCase()}</div>'"
+            />
+          </div>
+        `;
+      } else {
+        const initials = speaker.name
+          .split(" ")
+          .map((w) => w[0])
+          .join("")
+          .slice(0, 2)
+          .toUpperCase();
+        mediaHTML = `
+          <div class="speaker-photo-frame speaker-photo-frame--${speaker.color}">
+            <div class="speaker-placeholder" aria-hidden="true">${initials}</div>
+          </div>
+        `;
+      }
+
+      const speakerBadgeMeta = `${speaker.branch} · ${speaker.semester}`;
+
+      card.innerHTML = `
+        <div class="card-window-header">
+          <div class="window-controls" aria-hidden="true">
+            <span class="window-dot window-dot--red"></span>
+            <span class="window-dot window-dot--yellow"></span>
+            <span class="window-dot window-dot--green"></span>
+          </div>
+          <span class="card-window-tag">${tagText}</span>
         </div>
-        <span class="card-window-tag">speaker_0${i + 1}</span>
-      </div>
-      <div class="speaker-card__body">
-        ${avatarHTML}
-        <div class="speaker-info">
-          <span class="speaker-name">${speaker.name}</span>
-          <span class="speaker-title">${speaker.title}</span>
+        <div class="speaker-card__body">
+          <div class="speaker-card__portrait-col">
+            ${mediaHTML}
+          </div>
+          <div class="speaker-card__content-col">
+            <div class="speaker-card__desc-panel">
+              <p class="speaker-card__desc-text">${speaker.description}</p>
+            </div>
+            <div class="speaker-card__identity-panel">
+              <div class="speaker-card__identity-main">
+                <h3 class="speaker-name">${speaker.name}</h3>
+                <span class="speaker-academic-meta">${speakerBadgeMeta}</span>
+              </div>
+              <div class="speaker-topic-wrapper">
+                <span class="code-pill code-pill--${speaker.color} speaker-topic-pill">${speaker.topic}</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card-window-footer">
-        <span class="card-window-chapter">GDG UVCE</span>
-        <span class="card-window-track">INSTRUCTOR</span>
-      </div>
-    `;
-    speakerGrid.appendChild(card);
-  });
+        <div class="card-window-footer">
+          <span class="card-window-chapter">GDG UVCE</span>
+          <span class="card-window-track">${speaker.topic.toUpperCase()}</span>
+        </div>
+      `;
+      speakerGrid.appendChild(card);
+    });
+  }
 
   /* ---------------------------- About ------------------------------------- */
   document.getElementById("about-text").textContent = ABOUT_TEXT;
