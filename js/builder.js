@@ -27,11 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const directRegisterBtn = document.getElementById('direct-register-btn');
   const shareWhatsappBtn = document.getElementById('share-whatsapp-btn');
 
+  // Replace this placeholder once your seniors share the Google Form link
+  const GOOGLE_FORM_LINK = "https://forms.gle/PASTE_GOOGLE_FORM_LINK_HERE";
+
   // Pull the actual workshop link from your repo's config if available, or fallback
   const workshopUrl = window.location.origin + window.location.pathname.replace('builder.html', 'index.html');
   
   // Set real registration link (replace with your actual Google Form / Bevy URL if ready)
-  directRegisterBtn.href = "https://gdg.community.dev/"; 
+  if (directRegisterBtn) {
+  directRegisterBtn.href = GOOGLE_FORM_LINK;
+  }
 
   // Pre-fill WhatsApp viral message
   const shareText = encodeURIComponent(
