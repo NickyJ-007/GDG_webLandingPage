@@ -2315,157 +2315,132 @@ section {
 }
 
 /* ========================================================
-   WEBSTUDIO TEASER CARD & LAUNCH BUTTON (FLUID RESPONSIVE)
+   WEBSTUDIO TEASER CARD & LAUNCH BUTTON
    ======================================================== */
 
-/* 1. Card Container (Scales smoothly down to 250px) */
+/* 1. Desktop & Laptop Mode (Default / Screens > 768px) */
 .teaser-card,
 .phone-mockup,
 .webstudio-teaser,
 .challenge-card,
 div:has(> a[href*="builder.html"]) {
   width: 100% !important;
-  max-width: 320px !important;
-  margin: 0 auto 36px auto !important;
-  /* Extra bottom margin for the floating button */
-  padding: 24px 16px 32px 16px !important;
+  max-width: 620px !important;
+  /* Restores full desktop card size */
+  margin: 40px auto 50px auto !important;
+  padding: 44px 36px 48px 36px !important;
   position: relative !important;
   box-sizing: border-box !important;
+  text-align: center !important;
   border: 3px solid #1E1E1E !important;
-  border-radius: 28px !important;
+  border-radius: 32px !important;
   background: #FFFFFF !important;
-  box-shadow: 4px 4px 0 #1E1E1E !important;
+  box-shadow: 6px 6px 0 #1E1E1E !important;
 }
 
-/* 2. Top Badges */
-.teaser-card .badge,
-.phone-mockup .badge,
-.webstudio-teaser .badge,
-.teaser-badge {
-  font-size: 10px !important;
-  padding: 2px 8px !important;
-  border-radius: 999px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.5px !important;
-}
-
-/* 3. Title & Paragraph Fluid Typography */
+/* Desktop Typography */
 .teaser-card h2,
 .teaser-card h3,
 .phone-mockup h2,
 .phone-mockup h3,
 .webstudio-teaser h2,
 .webstudio-teaser h3 {
-  font-size: clamp(17px, 5.5vw, 24px) !important;
+  font-size: 32px !important;
   line-height: 1.25 !important;
-  margin: 12px 0 8px 0 !important;
   font-weight: 800 !important;
   color: #1E1E1E !important;
-  word-break: break-word !important;
+  margin: 16px 0 12px 0 !important;
 }
 
 .teaser-card p,
 .phone-mockup p,
 .webstudio-teaser p {
-  font-size: clamp(12px, 3.2vw, 14px) !important;
-  line-height: 1.45 !important;
-  margin: 0 0 16px 0 !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
   color: #5F6368 !important;
-  word-break: break-word !important;
+  max-width: 500px !important;
+  margin: 0 auto 24px auto !important;
 }
 
-/* 4. The Launch WebStudio Button (Centered & Self-Constrained) */
-a[href*="builder.html"],
-.teaser-btn,
-.launch-btn,
-.teaser-cta,
-.webstudio-btn {
+/* Desktop Launch Button */
+.teaser-launch-btn,
+a[href*="builder.html"] {
   position: absolute !important;
-  bottom: -20px !important;
+  bottom: -24px !important;
   left: 50% !important;
-  /* Centers relative to the card */
   transform: translateX(-50%) !important;
-  width: max-content !important;
-  max-width: calc(100% - 24px) !important;
-  /* Never exceeds card boundaries */
-  box-sizing: border-box !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 6px !important;
+  gap: 8px !important;
+  text-decoration: none !important;
   font-family: inherit !important;
-  font-size: clamp(11px, 3.2vw, 14px) !important;
-  /* Scales text on narrow viewports */
+  font-size: 16px !important;
   font-weight: 800 !important;
   color: #FFFFFF !important;
   background: #4285F4 !important;
-  padding: 8px 16px !important;
-  border: 2px solid #1E1E1E !important;
+  padding: 14px 32px !important;
+  border: 2.5px solid #1E1E1E !important;
   border-radius: 999px !important;
-  box-shadow: 3px 3px 0 #1E1E1E !important;
-  text-decoration: none !important;
+  box-shadow: 4px 4px 0 #1E1E1E !important;
   white-space: nowrap !important;
   cursor: pointer !important;
   transition: all 0.15s ease !important;
 }
 
-a[href*="builder.html"]:hover,
-.teaser-btn:hover,
-.launch-btn:hover {
+.teaser-launch-btn:hover,
+a[href*="builder.html"]:hover {
   background: #3367D6 !important;
-  transform: translate(-50%, -1px) !important;
-  box-shadow: 4px 4px 0 #1E1E1E !important;
+  transform: translate(-50%, -2px) !important;
+  box-shadow: 5px 5px 0 #1E1E1E !important;
 }
 
-a[href*="builder.html"]:active,
-.teaser-btn:active,
-.launch-btn:active {
+.teaser-launch-btn:active,
+a[href*="builder.html"]:active {
   transform: translate(-50%, 1px) !important;
   box-shadow: 1px 1px 0 #1E1E1E !important;
 }
 
-/* ========================================================
-   RESPONSIVE WEBSTUDIO LAUNCH BUTTON
-   ======================================================== */
+/* 2. Mobile Mode (Only for Screens <= 768px) */
+@media (max-width: 768px) {
 
-.teaser-launch-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  text-decoration: none;
-  font-family: inherit;
-  font-weight: 700;
-  color: #FFFFFF !important;
-  background: #4285F4;
-  border: 2px solid #000000;
-  border-radius: 999px;
-  box-shadow: 3px 3px 0 #000000;
+  .teaser-card,
+  .phone-mockup,
+  .webstudio-teaser,
+  .challenge-card,
+  div:has(> a[href*="builder.html"]) {
+    max-width: 340px !important;
+    /* Compact card only on phones */
+    padding: 24px 16px 36px 16px !important;
+    margin: 24px auto 36px auto !important;
+    border-radius: 24px !important;
+    box-shadow: 4px 4px 0 #1E1E1E !important;
+  }
 
-  /* Fluid sizing that scales on narrow screens */
-  font-size: clamp(12px, 3.6vw, 15px);
-  padding: 10px clamp(14px, 4vw, 24px);
-  max-width: 100%;
-  box-sizing: border-box;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
+  .teaser-card h2,
+  .teaser-card h3,
+  .phone-mockup h2,
+  .phone-mockup h3,
+  .webstudio-teaser h2,
+  .webstudio-teaser h3 {
+    font-size: clamp(18px, 6vw, 24px) !important;
+    margin: 12px 0 8px 0 !important;
+  }
 
-.teaser-launch-btn:hover {
-  background: #3367D6;
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0 #000000;
-}
+  .teaser-card p,
+  .phone-mockup p,
+  .webstudio-teaser p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
+  }
 
-.teaser-launch-btn:active {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0 #000000;
-}
-
-/* Ensure the parent card centers the button properly */
-.teaser-card,
-.phone-mockup,
-.webstudio-teaser {
-  text-align: center;
+  .teaser-launch-btn,
+  a[href*="builder.html"] {
+    bottom: -18px !important;
+    font-size: 12px !important;
+    padding: 9px 18px !important;
+    max-width: calc(100% - 24px) !important;
+    box-shadow: 3px 3px 0 #1E1E1E !important;
+  }
 }
