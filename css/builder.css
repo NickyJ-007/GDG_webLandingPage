@@ -598,3 +598,22 @@ body {
     pointer-events: none;
     z-index: 99;
 }
+
+.whatsapp-share-btn {
+    display: block;
+    text-decoration: none;
+    background: #25D366;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 2px solid var(--border-dark);
+    box-shadow: 3px 3px 0 var(--border-dark);
+    transition: all 0.15s ease;
+}
+
+.whatsapp-share-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--border-dark);
+}

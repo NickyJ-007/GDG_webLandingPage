@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputRole = document.getElementById('input-role');
   const inputBio = document.getElementById('input-bio');
   const inputBtnText = document.getElementById('input-btn-text');
-
+  
   const previewTitle = document.getElementById('preview-title');
   const previewRole = document.getElementById('preview-role');
   const previewBio = document.getElementById('preview-bio');
@@ -24,6 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const shipMainBtn = document.getElementById('ship-main-btn');
   const modalBackdrop = document.getElementById('modal-backdrop');
   const closeModalBtn = document.getElementById('close-modal-btn');
+  const directRegisterBtn = document.getElementById('direct-register-btn');
+  const shareWhatsappBtn = document.getElementById('share-whatsapp-btn');
+
+  // Pull the actual workshop link from your repo's config if available, or fallback
+  const workshopUrl = window.location.origin + window.location.pathname.replace('builder.html', 'index.html');
+  
+  // Set real registration link (replace with your actual Google Form / Bevy URL if ready)
+  directRegisterBtn.href = "https://gdg.community.dev/"; 
+
+  // Pre-fill WhatsApp viral message
+  const shareText = encodeURIComponent(
+    `Hey! I just built and launched my first website on GDG UVCE WebStudio 🚀 Try building yours in 60 seconds and claim a seat for the online workshop:\n${workshopUrl}`
+  );
+  shareWhatsappBtn.href = `https://api.whatsapp.com/send?text=${shareText}`;
   const confettiCanvas = document.getElementById('confetti-canvas');
 
   // 1. Live Input Sync
