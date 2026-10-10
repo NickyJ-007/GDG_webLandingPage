@@ -14,16 +14,38 @@
 </head>
 
 <body>
-    <!-- Top Navigation Bar -->
+    <!-- Neo-Brutalist Top Navbar (Back button removed) -->
     <header class="studio-header">
-        <div class="header-left">
-            <a href="index.html" class="back-btn">← Back to Workshop</a>
-            <div class="studio-badge">GDG UVCE · WebStudio</div>
+        <div class="nav-brand-badge">
+            <div class="google-dots">
+                <span class="dot g-blue"></span>
+                <span class="dot g-red"></span>
+                <span class="dot g-yellow"></span>
+                <span class="dot g-green"></span>
+            </div>
+            <span class="brand-text">GDG UVCE <span class="brand-accent">WebStudio</span></span>
         </div>
-        <div class="header-right">
-            <button id="ship-top-btn" class="ship-cta-btn">🚀 Ship Website</button>
-        </div>
+    
+        <button id="ship-website-btn" class="nav-ship-btn">
+            <span class="desktop-label">🚀 Ship Website</span>
+            <span class="mobile-label">🚀 Ship</span>
+        </button>
     </header>
+    
+    <!-- Neo-Brutalist Segmented Mobile Switcher -->
+    <div class="mobile-tab-bar">
+        <div class="tab-segmented-track">
+            <button type="button" class="mobile-tab-btn active" id="tab-edit-btn">
+                <span class="tab-icon">✏️</span>
+                <span>Customize</span>
+            </button>
+            <button type="button" class="mobile-tab-btn" id="tab-prev-btn">
+                <span class="tab-icon">👁️</span>
+                <span>Live Preview</span>
+                <span class="live-pulse"></span>
+            </button>
+        </div>
+    </div>
 
     <!-- Studio Workspace -->
     <main class="studio-layout">
@@ -94,7 +116,7 @@
 
             <!-- Action Footer -->
             <div class="control-footer">
-                <button id="ship-main-btn" class="ship-cta-btn large">🚀 Ship My Website & Win Swag</button>
+                <button id="ship-main-btn" class="ship-cta-btn large">🚀 Ship My Website</button>
             </div>
         </section>
 

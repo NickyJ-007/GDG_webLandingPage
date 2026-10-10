@@ -433,126 +433,142 @@ body {
     margin-top: 30px;
 }
 
-/* Modal */
+/* ========================================================
+   MODAL BACKDROP & SCROLL ENGINE
+   ======================================================== */
+
+/* 1. Backdrop is the scrollable container */
 .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    z-index: 99999 !important;
     display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    z-index: 100;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    /* Enables vertical touch & mouse scroll */
+    -webkit-overflow-scrolling: touch !important;
+    padding: 16px 12px 60px 12px !important;
+    /* Breathing room so buttons aren't cut off */
+    box-sizing: border-box !important;
 }
 
+/* Must be block (NOT flex) so top header is never pushed into negative/cut-off space */
 .modal-backdrop.open {
-    display: flex;
+    display: block !important;
 }
 
+/* 2. The Pop-Up Card */
 .modal-card {
-    background: #FFFFFF;
-    border: 3px solid var(--border-dark);
-    border-radius: 20px;
-    box-shadow: 8px 8px 0 var(--border-dark);
-    max-width: 540px;
-    width: 100%;
-    padding: 32px 28px;
-    text-align: center;
-    animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 16px auto 40px auto !important;
+    /* Centers card with top & bottom margins */
+    width: 100% !important;
+    max-width: 440px !important;
+    background: #FFFDF8 !important;
+    border: 3px solid #1E1E1E !important;
+    border-radius: 20px !important;
+    box-shadow: 6px 6px 0 #1E1E1E !important;
+    padding: 24px 18px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    max-height: none !important;
+    /* Prevents inner height traps */
+    overflow: visible !important;
 }
 
-@keyframes popIn {
-    from {
-        transform: scale(0.85);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+.modal-badge {
+    display: inline-block;
+    background: #E8F0FE;
+    color: #1A73E8;
+    border: 2px solid #1E1E1E;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
-.modal-emoji {
-    font-size: 48px;
+.modal-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1E1E1E;
     margin-bottom: 8px;
 }
 
-.modal-card h2 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.modal-lead {
-    font-size: 14px;
+.modal-subtitle {
+    font-size: 13px;
     color: #5F6368;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
+/* Tech Cards Inside Modal */
 .tech-breakdown {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 20px;
-    text-align: left;
 }
 
 .tech-card {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #F8F9FA;
+    background: #FFFFFF;
+    border: 2px solid #1E1E1E;
+    border-radius: 12px;
     padding: 10px 14px;
-    border-radius: 10px;
-    border: 1.5px solid var(--border-dark);
     font-size: 13px;
+    font-weight: 600;
 }
 
 .tech-tag {
-    font-family: 'Google Sans Mono', monospace;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     padding: 3px 8px;
     border-radius: 6px;
-    color: #FFF;
+    border: 1.5px solid #1E1E1E;
+    color: #FFFFFF;
 }
 
 .tech-tag.html {
-    background: var(--gdg-red);
+    background: #EA4335;
 }
 
 .tech-tag.css {
-    background: var(--gdg-blue);
+    background: #4285F4;
 }
 
 .tech-tag.js {
-    background: var(--gdg-yellow);
-    color: #000;
+    background: #FBBC04;
+    color: #1E1E1E;
 }
 
+/* Contest Box */
 .contest-box {
     background: #FEF7E0;
     border: 2px dashed #B06000;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 24px;
-    text-align: left;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #5F6368;
 }
 
 .contest-box h3 {
     font-size: 14px;
-    font-weight: 700;
-    color: #8C4400;
+    font-weight: 800;
+    color: #B06000;
     margin-bottom: 6px;
 }
 
-.contest-box p {
-    font-size: 12px;
-    line-height: 1.5;
-    color: #4A3B00;
-}
-
+/* Modal Action Buttons */
 .modal-actions {
     display: flex;
     flex-direction: column;
@@ -561,59 +577,451 @@ body {
 
 .claim-seat-btn {
     display: block;
+    text-align: center;
     text-decoration: none;
-    background: var(--gdg-blue);
-    color: #FFF;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 14px 20px;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 14px;
+    color: #FFFFFF !important;
+    background: #4285F4;
+    border: 2px solid #1E1E1E;
     border-radius: 999px;
-    border: 2px solid var(--border-dark);
-    box-shadow: 3px 3px 0 var(--border-dark);
-}
-
-.claim-seat-btn:hover {
-    transform: translate(-1px, -1px);
-    box-shadow: 4px 4px 0 var(--border-dark);
-}
-
-.edit-again-btn {
-    background: transparent;
-    border: none;
-    font-size: 13px;
-    font-weight: 600;
-    color: #5F6368;
-    cursor: pointer;
-    padding: 6px;
-}
-
-.edit-again-btn:hover {
-    text-decoration: underline;
-}
-
-/* Confetti Canvas */
-#confetti-canvas {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 99;
+    padding: 12px;
+    box-shadow: 3px 3px 0 #1E1E1E;
 }
 
 .whatsapp-share-btn {
     display: block;
+    text-align: center;
     text-decoration: none;
-    background: #25D366;
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 12px 20px;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 13px;
+    color: #FFFFFF !important;
+    background: #34A853;
+    border: 2px solid #1E1E1E;
     border-radius: 999px;
-    border: 2px solid var(--border-dark);
-    box-shadow: 3px 3px 0 var(--border-dark);
+    padding: 11px;
+    box-shadow: 3px 3px 0 #1E1E1E;
+}
+
+.edit-again-btn {
+    background: #FFFFFF;
+    border: 2px solid #1E1E1E;
+    border-radius: 999px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    color: #1E1E1E;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #1E1E1E;
+}
+
+/* Confetti Layer - Pointer events none allows touch scroll directly through it */
+#confetti-canvas {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 100000 !important;
+}
+
+/* ========================================================
+   1. CONTROL PANEL STEP SPACING (INCREASED AIRFLOW)
+   ======================================================== */
+
+.control-panel .form-group,
+.control-panel .control-group,
+.control-panel .step-group {
+    margin-top: 28px;
+    margin-bottom: 0;
+}
+
+/* Spacing above every step label (1. CHOOSE THEME, 2. WEBSITE NAME, etc.) */
+.control-panel label,
+.control-panel .step-label,
+.control-panel h3 {
+    display: block;
+    margin-top: 28px !important;
+    margin-bottom: 10px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+    color: #1E1E1E;
+    text-transform: uppercase;
+}
+
+/* First label stays close to the intro header */
+.control-panel>label:first-of-type,
+.control-panel>.form-group:first-of-type label,
+.control-panel>.control-group:first-of-type label {
+    margin-top: 14px !important;
+}
+
+/* ========================================================
+   2. NEO-BRUTALIST TOP NAVBAR
+   ======================================================== */
+
+.studio-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: #FFFDF8;
+    border-bottom: 3px solid #1E1E1E;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.04);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Back Link Pill */
+.nav-back-btn,
+.studio-header .back-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E1E1E !important;
+    text-decoration: none !important;
+    background: #FFFFFF;
+    padding: 8px 16px;
+    border: 2px solid #1E1E1E;
+    border-radius: 999px;
+    box-shadow: 2px 2px 0 #1E1E1E;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.nav-back-btn:hover,
+.studio-header .back-link:hover {
+    background: #F1F3F4;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 #1E1E1E;
+}
+
+/* Central Brand Badge */
+.nav-brand-badge,
+.studio-header .studio-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    padding: 6px 16px;
+    border: 2px solid #1E1E1E;
+    border-radius: 999px;
+    box-shadow: 2px 2px 0 #1E1E1E;
+    font-size: 14px;
+    font-weight: 800;
+    color: #1E1E1E;
+}
+
+.google-dots {
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.google-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #1E1E1E;
+    display: inline-block;
+}
+
+.g-blue {
+    background: #4285F4;
+}
+
+.g-red {
+    background: #EA4335;
+}
+
+.g-yellow {
+    background: #FBBC04;
+}
+
+.g-green {
+    background: #34A853;
+}
+
+.brand-text {
+    font-size: 14px;
+    font-weight: 800;
+    color: #1E1E1E;
+}
+
+.brand-accent {
+    color: #4285F4;
+}
+
+.live-tag {
+    font-size: 10px;
+    font-weight: 800;
+    background: #34A853;
+    color: #FFFFFF;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid #1E1E1E;
+    letter-spacing: 0.5px;
+}
+
+/* Top Ship Button */
+.nav-ship-btn,
+.studio-header .ship-btn,
+.studio-header #ship-website-btn,
+.studio-header #ship-top-btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    color: #FFFFFF !important;
+    background: #4285F4 !important;
+    padding: 8px 18px;
+    border: 2px solid #1E1E1E;
+    border-radius: 999px;
+    box-shadow: 3px 3px 0 #1E1E1E;
+    cursor: pointer;
     transition: all 0.15s ease;
 }
 
-.whatsapp-share-btn:hover {
+.nav-ship-btn:hover,
+.studio-header .ship-btn:hover {
+    background: #3367D6 !important;
     transform: translate(-1px, -1px);
-    box-shadow: 4px 4px 0 var(--border-dark);
+    box-shadow: 4px 4px 0 #1E1E1E;
+}
+
+/* Label Visibility Defaults */
+.mobile-label {
+    display: none;
+}
+
+.desktop-label {
+    display: inline;
+}
+
+.mobile-tab-bar {
+    display: none;
+}
+
+/* ========================================================
+   FLUID MOBILE RESPONSIVE ENGINE (NO CLIPPING / NO LOCKOUT)
+   ======================================================== */
+
+/* 1. Global Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Desktop Mode (Width > 768px): Side-by-Side Split */
+@media (min-width: 769px) {
+    .studio-container {
+        display: grid !important;
+        grid-template-columns: 440px 1fr !important;
+        gap: 32px !important;
+        padding: 32px !important;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .control-panel,
+    .preview-panel {
+        display: block !important;
+    }
+
+    .mobile-tab-bar {
+        display: none !important;
+    }
+}
+
+/* 3. Mobile Mode (Width <= 768px): Fluid & Scaled */
+@media (max-width: 768px) {
+    .desktop-label {
+        display: none !important;
+    }
+
+    .mobile-label {
+        display: inline !important;
+    }
+
+    /* Top Navbar: Fits all mobile screen widths down to 280px */
+    .studio-header {
+        height: auto !important;
+        min-height: 50px !important;
+        padding: 8px 10px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 6px !important;
+        width: 100% !important;
+    }
+
+    .nav-brand-badge {
+        padding: 4px 8px !important;
+        gap: 5px !important;
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
+    }
+
+    .brand-text {
+        font-size: 11px !important;
+        white-space: nowrap !important;
+    }
+
+    .google-dots .dot {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    .nav-ship-btn {
+        font-size: 12px !important;
+        padding: 6px 12px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Segmented Mobile Tab Switcher */
+    .mobile-tab-bar {
+        display: flex !important;
+        width: 100% !important;
+        padding: 6px 8px !important;
+        background: #FFFDF8 !important;
+        border-bottom: 2px solid #1E1E1E !important;
+        position: sticky !important;
+        top: 50px !important;
+        z-index: 90 !important;
+    }
+
+    .tab-segmented-track {
+        display: flex !important;
+        width: 100% !important;
+        background: #F1EEDD !important;
+        border: 2px solid #1E1E1E !important;
+        border-radius: 999px !important;
+        padding: 3px !important;
+        gap: 4px !important;
+    }
+
+    .mobile-tab-btn {
+        flex: 1 !important;
+        font-family: inherit !important;
+        font-weight: 800 !important;
+        font-size: 11px !important;
+        padding: 6px 4px !important;
+        border-radius: 999px !important;
+        border: 1.5px solid transparent !important;
+        background: transparent !important;
+        color: #5F6368 !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
+        white-space: nowrap !important;
+        min-width: 0 !important;
+    }
+
+    .mobile-tab-btn.active {
+        background: #FBBC04 !important;
+        color: #1E1E1E !important;
+        border: 1.5px solid #1E1E1E !important;
+        box-shadow: 1.5px 1.5px 0 #1E1E1E !important;
+    }
+
+    .live-pulse {
+        width: 6px !important;
+        height: 6px !important;
+        background: #34A853 !important;
+        border-radius: 50% !important;
+    }
+
+    /* Container & Panels */
+    .studio-container {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 12px 8px 60px 8px !important;
+    }
+
+    .control-panel,
+    .preview-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* View Toggle Control */
+    .control-panel {
+        display: block !important;
+    }
+
+    .preview-panel {
+        display: none !important;
+    }
+
+    body.show-preview .control-panel,
+    .view-preview .control-panel {
+        display: none !important;
+    }
+
+    body.show-preview .preview-panel,
+    .view-preview .preview-panel {
+        display: block !important;
+    }
+
+    /* Mock Browser Card: Scales down to any screen width */
+    .mock-browser-window {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 auto !important;
+        border-width: 2px !important;
+        box-shadow: 3px 3px 0 #1E1E1E !important;
+    }
+
+    /* Address Bar: Ellipsizes long URLs instead of stretching the card */
+    .mock-browser-header,
+    .browser-header,
+    .mock-browser-bar,
+    .browser-bar {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        overflow: hidden !important;
+    }
+
+    #preview-url,
+    .mock-url,
+    .browser-url {
+        min-width: 0 !important;
+        flex: 1 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+        font-size: 11px !important;
+    }
+
+    /* Card Content Wrapping */
+    #preview-title {
+        font-size: clamp(20px, 6vw, 28px) !important;
+        word-break: break-word !important;
+    }
+
+    #preview-role,
+    #preview-bio {
+        word-break: break-word !important;
+    }
 }
