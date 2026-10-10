@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDG WebStudio · Build Your First Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/builder.css" />
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="studio-header">
+        <div class="header-left">
+            <a href="index.html" class="back-btn">← Back to Workshop</a>
+            <div class="studio-badge">GDG UVCE · WebStudio</div>
+        </div>
+        <div class="header-right">
+            <button id="ship-top-btn" class="ship-cta-btn">🚀 Ship Website</button>
+        </div>
+    </header>
+
+    <!-- Studio Workspace -->
+    <main class="studio-layout">
+        <!-- Left: Creator Deck -->
+        <section class="control-panel">
+            <div class="panel-header">
+                <h1>Build Your First Site</h1>
+                <p>No coding required. Customize your identity, watch it build live, and launch it!</p>
+            </div>
+
+            <!-- 1. Theme Palette -->
+            <div class="control-group">
+                <label class="control-label">1. Choose Theme Palette</label>
+                <div class="theme-options">
+                    <button class="theme-chip active" data-theme="theme-gdg">
+                        <span class="color-dot" style="background: #4285F4;"></span> GDG Blue
+                    </button>
+                    <button class="theme-chip" data-theme="theme-terminal">
+                        <span class="color-dot" style="background: #34A853;"></span> Terminal Green
+                    </button>
+                    <button class="theme-chip" data-theme="theme-sunset">
+                        <span class="color-dot" style="background: #F9AB00;"></span> Sunset Amber
+                    </button>
+                    <button class="theme-chip" data-theme="theme-dark">
+                        <span class="color-dot" style="background: #202124;"></span> Dark Mode
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. Site Identity -->
+            <div class="control-group">
+                <label class="control-label" for="input-title">2. Website Name / Title</label>
+                <input type="text" id="input-title" class="studio-input" value="Alex's Portfolio" maxlength="32" />
+            </div>
+
+            <!-- 3. Tagline / Role -->
+            <div class="control-group">
+                <label class="control-label" for="input-role">3. Your Role / Focus</label>
+                <input type="text" id="input-role" class="studio-input" value="First-Year Engineer · Aspiring Developer"
+                    maxlength="50" />
+            </div>
+
+            <!-- 4. Bio / Description -->
+            <div class="control-group">
+                <label class="control-label" for="input-bio">4. Short Bio</label>
+                <textarea id="input-bio" class="studio-textarea" rows="3"
+                    maxlength="140">Building modern web projects from scratch. Excited to learn full-stack development at GDG UVCE!</textarea>
+            </div>
+
+            <!-- 5. Pick a Sticker Badge -->
+            <div class="control-group">
+                <label class="control-label">5. Pick Mascot / Sticker</label>
+                <div class="sticker-options">
+                    <button class="sticker-chip active" data-emoji="⚡">⚡ Lightning</button>
+                    <button class="sticker-chip" data-emoji="🚀">🚀 Rocket</button>
+                    <button class="sticker-chip" data-emoji="💻">💻 Code</button>
+                    <button class="sticker-chip" data-emoji="✨">✨ Sparkle</button>
+                    <button class="sticker-chip" data-emoji="👾">👾 Retro Bot</button>
+                </div>
+            </div>
+
+            <!-- 6. Button Text -->
+            <div class="control-group">
+                <label class="control-label" for="input-btn-text">6. Call To Action Button</label>
+                <input type="text" id="input-btn-text" class="studio-input" value="Explore My Projects ›"
+                    maxlength="25" />
+            </div>
+
+            <!-- Action Footer -->
+            <div class="control-footer">
+                <button id="ship-main-btn" class="ship-cta-btn large">🚀 Ship My Website & Win Swag</button>
+            </div>
+        </section>
+
+        <!-- Right: Live Browser Preview -->
+        <section class="preview-panel">
+            <div class="browser-window">
+                <!-- Mock Browser Chrome Bar -->
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="browser-url" id="preview-url">https://alex.gdguvce.dev</div>
+                </div>
+
+                <!-- Rendered Webpage -->
+                <div class="browser-content theme-gdg" id="preview-content">
+                    <div class="preview-hero">
+                        <div class="preview-sticker" id="preview-sticker">⚡</div>
+                        <div class="preview-badge" id="preview-badge">LIVE PREVIEW</div>
+                        <h2 class="preview-title" id="preview-title">Alex's Portfolio</h2>
+                        <p class="preview-role" id="preview-role">First-Year Engineer · Aspiring Developer</p>
+                        <p class="preview-bio" id="preview-bio">Building modern web projects from scratch. Excited to
+                            learn full-stack development at GDG UVCE!</p>
+                        <a href="#" class="preview-button" id="preview-button">Explore My Projects ›</a>
+                    </div>
+
+                    <div class="preview-footer-note">
+                        <span>Powered by HTML · CSS · JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Celebration & Contest Modal -->
+    <div class="modal-backdrop" id="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-emoji">🎉</div>
+            <h2>Website Successfully Shipped!</h2>
+            <p class="modal-lead">In less than a minute, you just designed, styled, and launched a responsive webpage.
+            </p>
+
+            <div class="tech-breakdown">
+                <div class="tech-card">
+                    <span class="tech-tag html">HTML</span>
+                    <span>Structured your content & badges</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-tag css">CSS</span>
+                    <span>Styled your themes, borders & layout</span>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-tag js">JavaScript</span>
+                    <span>Ran this interactive live studio</span>
+                </div>
+            </div>
+
+            <!-- Marketing & Contest Card -->
+            <div class="contest-box">
+                <h3>📸 GDG UVCE Screenshot Challenge</h3>
+                <p>1. Take a screenshot of this card and your created website.</p>
+                <p>2. Post it on Instagram or WhatsApp, tag <strong>@gdguvce</strong> with <strong>#GDGWebDev</strong>.
+                </p>
+                <p>3. Show it at the registration desk on workshop day to claim <strong>exclusive GDG sticker
+                        packs!</strong></p>
+            </div>
+
+            <div class="modal-actions">
+                <a href="index.html#register" class="claim-seat-btn">🎟️ Claim Your Workshop Seat</a>
+                <button id="close-modal-btn" class="edit-again-btn">↻ Edit My Site</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+    <script src="js/builder.js"></script>
+</body>
+
+</html>
