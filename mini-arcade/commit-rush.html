@@ -15,8 +15,8 @@
         <div class="window-notch" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="window-body">
           <div class="game-heading"><div><div class="eyebrow">GREEN LANE · RUNNER</div><h2 class="game-title" id="commit-title">Commit Rush</h2></div><div class="code-pill pill-green" id="commit-score">SCORE 000</div></div>
-          <p class="game-copy">Collect spinning commit coins for points. Jump merge conflicts and force-push lasers. You have three lives, and the pace climbs for two minutes. Every jump rotates the block Geometry Dash-style.</p>
-          <div class="hud"><span class="status status-green" id="commit-status"><span class="status-dot"></span><span>IDLE</span></span><span class="code-pill pill-green" id="commit-level">INTENSITY 0%</span><span class="code-pill pill-yellow" id="commit-lives">LIVES 3/3</span><span class="code-pill pill-blue" id="commit-progress">RUN 0:00</span><button class="btn audio-toggle" id="commit-music" type="button" aria-pressed="true">♫ MUSIC ON</button><button class="btn audio-toggle" id="commit-trail" type="button">TRAIL · FLAME</button></div>
+          <p class="game-copy">Collect commit coins and jump merge conflicts and force-push lasers. You have three lives. The run climbs from Easy to Extreme Demon over two minutes, and your rank depends on how far you get: SSS only at maximum intensity.</p>
+          <div class="hud"><span class="status status-green" id="commit-status"><span class="status-dot"></span><span>IDLE</span></span><span class="code-pill pill-green" id="commit-level">EASY · 0%</span><span class="code-pill pill-yellow" id="commit-lives">LIVES 3/3</span><span class="code-pill pill-blue" id="commit-progress">RUN 0:00</span><button class="btn audio-toggle" id="commit-music" type="button" aria-pressed="true">♫ MUSIC ON</button><button class="btn audio-toggle" id="commit-trail" type="button">TRAIL · FLAME</button></div>
           <div class="commit-stage" id="commit-stage" aria-label="Commit Rush game canvas. Tap the play button to start.">
             <canvas id="commit-canvas"></canvas>
             <div class="stage-start" id="commit-start"><span class="mono-label">ENDLESS RUN · 3 LIVES</span><button class="btn btn-green btn-featured" id="commit-play" type="button">Play Commit Rush</button></div>
@@ -24,21 +24,18 @@
           </div>
           <div class="control-row" aria-label="Commit Rush controls"><button class="btn btn-green control-btn" id="jump-btn" type="button">⤒ JUMP</button><button class="btn control-btn down-btn" id="down-btn" type="button">⤓ DOWN / SLAM</button></div>
           <div class="result-card round-result" id="commit-result" hidden>
-            <div class="round-rank" data-rank="D"><span class="mono-label">RANK</span><strong id="commit-rank">D</strong></div>
+            <div class="round-rank" data-rank="F"><span class="mono-label">RANK</span><strong id="commit-rank">F</strong></div>
             <div class="status status-red" id="commit-result-status"><span class="status-dot"></span><span>GAME OVER</span></div>
-            <h3 id="commit-result-title">Build failed</h3>
+            <h3 id="commit-result-title">Run complete</h3>
             <p id="commit-result-copy"></p>
             <div class="stat-grid">
               <div class="stat-card"><span class="mono-label">SCORE</span><strong id="commit-final-score">0</strong></div>
               <div class="stat-card"><span class="mono-label">COINS</span><strong id="commit-stat-coins">0</strong></div>
               <div class="stat-card"><span class="mono-label">SURVIVED</span><strong id="commit-stat-time">0:00</strong></div>
               <div class="stat-card"><span class="mono-label">PEAK INTENSITY</span><strong id="commit-stat-intensity">0%</strong></div>
+              <div class="stat-card"><span class="mono-label">PHASE REACHED</span><strong id="commit-stat-phase">EASY</strong></div>
             </div>
-            <div class="learn"><div class="mono-label">WHAT YOU JUST LEARNED</div><strong class="learn-topic" id="commit-learn-topic">MERGE CONFLICT</strong><p id="commit-learn-copy"></p><pre class="code-block">git checkout -b feature      # start a branch from main
-git add .                    # stage your changes
-git commit -m "add feature"  # save a snapshot
-git push -u origin feature   # share the branch
-# open a pull request, then merge it into main</pre></div>
+            <div class="learn"><div class="mono-label">WHAT YOU JUST LEARNED</div><strong class="learn-topic" id="commit-learn-topic">MERGE CONFLICT</strong><p id="commit-learn-copy"></p><ol class="learn-steps" id="commit-learn-steps"></ol></div>
             <div class="btn-row"><button class="btn btn-green btn-featured" id="commit-again" type="button">Play again</button><a class="cta" id="claim-seat" href="#claim-seat">Claim your seat</a></div>
           </div>
         </div>

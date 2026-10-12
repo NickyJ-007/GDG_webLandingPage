@@ -205,3 +205,20 @@ a { color: var(--on-surface); }
 .stat-card strong { font: 700 20px/1 var(--font-mono); }
 @media (min-width: 560px) { .stat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .learn-topic { justify-self: start; padding: .25rem .75rem; border: 1px solid var(--black-02); border-radius: var(--radius-full); background: var(--pastel-yellow); font: 700 13px/16px var(--font-mono); letter-spacing: .04em; }
+
+/* Commit Rush ranks, F to SSS (scoped so Bug Smasher keeps its own colours) */
+.commit-game .round-rank[data-rank="SSS"] strong { background: var(--core-yellow); font-size: 20px; animation: rank-glow .5s steps(2, end) infinite; }
+.commit-game .round-rank[data-rank="SS"] strong { background: var(--halftone-yellow); font-size: 24px; }
+.commit-game .round-rank[data-rank="S"] strong { background: var(--pastel-yellow); }
+.commit-game .round-rank[data-rank="A"] strong { background: var(--pastel-green); }
+.commit-game .round-rank[data-rank="B"] strong { background: var(--pastel-blue); }
+.commit-game .round-rank[data-rank="C"] strong { background: var(--surface-container-high); }
+.commit-game .round-rank[data-rank="D"] strong { background: var(--pastel-red); }
+.commit-game .round-rank[data-rank="F"] strong { background: var(--core-red); color: var(--surface-container-lowest); }
+@keyframes rank-glow { 50% { box-shadow: 3px 3px 0 var(--core-red); transform: scale(1.06); } }
+#commit-stat-phase { font-size: 15px; line-height: 1.2; }
+
+/* Commit Rush lesson steps (replaces the code snippet) */
+.learn-steps { display: grid; gap: 6px; margin: 4px 0 0; padding: 0; list-style: none; counter-reset: step; }
+.learn-steps li { counter-increment: step; display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; padding: 8px 10px; border: 1.5px solid var(--black-02); border-radius: var(--radius-sm); background: var(--surface-container-lowest); font-size: 14px; line-height: 20px; }
+.learn-steps li::before { content: counter(step); display: grid; place-items: center; width: 22px; height: 22px; border: 1.5px solid var(--black-02); border-radius: var(--radius-full); background: var(--pastel-yellow); font: 700 12px/1 var(--font-mono); }
