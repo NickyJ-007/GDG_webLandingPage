@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bug Smasher — Mini Arcade</title>
+  <link rel="stylesheet" href="mini-arcade-tokens.css">
+</head>
+<body data-game="bug-vacuum">
+  <main class="arcade-page" id="game">
+    <div class="arcade-shell">
+      <nav class="arcade-nav" aria-label="Mini Arcade navigation"><a class="brand-mark" href="#game">GDG UVCE · MINI ARCADE</a><a class="nav-link" href="#claim-seat">CLAIM YOUR SEAT</a></nav>
+      <header class="hero"><div class="eyebrow">WORKSHOP WARM-UP · 02</div><h1>Clean the board. Keep the signal.</h1><p>Whack the bugs before they vanish, build a combo, and leave friendly packets alone.</p></header>
+      <section class="window-card vacuum-game" aria-labelledby="vacuum-title">
+        <div class="window-notch" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="window-body">
+          <div class="game-heading"><div><div class="eyebrow">TERMINAL LANE · CLEANUP</div><h2 class="game-title" id="vacuum-title">Bug Smasher</h2></div><div class="code-pill pill-blue" id="vacuum-score">SCORE 000</div></div>
+          <p class="game-copy">Tap a bug with the hammer before it retreats. Dangerous bugs are worth more, moderate bugs move steadily, and very easy bugs are quick wins. Friendly packets are green and marked ✓ — do not hit them. Grab the glowing power-ups: HOTFIX FREEZE stops the retreat, BUILD BOOST doubles points, ROLLBACK forgives one miss.</p>
+          <div class="hud challenge-hud"><span class="status" id="vacuum-status"><span class="status-dot"></span><span>IDLE</span></span><span class="code-pill pill-blue" id="vacuum-round">ROUND 00s</span><span class="code-pill pill-yellow" id="vacuum-caught">WHACKED 0</span><span class="code-pill pill-green" id="vacuum-streak">COMBO x0</span><span class="code-pill pill-red" id="vacuum-misses">MISSES 0</span><span class="code-pill pill-blue" id="vacuum-power">POWER —</span><button class="btn audio-toggle" id="vacuum-music" type="button" aria-pressed="true">♫ MUSIC ON</button></div>
+          <div class="vacuum-stage" id="vacuum-stage" aria-label="Bug Vacuum play area. Tap a bug to whack it. Move your pointer or finger to move the nozzle.">
+            <div class="circuit-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="vent-grid" id="vent-grid" aria-hidden="true"></div><div class="cpu-die" aria-hidden="true"><span>CPU</span><span>CORE</span></div>
+            <div class="vacuum-entities" id="vacuum-entities"></div>
+            <div class="hammer" id="vacuum-hammer" aria-hidden="true"><span class="hammer-head"></span><span class="hammer-handle"></span><span class="hammer-spark"></span></div>
+            <div class="vacuum-start" id="vacuum-start"><span class="mono-label">30S WHACK-A-MOLE · TAP FAST · PROTECT PACKETS</span><button class="btn btn-primary btn-featured" id="vacuum-play" type="button">Play Bug Smasher</button></div>
+            <div class="edge-flash" id="vacuum-flash" aria-hidden="true"></div>
+            <div class="time-up" id="vacuum-timeup" hidden><strong>TIME'S UP</strong><span>TALLYING THE BOARD</span></div>
+          </div>
+          <div class="result-card round-result" id="vacuum-result" hidden>
+            <div class="round-rank" data-rank="C"><span class="mono-label">RANK</span><strong id="vacuum-rank">C</strong></div>
+            <div class="status status-green"><span class="status-dot"></span><span>ROUND COMPLETE</span></div>
+            <h3 id="vacuum-result-title">Board state: clean.</h3>
+            <p id="vacuum-result-copy"></p>
+            <div class="stat-grid">
+              <div class="stat-card"><span class="mono-label">SCORE</span><strong id="vacuum-final-score">000</strong></div>
+              <div class="stat-card"><span class="mono-label">WHACKED</span><strong id="vacuum-stat-whacked">0</strong></div>
+              <div class="stat-card"><span class="mono-label">ACCURACY</span><strong id="vacuum-stat-accuracy">0%</strong></div>
+              <div class="stat-card"><span class="mono-label">BEST COMBO</span><strong id="vacuum-stat-combo">x0</strong></div>
+              <div class="stat-card"><span class="mono-label">PACKETS HIT</span><strong id="vacuum-stat-packets">0</strong></div>
+              <div class="stat-card"><span class="mono-label">POWER-UPS</span><strong id="vacuum-stat-powers">0</strong></div>
+            </div>
+            <div class="learn"><div class="mono-label">WHAT YOU JUST LEARNED</div><div class="code-pill pill-blue" id="vacuum-learning-label">NULL REF</div><p id="vacuum-explanation"></p></div>
+            <div class="btn-row"><button class="btn btn-primary btn-featured" id="vacuum-again" type="button">Play again</button><a class="cta" id="claim-seat" href="#claim-seat">Claim your seat</a></div>
+          </div>
+          <section class="bug-guide" aria-labelledby="bug-guide-title">
+            <div class="mono-label" id="bug-guide-title">BUG SMASHER FIELD GUIDE</div>
+            <div class="bug-guide-grid">
+              <article class="bug-guide-card bug-guide-danger"><div class="bug-guide-title">DANGEROUS BUGS</div><strong>NULL REF · RACE COND. · MEMORY LEAK</strong><p>High-value bugs with short windows. They represent failures that can crash systems, corrupt results, or consume resources.</p></article>
+              <article class="bug-guide-card bug-guide-moderate"><div class="bug-guide-title">MODERATE BUGS</div><strong>OFF-BY-ONE · ∞ LOOP · STALE CACHE</strong><p>Slower but persistent bugs. They create incorrect counts, stuck processes, or outdated information.</p></article>
+              <article class="bug-guide-card bug-guide-easy"><div class="bug-guide-title">VERY EASY BUGS</div><strong>TYPO · GIT TRUSTY</strong><p>Quick wins. A typo breaks syntax; GIT TRUSTY is your friendly reminder to make small, tested, trustworthy commits.</p></article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="bug-vacuum.js" defer></script>
+  <script>
+    (function () {
+      if (!new URLSearchParams(location.search).has('embed')) return;
+      document.body.classList.add('is-embed');
+      const page = document.querySelector('.arcade-page');
+      const report = () => parent.postMessage({ type: 'mini-arcade:height', game: document.body.dataset.game, height: Math.ceil(page.getBoundingClientRect().height) }, '*');
+      new ResizeObserver(report).observe(page);
+      report();
+    })();
+  </script>
+</body>
+</html>

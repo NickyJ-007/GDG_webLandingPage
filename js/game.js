@@ -865,6 +865,17 @@
     endScreen.hidden = false;
   }
 
+  // Mini Arcade: when the player switches to another game, end this round cleanly
+  window.addEventListener("arcade:stop", function () {
+    if (!running) return;
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    keys.left = false;
+    keys.right = false;
+    hud.hidden = true;
+    startScreen.hidden = false;
+  });
+
   // Event Listeners
   startBtn.addEventListener("click", startRound);
   replayBtn.addEventListener("click", startRound);
