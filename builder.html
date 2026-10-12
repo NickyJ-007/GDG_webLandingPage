@@ -108,45 +108,85 @@
             </div>
 
             <!-- 6. Button Text -->
-            <div class="control-group">
-                <label class="control-label" for="input-btn-text">6. Call To Action Button</label>
-                <input type="text" id="input-btn-text" class="studio-input" value="Explore My Projects ›"
-                    maxlength="25" />
+            <div class="form-group">
+                <label for="input-btn-text">6. Call-to-Action Button Text</label>
+                <input type="text" id="input-btn-text" placeholder="Say Hello on Instagram 👋" maxlength="32"
+                    value="Say Hello on Instagram 👋" />
             </div>
+            
+            <!-- 7. Social Profile Link -->
+            <div class="form-group">
+                <label for="input-btn-url">7. Social Link (Instagram, LinkedIn, etc.)</label>
+                <input type="text" id="input-btn-url" placeholder="https://instagram.com/your_handle" />
+            </div>
+            
+            <!-- 8. What Excites You in Tech -->
+            <div class="form-group">
+                <label>8. What excites you in tech?</label>
+                <div class="skills-chip-group" id="skills-chip-group">
+                    <button type="button" class="skill-chip active" data-skill="Web Dev">Web Dev</button>
+                    <button type="button" class="skill-chip active" data-skill="AI &amp; ML">AI &amp; ML</button>
+                    <button type="button" class="skill-chip active" data-skill="App Dev">App Dev</button>
+                    <button type="button" class="skill-chip" data-skill="UI/UX Design">UI/UX Design</button>
+                    <button type="button" class="skill-chip" data-skill="Cloud">Cloud</button>
+                    <button type="button" class="skill-chip" data-skill="Cybersecurity">Cybersecurity</button>
+                    <button type="button" class="skill-chip" data-skill="Game Dev">Game Dev</button>
+                </div>
+            </div>
+            
+            <!-- Single Primary Green Ship Button -->
+            <button type="button" id="ship-main-btn" class="ship-main-btn">
+                🚀 Ship My Website
+            </button>
 
-            <!-- Action Footer -->
-            <div class="control-footer">
-                <button id="ship-main-btn" class="ship-cta-btn large">🚀 Ship My Website</button>
-            </div>
         </section>
 
-        <!-- Right: Live Browser Preview -->
         <section class="preview-panel">
-            <div class="browser-window">
-                <!-- Mock Browser Chrome Bar -->
-                <div class="browser-bar">
+            <div class="mock-browser-window">
+                <!-- Browser Top Header -->
+                <div class="mock-browser-header">
                     <div class="browser-dots">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
+                        <span class="b-dot red"></span>
+                        <span class="b-dot yellow"></span>
+                        <span class="b-dot green"></span>
                     </div>
-                    <div class="browser-url" id="preview-url">https://alex.gdguvce.dev</div>
+        
+                    <div class="browser-url-pill">
+                        <span class="url-icon">🔒</span>
+                        <span id="preview-url">https://alexsportfolio.gdguvce.dev</span>
+                    </div>
                 </div>
-
-                <!-- Rendered Webpage -->
-                <div class="browser-content theme-gdg" id="preview-content">
-                    <div class="preview-hero">
-                        <div class="preview-sticker" id="preview-sticker">⚡</div>
-                        <div class="preview-badge" id="preview-badge">LIVE PREVIEW</div>
-                        <h2 class="preview-title" id="preview-title">Alex's Portfolio</h2>
-                        <p class="preview-role" id="preview-role">First-Year Engineer · Aspiring Developer</p>
-                        <p class="preview-bio" id="preview-bio">Building modern web projects from scratch. Excited to
-                            learn full-stack development at GDG UVCE!</p>
-                        <a href="#" class="preview-button" id="preview-button">Explore My Projects ›</a>
+        
+                <!-- Live Card Content -->
+                <div id="preview-content" class="browser-content theme-blue">
+                    <!-- Interactive Toast Pill -->
+                    <div id="preview-toast" class="preview-toast"></div>
+        
+                    <div class="preview-sticker-wrapper">
+                        <span id="preview-sticker">⚡</span>
                     </div>
-
+        
+                    <div class="preview-badge-wrapper">
+                        <span class="live-pill-tag">LIVE PREVIEW</span>
+                    </div>
+        
+                    <h2 id="preview-title">Alex's Portfolio</h2>
+                    <p id="preview-role">First-Year Engineer · Aspiring Developer</p>
+                    <p id="preview-bio">Building modern web projects from scratch. Excited to learn full-stack development at
+                        GDG UVCE!</p>
+        
+                    <!-- Live Skill Pills -->
+                    <div class="preview-skills-container" id="preview-skills-list"></div>
+        
+                    <!-- Social CTA Button -->
+                    <div class="preview-cta-wrapper">
+                        <a href="#" id="preview-button" class="preview-button">
+                            Say Hello on Instagram 👋
+                        </a>
+                    </div>
+        
                     <div class="preview-footer-note">
-                        <span>Powered by HTML · CSS · JavaScript</span>
+                        Powered by HTML · CSS · JavaScript
                     </div>
                 </div>
             </div>
@@ -194,7 +234,7 @@
             
                 <!-- WhatsApp Button -->
                 <a href="#" id="share-whatsapp-btn" class="whatsapp-share-btn" target="_blank" rel="noopener noreferrer">
-                    💬 Share with Classmates on WhatsApp
+                    📲 Share with Classmates on WhatsApp
                 </a>
             
                 <button id="close-modal-btn" class="edit-again-btn">↻ Keep Editing My Site</button>

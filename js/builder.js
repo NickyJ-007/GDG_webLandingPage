@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const inputRole = document.getElementById('input-role');
   const inputBio = document.getElementById('input-bio');
   const inputBtnText = document.getElementById('input-btn-text');
+  const inputBtnUrl = document.getElementById('input-btn-url');
 
   const previewTitle = document.getElementById('preview-title');
   const previewRole = document.getElementById('preview-role');
@@ -16,23 +17,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const previewSticker = document.getElementById('preview-sticker');
   const previewUrl = document.getElementById('preview-url');
   const previewContent = document.getElementById('preview-content');
+  const previewToast = document.getElementById('preview-toast');
 
-  const themeChips = document.querySelectorAll('.theme-chip');
-  const stickerChips = document.querySelectorAll('.sticker-chip');
-
+  // 2. Celebration Modal (Guaranteed Event Listeners)
   const modalBackdrop = document.getElementById('modal-backdrop');
   const closeModalBtn = document.getElementById('close-modal-btn');
-  const directRegisterBtn = document.getElementById('direct-register-btn');
-  const shareWhatsappBtn = document.getElementById('share-whatsapp-btn');
   const confettiCanvas = document.getElementById('confetti-canvas');
+  const shareWhatsappBtn = document.getElementById('share-whatsapp-btn');
+  const directRegisterBtn = document.getElementById('direct-register-btn');
 
-  const studioContainer = document.querySelector('.studio-container');
-  const tabEditBtn = document.getElementById('tab-edit-btn');
-  const tabPrevBtn = document.getElementById('tab-prev-btn');
-  const controlPanel = document.querySelector('.control-panel');
-  const previewPanel = document.querySelector('.preview-panel');
+  function openShipModal() {
+    if (modalBackdrop) {
+      modalBackdrop.classList.add('open');
+      modalBackdrop.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      runConfetti();
+    }
+  }
 
-  // 2. Live Input Sync
+  function closeShipModal() {
+    if (modalBackdrop) {
+      modalBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Universal click capture for any Ship button (blue header button OR bottom green button)
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest(
+      '#ship-website-btn, #ship-main-btn, .nav-ship-btn, .ship-main-btn, .ship-btn'
+    );
+    if (target) {
+      e.preventDefault();
+      openShipModal();
+    }
+  });
+
+  closeModalBtn?.addEventListener('click', closeShipModal);
+  modalBackdrop?.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) closeShipModal();
+  });
+
+  // 3. Live Form Input Sync
   inputTitle?.addEventListener('input', (e) => {
     const val = e.target.value.trim() || "Alex's Portfolio";
     if (previewTitle) previewTitle.textContent = val;
@@ -51,81 +77,98 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   inputBtnText?.addEventListener('input', (e) => {
-    if (previewButton) previewButton.textContent = e.target.value || 'Explore My Projects ›';
+    if (previewButton) previewButton.textContent = e.target.value || 'Say Hello on Instagram 👋';
   });
 
-  // 3. Theme Selection
+  // 4. Interactive Toast on CTA Button Click
+  let toastTimer = null;
+  function showToast(msg) {
+    if (!previewToast) return;
+    previewToast.textContent = msg;
+    previewToast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      previewToast.classList.remove('show');
+    }, 2800);
+  }
+
+  previewButton?.addEventListener('click', (e) => {
+    e.preventDefault();
+    let url = inputBtnUrl?.value.trim() || '';
+
+    if (url) {
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+      }
+      showToast('🚀 Opening your link in a new tab!');
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else {
+      showToast('💡 In real web development, this button opens your social profile or portfolio!');
+    }
+  });
+
+  // 5. Theme Palette Chips
+  const themeChips = document.querySelectorAll('.theme-chip');
   themeChips.forEach((chip) => {
     chip.addEventListener('click', () => {
       themeChips.forEach((c) => c.classList.remove('active'));
       chip.classList.add('active');
-      const theme = chip.getAttribute('data-theme');
-      if (previewContent && theme) {
+      const theme = chip.getAttribute('data-theme') || 'theme-blue';
+      if (previewContent) {
         previewContent.className = `browser-content ${theme}`;
       }
     });
   });
 
-  // 4. Mascot / Sticker Selection
+  // 6. Sticker / Mascot Chips
+  const stickerChips = document.querySelectorAll('.sticker-chip');
   stickerChips.forEach((chip) => {
     chip.addEventListener('click', () => {
       stickerChips.forEach((c) => c.classList.remove('active'));
       chip.classList.add('active');
       const emoji = chip.getAttribute('data-emoji');
-      if (previewSticker && emoji) {
-        previewSticker.textContent = emoji;
-      }
+      if (previewSticker && emoji) previewSticker.textContent = emoji;
     });
   });
 
-// 5. Modal Open & Close Logic (Scroll-Safe)
-  const openShipModal = () => {
-    if (modalBackdrop) {
-      modalBackdrop.classList.add('open');
-      modalBackdrop.scrollTop = 0;              // Scrolls popup to the very top upon opening
-      document.body.style.overflow = 'hidden';  // Freezes background page so it cannot drag
-      runConfetti();
-    }
-  };
-
-  const closeShipModal = () => {
-    if (modalBackdrop) {
-      modalBackdrop.classList.remove('open');
-      document.body.style.overflow = '';        // Restores normal background page scrolling
-    }
-  };
-
-  // Attach click listener to all ship buttons
-  const shipButtons = document.querySelectorAll(
-    '#ship-website-btn, #ship-top-btn, #ship-main-btn, .ship-btn, .nav-ship-btn, .ship-btn-main'
-  );
-  shipButtons.forEach((btn) => {
-    btn.addEventListener('click', openShipModal);
-  });
-
-  closeModalBtn?.addEventListener('click', closeShipModal);
-
-  modalBackdrop?.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) {
-      closeShipModal();
-    }
-  });
-
-  // 6. Safe Link Setup
-  const GOOGLE_FORM_LINK = "https://forms.gle/PASTE_GOOGLE_FORM_LINK_HERE";
-  if (directRegisterBtn) {
-    directRegisterBtn.href = GOOGLE_FORM_LINK;
+  // 7. Tech Interest Badges
+  const previewSkillsList = document.getElementById('preview-skills-list');
+  function renderSkillBadges() {
+    if (!previewSkillsList) return;
+    previewSkillsList.innerHTML = '';
+    const activeChips = document.querySelectorAll('.skill-chip.active');
+    activeChips.forEach((chip) => {
+      const badge = document.createElement('span');
+      badge.className = 'preview-skill-tag';
+      badge.textContent = chip.getAttribute('data-skill');
+      previewSkillsList.appendChild(badge);
+    });
   }
 
+  const skillChips = document.querySelectorAll('.skill-chip');
+  skillChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+      renderSkillBadges();
+    });
+  });
+  renderSkillBadges();
+
+  // 8. Safe WhatsApp Share Links
   if (shareWhatsappBtn) {
-    const workshopUrl = window.location.origin + window.location.pathname.replace('builder.html', 'index.html');
+    const workshopUrl = window.location.href.includes('builder.html')
+      ? window.location.href.replace('builder.html', 'index.html')
+      : (window.location.origin + window.location.pathname.replace(/\/$/, '') + '/index.html');
+
     const shareText = encodeURIComponent(
       `Hey! I just built and launched my first website on GDG UVCE WebStudio 🚀 Try building yours in 60 seconds and claim a seat for the online workshop:\n${workshopUrl}`
     );
-    shareWhatsappBtn.href = `https://api.whatsapp.com/send?text=${shareText}`;
+    shareWhatsappBtn.href = `https://wa.me/?text=${shareText}`;
+    shareWhatsappBtn.target = "_blank";
+    shareWhatsappBtn.rel = "noopener noreferrer";
   }
 
-  // 7. Confetti Effect
+  // 9. Confetti Particle Animation
   function runConfetti() {
     if (!confettiCanvas) return;
     const ctx = confettiCanvas.getContext('2d');
@@ -135,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     confettiCanvas.height = window.innerHeight;
 
     const pieces = [];
-    const colors = ['#4285F4', '#34A853', '#F9AB00', '#EA4335', '#FBBC04'];
+    const colors = ['#4285F4', '#34A853', '#FBBC04', '#EA4335'];
 
     for (let i = 0; i < 90; i++) {
       pieces.push({
@@ -173,37 +216,21 @@ document.addEventListener('DOMContentLoaded', () => {
     update();
   }
 
-// 8. Mobile View Switcher
-  function showCustomize() {
-    tabEditBtn?.classList.add('active');
+  // 10. Mobile Tab Switcher
+  const tabEditBtn = document.getElementById('tab-edit-btn');
+  const tabPrevBtn = document.getElementById('tab-prev-btn');
+
+  tabEditBtn?.addEventListener('click', () => {
+    tabEditBtn.classList.add('active');
     tabPrevBtn?.classList.remove('active');
     document.body.classList.remove('show-preview');
-    studioContainer?.classList.remove('view-preview');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
-    if (window.innerWidth <= 768) {
-      if (controlPanel) controlPanel.style.display = 'block';
-      if (previewPanel) previewPanel.style.display = 'none';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
-  function showLivePreview() {
-    tabPrevBtn?.classList.add('active');
+  tabPrevBtn?.addEventListener('click', () => {
+    tabPrevBtn.classList.add('active');
     tabEditBtn?.classList.remove('active');
     document.body.classList.add('show-preview');
-    studioContainer?.classList.add('view-preview');
-
-    if (window.innerWidth <= 768) {
-      if (controlPanel) controlPanel.style.display = 'none';
-      if (previewPanel) previewPanel.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
-  tabEditBtn?.addEventListener('click', showCustomize);
-  tabPrevBtn?.addEventListener('click', showLivePreview);
-
-  if (window.innerWidth <= 768) {
-    showCustomize();
-  }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });
