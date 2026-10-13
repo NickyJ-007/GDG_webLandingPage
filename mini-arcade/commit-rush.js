@@ -46,7 +46,7 @@
   const MARGIN = .02;                    // safety padding around every hazard: about one frame at 60fps
   const REACT = .25;                     // a jump is never needed sooner than this after its obstacle appears
   const JUMP_BUFFER = .12, SLAM_GRAVITY = 2.5, INVULN = 1.2, CHARGE = .22;
-  const TRACKS = ['commit-rush-level1.mp3', 'commit-rush-level2.mp3', 'commit-rush-level3.mp3'];
+  const TRACKS = ['commit-rush-bg.mp3'];
   const TRAILS = ['FLAME', 'OFF'];
   const LEARN = {
     'MERGE CONFLICT': {
@@ -167,7 +167,7 @@
   function playWarningSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; [0, .13].forEach((offset, index) => { const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'square'; osc.frequency.setValueAtTime(index ? 740 : 620, now + offset); gain.gain.setValueAtTime(.001, now + offset); gain.gain.exponentialRampToValueAtTime(.1, now + offset + .015); gain.gain.exponentialRampToValueAtTime(.001, now + offset + .1); osc.connect(gain).connect(ctx.destination); osc.start(now + offset); osc.stop(now + offset + .12); }); } catch (err) { /* audio is optional */ } }
   function playErrorSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'sawtooth'; osc.frequency.setValueAtTime(190, now); osc.frequency.exponentialRampToValueAtTime(70, now + .28); gain.gain.setValueAtTime(.14, now); gain.gain.exponentialRampToValueAtTime(.001, now + .32); osc.connect(gain).connect(ctx.destination); osc.start(now); osc.stop(now + .35); } catch (err) { /* audio is optional */ } }
   function updateMusic(I) {
-    const track = I < .34 ? 0 : I < .67 ? 1 : 2;
+    const track = 0; // one soundtrack for the whole run; volume and tempo carry the intensity
     if (track === musicTrack) return;
     musicTrack = track;
     const playingNow = musicOn && state === 'playing';
