@@ -46,7 +46,7 @@
   const MARGIN = .02;                    // safety padding around every hazard: about one frame at 60fps
   const REACT = .25;                     // a jump is never needed sooner than this after its obstacle appears
   const JUMP_BUFFER = .12, SLAM_GRAVITY = 2.5, INVULN = 1.2, CHARGE = .22;
-  const TRACKS = ['commit-rush-bg.mp3'];
+  const SONG = 'commit-rush-bg.mp3';
   const TRAILS = ['FLAME', 'OFF'];
   const LEARN = {
     'MERGE CONFLICT': {
@@ -153,7 +153,7 @@
   let jumpY = 0; let jumpV = 0; let jumpAge = 0; let jumpDuration = .82; let jumpG = 1450; let runnerAngle = 0; let jumpStartAngle = 0; let jumpBuffer = 0; let slamming = false;
   let trailHistory = []; let trailAge = 0; let trailStyle = 0;
   let toastTimer = 0; let failureAge = 0; let countRaf = 0; let audioCtx = null; let musicOn = true; let musicTrack = 0;
-  const music = new Audio(TRACKS[0]); music.loop = true; music.volume = .16;
+  const music = new Audio(SONG); music.loop = true; music.volume = .16;
 
   function setStatus(text, tone) { statusEl.querySelector('span:last-child').textContent = text; statusEl.className = `status ${tone ? `status-${tone}` : ''}`; }
   function fmt(seconds) { return `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`; }
@@ -166,13 +166,16 @@
   function playFallSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'sine'; osc.frequency.setValueAtTime(440, now); osc.frequency.exponentialRampToValueAtTime(180, now + .3); gain.gain.setValueAtTime(.18, now); gain.gain.exponentialRampToValueAtTime(.001, now + .35); osc.connect(gain).connect(ctx.destination); osc.start(now); osc.stop(now + .35); } catch (err) { /* audio is optional */ } }
   function playWarningSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; [0, .13].forEach((offset, index) => { const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'square'; osc.frequency.setValueAtTime(index ? 740 : 620, now + offset); gain.gain.setValueAtTime(.001, now + offset); gain.gain.exponentialRampToValueAtTime(.1, now + offset + .015); gain.gain.exponentialRampToValueAtTime(.001, now + offset + .1); osc.connect(gain).connect(ctx.destination); osc.start(now + offset); osc.stop(now + offset + .12); }); } catch (err) { /* audio is optional */ } }
   function playErrorSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'sawtooth'; osc.frequency.setValueAtTime(190, now); osc.frequency.exponentialRampToValueAtTime(70, now + .28); gain.gain.setValueAtTime(.14, now); gain.gain.exponentialRampToValueAtTime(.001, now + .32); osc.connect(gain).connect(ctx.destination); osc.start(now); osc.stop(now + .35); } catch (err) { /* audio is optional */ } }
+  // One song, a different part for each difficulty phase: phase k starts k/N of the way through the track.
+  function seekPhase(index) {
+    const seek = () => { if (Number.isFinite(music.duration)) music.currentTime = index * music.duration / PHASES.length; };
+    if (music.readyState >= 1) seek(); else music.addEventListener('loadedmetadata', seek, { once: true });
+  }
   function updateMusic(I) {
-    const track = 0; // one soundtrack for the whole run; volume and tempo carry the intensity
-    if (track === musicTrack) return;
-    musicTrack = track;
-    const playingNow = musicOn && state === 'playing';
-    music.pause(); music.src = TRACKS[track]; music.load();
-    if (playingNow) music.play().catch(() => {});
+    const index = PHASES.indexOf(phaseAt(I));
+    if (index === musicTrack) return;
+    musicTrack = index;
+    seekPhase(index);
   }
 
   // ---------- obstacle planner: every obstacle is covered by a jump the planner has already committed to ----------
@@ -452,7 +455,7 @@
   // ---------- run lifecycle ----------
   function reset() {
     cancelAnimationFrame(rafId); clearTimeout(toastTimer); cancelAnimationFrame(countRaf);
-    music.pause(); musicTrack = 0; music.src = TRACKS[0]; music.load();
+    music.pause(); musicTrack = 0; music.currentTime = 0;
     state = 'idle'; last = 0; elapsed = 0; score = 0; coins = 0; lives = MAX_LIVES; peak = 0; lastHit = null; invulnLeft = 0;
     entities = []; effects = []; plan = []; commits = []; patternLeft = 0; currentPhase = null; flashText = ''; flashSub = ''; flashLeft = 0; maxAnnounced = false; deathRank = null; nextSpawnAt = 2; nextCoinAt = 1.5; trailHistory = []; trailAge = 0;
     jumpY = 0; jumpV = 0; jumpAge = 0; jumpBuffer = 0; slamming = false; runnerAngle = 0; jumpStartAngle = 0; failureAge = 0;
