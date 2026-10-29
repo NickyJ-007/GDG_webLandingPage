@@ -155,22 +155,37 @@
   </div>
 
   <div class="container hero-container">
-    <div class="hero-status-row">
-      <span class="status-indicator">
-        <span class="status-indicator__dot" aria-hidden="true"></span>
-        <span>OPEN</span>
-      </span>
-      <span class="code-pill code-pill--neutral">GDG ON CAMPUS · UVCE</span>
+    <!-- Left column: the pitch -->
+    <div class="hero-main">
+    <div class="hero-copy">
+      <div class="hero-status-row">
+        <span class="status-indicator">
+          <span class="status-indicator__dot" aria-hidden="true"></span>
+          <span>OPEN</span>
+        </span>
+        <span class="code-pill code-pill--neutral">GDG ON CAMPUS · UVCE</span>
+      </div>
+
+      <div class="hero-brand-row">
+        <img class="hero-logo" src="Logo/Logos/GDG-Main-Logo.png" alt="GDG UVCE logo" width="56" height="56" />
+        <p class="eyebrow">STUDENT COMMUNITY INITIATIVE</p>
+      </div>
+
+      <h1 class="hero-title type-display-lg">
+        <span class="hero-title__line hero-title__line--accent">Web Development</span>
+        <span class="hero-title__line">Workshop</span>
+      </h1>
+
+      <p class="hero-lede">Press start on your dev journey. Go from a blank file to a <strong>live URL</strong> in a single day: learn HTML, CSS, JavaScript and Git, then ship a website you can actually show off.</p>
+
+      <!-- Typewriter Command Line -->
+      <div class="typewriter-box" aria-label="What you will learn">
+        <span class="typewriter-prefix">&gt; $ learn --track</span>
+        <span class="typewriter-output">
+          <span id="typewriter"></span><span class="caret" aria-hidden="true">_</span>
+        </span>
+      </div>
     </div>
-
-    <img class="hero-logo" src="Logo/Logos/GDG-Main-Logo.png" alt="GDG UVCE logo" width="56" height="56" />
-
-    <p class="eyebrow">STUDENT COMMUNITY INITIATIVE</p>
-
-    <h1 class="hero-title type-display-lg">
-      <span class="hero-title__line hero-title__line--accent">Web Development</span>
-      <span class="hero-title__line">Workshop</span>
-    </h1>
 
     <!-- Asymmetrical Window Card for Event Metadata -->
     <div class="window-card hero-meta-window">
@@ -231,16 +246,64 @@
       </div>
     </div>
 
-    <!-- Typewriter Command Line -->
-    <div class="typewriter-box" aria-label="What you will learn">
-      <span class="typewriter-prefix">&gt; $ learn --track</span>
-      <span class="typewriter-output">
-        <span id="typewriter"></span><span class="caret" aria-hidden="true">_</span>
-      </span>
+    <!-- Action Buttons -->
+    <div class="btn-row cta-row">
+      <a class="btn btn--primary js-register-btn" href="#" target="_blank" rel="noopener noreferrer">
+        Claim your seat <span class="btn-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="btn btn--secondary js-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer">
+        Join on WhatsApp <span class="btn-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    </div>
+
+    <!-- Right column: playful "game screen" visual + countdown -->
+    <div class="hero-side">
+    <div class="hero-stage" aria-hidden="true">
+      <img class="hero-float hero-float--globe" src="Playful SVGs and GIFs/SVGs/Blue/04_globe.svg" alt="" width="96" height="88" />
+      <img class="hero-float hero-float--slash" src="Playful SVGs and GIFs/SVGs/Green/08_double_slash.svg" alt="" width="54" height="62" />
+      <img class="hero-float hero-float--pill" src="Playful SVGs and GIFs/SVGs/Yellow/09_pill_horizontal_dark.svg" alt="" width="92" height="44" />
+      <img class="hero-float hero-float--arches" src="Playful SVGs and GIFs/SVGs/Red/17_three_arches.svg" alt="" width="104" height="22" />
+      <img class="hero-float hero-float--brackets" src="Playful SVGs and GIFs/Gifs/GDG-Sticker-Brackets.gif" alt="" width="150" height="84" />
+
+      <div class="window-card hero-stage__window">
+        <div class="card-window-header">
+          <div class="window-controls">
+            <span class="window-dot window-dot--red"></span>
+            <span class="window-dot window-dot--yellow"></span>
+            <span class="window-dot window-dot--green"></span>
+          </div>
+          <span class="card-window-tag">player_01.exe</span>
+        </div>
+        <div class="hero-stage__screen">
+          <div class="hero-stage__hud">
+            <span class="code-pill code-pill--yellow">LVL 01</span>
+            <span class="hero-stage__lives"><span>♥</span><span>♥</span><span>♥</span></span>
+            <span class="code-pill code-pill--green">XP +500</span>
+          </div>
+          <img class="hero-stage__sticker" src="Playful SVGs and GIFs/Gifs/GDG-Sticker-Assembly.gif" alt="" width="420" height="270" />
+          <span class="hero-chip hero-chip--blue">&lt;html&gt;</span>
+          <span class="hero-chip hero-chip--red">{ css }</span>
+          <span class="hero-chip hero-chip--yellow">js()</span>
+          <span class="hero-chip hero-chip--green">git push</span>
+          <div class="hero-stage__quest">
+            <span class="hero-stage__quest-label">MAIN QUEST · Ship your first website</span>
+            <span class="hero-stage__bar">
+              <span class="is-done"></span><span class="is-done"></span><span class="is-done"></span><span></span>
+            </span>
+          </div>
+        </div>
+        <div class="card-window-footer">
+          <span class="card-window-chapter">GDG ON CAMPUS · UVCE</span>
+          <span class="card-window-track hero-stage__press">PRESS START ▶</span>
+        </div>
+      </div>
     </div>
 
     <!-- Neo-Brutalist Countdown -->
     <div class="countdown-wrapper">
+      <span class="countdown-caption">// WORKSHOP BOOTS IN</span>
       <div class="countdown" id="countdown" aria-label="Countdown to workshop">
         <div class="countdown__unit">
           <span class="countdown__unit-tag">01</span>
@@ -264,15 +327,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Action Buttons -->
-    <div class="btn-row cta-row">
-      <a class="btn btn--primary js-register-btn" href="#" target="_blank" rel="noopener noreferrer">
-        Claim your seat <span class="btn-arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="btn btn--secondary js-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer">
-        Join on WhatsApp <span class="btn-arrow" aria-hidden="true">↗</span>
-      </a>
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -284,42 +338,79 @@
 
 <div class="section-divider"></div>
 
-<!-- GDG WebStudio Teaser Banner -->
-<section class="container" style="margin-top: 40px; margin-bottom: 40px;">
-  <div style="
-    background: #FFFFFF;
-    border: 2px solid #000;
-    border-radius: 16px;
-    padding: 32px 28px;
-    box-shadow: 5px 5px 0 #000;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  ">
-    <div>
-      <span style="
-        font-family: monospace;
-        font-size: 12px;
-        font-weight: 700;
-        background: #FEF7E0;
-        color: #B06000;
-        padding: 4px 10px;
-        border-radius: 999px;
-        border: 1px solid #000;
-      ">INTERACTIVE CHALLENGE</span>
-      <h2 style="font-size: 26px; font-weight: 700; margin-top: 10px;">
-        Can You Build a Website in 60 Seconds?
-      </h2>
-      <p style="font-size: 15px; color: #5F6368; max-width: 550px; margin-top: 4px;">
-        Never coded before? Step into the GDG WebStudio, customize your first live webpage, and share your screenshot
-        for an exclusive shoutout!
-      </p>
+<!-- ============================ WEBSTUDIO CHALLENGE ============================ -->
+<section id="challenge" aria-label="WebStudio challenge">
+  <img class="challenge-float challenge-float--a" src="Playful SVGs and GIFs/SVGs/Yellow/07_asterisk.svg" alt="" aria-hidden="true" width="64" height="64" />
+  <img class="challenge-float challenge-float--b" src="Playful SVGs and GIFs/SVGs/Blue/06_circles_light.svg" alt="" aria-hidden="true" width="44" height="90" />
+  <img class="challenge-float challenge-float--c" src="Playful SVGs and GIFs/SVGs/Red/10_three_lines.svg" alt="" aria-hidden="true" width="70" height="54" />
+
+  <div class="container">
+    <div class="window-card challenge-card">
+      <div class="card-window-header">
+        <div class="window-controls" aria-hidden="true">
+          <span class="window-dot window-dot--red"></span>
+          <span class="window-dot window-dot--yellow"></span>
+          <span class="window-dot window-dot--green"></span>
+        </div>
+        <span class="card-window-tag">webstudio_challenge.exe</span>
+      </div>
+
+      <div class="challenge-card__body">
+        <div class="challenge-copy">
+          <div class="challenge-pills">
+            <span class="code-pill code-pill--yellow">INTERACTIVE CHALLENGE</span>
+            <span class="code-pill code-pill--red">⏱ 60 SEC</span>
+          </div>
+          <h2 class="challenge-title">Can You Build a Website in <span class="challenge-title__accent">60 Seconds?</span></h2>
+          <p class="challenge-sub">Never coded before? Perfect. Step into the GDG WebStudio, remix your first live webpage, and share your screenshot for an exclusive shoutout.</p>
+
+          <ul class="challenge-perks">
+            <li><span class="challenge-perk__icon challenge-perk__icon--blue" aria-hidden="true">⏱</span><span><strong>Beat the clock.</strong> One minute, one website, zero excuses.</span></li>
+            <li><span class="challenge-perk__icon challenge-perk__icon--green" aria-hidden="true">🎨</span><span><strong>Zero code. All vibes.</strong> Tap, tweak, done.</span></li>
+            <li><span class="challenge-perk__icon challenge-perk__icon--yellow" aria-hidden="true">📸</span><span><strong>Flex the build.</strong> Screenshot it and claim your shoutout.</span></li>
+          </ul>
+
+          <div class="challenge-actions">
+            <a href="builder.html" target="_blank" rel="noopener noreferrer" class="btn btn--primary challenge-launch">
+              🚀 Launch WebStudio <span class="btn-arrow" aria-hidden="true">›</span>
+            </a>
+            <span class="challenge-note">No sign-up · works on your phone</span>
+          </div>
+        </div>
+
+        <!-- Mock "site under construction" preview -->
+        <div class="challenge-preview" aria-hidden="true">
+          <img class="challenge-preview__sticker" src="Playful SVGs and GIFs/Gifs/GDG-Sticker-Slider.gif" alt="" width="150" height="85" />
+          <div class="challenge-browser">
+            <div class="challenge-browser__bar">
+              <span class="window-dot window-dot--red"></span>
+              <span class="window-dot window-dot--yellow"></span>
+              <span class="window-dot window-dot--green"></span>
+              <span class="challenge-browser__url">your-name.gdg.site</span>
+            </div>
+            <div class="challenge-browser__page">
+              <div class="challenge-mock__nav"><span></span><span></span><span></span></div>
+              <p class="challenge-mock__hi">Hi, I'm <span>you</span> 👋</p>
+              <div class="challenge-mock__line"></div>
+              <div class="challenge-mock__line challenge-mock__line--short"></div>
+              <div class="challenge-mock__swatches">
+                <span class="sw sw--blue"></span><span class="sw sw--red"></span><span class="sw sw--yellow"></span><span class="sw sw--green"></span>
+              </div>
+              <div class="challenge-mock__btn">Hire me ›</div>
+            </div>
+          </div>
+          <div class="challenge-timer">
+            <span class="challenge-timer__label">TIME LEFT</span>
+            <span class="challenge-timer__value">00:60</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-window-footer">
+        <span class="card-window-chapter">GDG ON CAMPUS · UVCE</span>
+        <span class="card-window-track">SPEEDRUN_MODE</span>
+      </div>
     </div>
-    <a href="builder.html" target="_blank" rel="noopener noreferrer" class="teaser-launch-btn">
-      🚀 Launch WebStudio ›
-    </a>
   </div>
 </section>
 
@@ -473,28 +564,41 @@
 <!-- ============================ GAME ============================ -->
 <!-- ============================ GAME: MINI ARCADE ============================ -->
 <section id="game" aria-label="Mini Arcade">
+  <div class="arcade-side arcade-side--left" aria-hidden="true">
+    <span class="arcade-sticker arcade-sticker--blue">&lt;/&gt; HIGH SCORE</span>
+    <img src="Playful SVGs and GIFs/SVGs/Blue/13_stadium_dark.svg" alt="" width="96" height="64" />
+    <span class="arcade-sticker arcade-sticker--yellow">★ COMBO ×5</span>
+    <img src="Playful SVGs and GIFs/SVGs/Green/16_three_circles_outline.svg" alt="" width="90" height="22" />
+  </div>
+  <div class="arcade-side arcade-side--right" aria-hidden="true">
+    <img src="Playful SVGs and GIFs/SVGs/Red/04_globe.svg" alt="" width="84" height="76" />
+    <span class="arcade-sticker arcade-sticker--green">git push --force</span>
+    <img src="Playful SVGs and GIFs/SVGs/Yellow/08_double_slash.svg" alt="" width="48" height="54" />
+    <span class="arcade-sticker arcade-sticker--red">♥ ♥ ♥ LIVES</span>
+  </div>
   <div class="container game-module">
     <div class="section-header reveal">
       <div class="section-header__tag">
         <span class="code-pill code-pill--green">ARCADE_CHALLENGE</span>
+        <span class="code-pill code-pill--yellow arcade-coin">● INSERT COIN</span>
       </div>
       <p class="eyebrow">{ MINI ARCADE }</p>
       <h2 class="section-title type-headline-lg">Mini Arcade</h2>
-      <p class="section-sub type-body-md">Pick a game. Three quick challenges, one arcade.</p>
+      <p class="section-sub type-body-md">Three tiny games. One giant flex. Set a high score now and brag about it at the workshop.</p>
     </div>
 
     <div class="arcade-bar reveal">
       <div class="arcade-picker" role="tablist" aria-label="Choose a mini-game">
-        <button class="arcade-choice is-active" type="button" role="tab" id="tab-ship" aria-controls="panel-ship" aria-selected="true" tabindex="0" data-arcade="ship" data-title="Ship the Web" data-time="18 SEC" data-blurb="Catch the stack before time runs out. Build the complete web." data-controls="Arrow keys or A D to move · drag on mobile">Ship the Web</button>
-        <button class="arcade-choice" type="button" role="tab" id="tab-commit" aria-controls="panel-commit" aria-selected="false" tabindex="-1" data-arcade="commit" data-title="Commit Rush" data-time="ENDLESS" data-blurb="Endless run from Easy to Extreme Demon. Three lives, ranks F to SSS, and SSS only at max intensity." data-controls="Space or ↑ to jump · ↓ to slam">Commit Rush</button>
-        <button class="arcade-choice" type="button" role="tab" id="tab-bug" aria-controls="panel-bug" aria-selected="false" tabindex="-1" data-arcade="bug" data-title="Bug Smasher" data-time="30 SEC" data-blurb="Whack the bugs before they retreat. Spare the friendly packets." data-controls="Tap bugs · drag to aim the hammer">Bug Smasher</button>
+        <button class="arcade-choice arcade-choice--blue is-active" type="button" role="tab" id="tab-ship" aria-controls="panel-ship" aria-selected="true" tabindex="0" data-arcade="ship" data-title="Ship the Web" data-time="18 SEC" data-blurb="18 seconds. Five layers. One complete web. Catch the stack before the clock catches you." data-controls="Arrow keys or A D to move · drag on mobile"><span class="arcade-choice__logo" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span><span class="arcade-choice__text"><span class="arcade-choice__name">Ship the Web</span><span class="arcade-choice__tag">Catch the stack. Dodge bugs. Ship it.</span></span></button>
+        <button class="arcade-choice arcade-choice--green" type="button" role="tab" id="tab-commit" aria-controls="panel-commit" aria-selected="false" tabindex="-1" data-arcade="commit" data-title="Commit Rush" data-time="ENDLESS" data-blurb="Endless run from Easy to Extreme Demon. Three lives, ranks F to SSS. Only legends reach SSS." data-controls="Space or ↑ to jump · ↓ to slam"><span class="arcade-choice__logo" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="9" r="3"/><path d="M6 9v6"/><path d="M18 12c0 3-3 4-9 5"/></svg></span><span class="arcade-choice__text"><span class="arcade-choice__name">Commit Rush</span><span class="arcade-choice__tag">Jump merge conflicts. Chase SSS.</span></span></button>
+        <button class="arcade-choice arcade-choice--red" type="button" role="tab" id="tab-bug" aria-controls="panel-bug" aria-selected="false" tabindex="-1" data-arcade="bug" data-title="Bug Smasher" data-time="30 SEC" data-blurb="Production is on fire. Whack the bugs before they retreat and spare the friendly packets." data-controls="Tap bugs · drag to aim the hammer"><span class="arcade-choice__logo" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg></span><span class="arcade-choice__text"><span class="arcade-choice__name">Bug Smasher</span><span class="arcade-choice__tag">Whack every bug. Spare the packets.</span></span></button>
       </div>
       <div class="arcade-info" aria-live="polite">
         <div class="arcade-info__head">
           <strong class="arcade-info__title" id="arcade-title">Ship the Web</strong>
           <span class="code-pill code-pill--green" id="arcade-time">18 SEC</span>
         </div>
-        <p class="arcade-info__blurb" id="arcade-blurb">Catch the stack before time runs out. Build the complete web.</p>
+        <p class="arcade-info__blurb" id="arcade-blurb">18 seconds. Five layers. One complete web. Catch the stack before the clock catches you.</p>
         <span class="arcade-info__controls" id="arcade-controls">Arrow keys or A D to move · drag on mobile</span>
       </div>
     </div>
