@@ -48,7 +48,7 @@ const SPEAKERS = [
   },
   {
     id: "nandhini-deployment",
-    name: "Nandhini",
+    name: "Nandini",
     topic: "Deployment",
     color: "green",
     branch: "CSE",

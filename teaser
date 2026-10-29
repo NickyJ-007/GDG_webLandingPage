@@ -1,0 +1,126 @@
+[33mcommit 954e35627f57144c6978b22ae0ee6ad63b30dbca[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/website-builder[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Tue Oct 13 04:11:56 2026 +0530
+
+    final teaser
+
+[33mcommit 5b4167aed31c6f3afd4ca4ba650db6b91f07f571[m
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Sun Oct 11 01:06:22 2026 +0530
+
+    feat: finalize WebStudio mobile responsiveness, modal scrolling, and teaser card styling
+
+[33mcommit a99a6546239cb648b4d88b81accf304c6cfc4152[m
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Sun Oct 11 00:58:15 2026 +0530
+
+    feat: finalize mobile responsiveness, studio navbar, and modal scrolling
+
+[33mcommit 4be0e2ebeecf93164718ce713aa903a3a8f14795[m
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Sat Oct 10 21:32:54 2026 +0530
+
+    Update teaser banner copy to exclusive shoutout
+
+[33mcommit a71c3a6d82e2c776430ab56a02b6cccc811f2cbc[m
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Sat Oct 10 21:08:53 2026 +0530
+
+    Update registration button with Google Form placeholder
+
+[33mcommit b04524845e358e285ce83efb5a625091b61c785e[m
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Sat Oct 10 20:39:58 2026 +0530
+
+    Finalize builder with WhatsApp share and CTA link
+
+[33mcommit f1c6dd71ca3315d53f75cee4ef4c13469bfb7a00[m
+Merge: 3bb5b32 17d93fa
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Sat Oct 10 20:03:54 2026 +0530
+
+    Merge branch 'main' into feature/website-builder
+
+[33mcommit 3bb5b3276971f51a0025cdd91d0fb05978bfa4d2[m
+Author: Nikhil <5523816.9nikhil@gmail.com>
+Date:   Sat Oct 10 20:03:03 2026 +0530
+
+    Add website builder files and teaser banner
+
+[33mcommit 17d93fa55cbb0d4e7f2f23ee6889dccae4a360f7[m[33m ([m[1;32mmain[m[33m)[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Sat Oct 10 14:51:45 2026 +0530
+
+    feat: add Google-style speaker promo cards
+
+[33mcommit 1d53db8c4bf0d9c426fde4e10ccd36122680631e[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 23:49:28 2026 +0530
+
+    chore: finalize workshop event details
+
+[33mcommit e5c136cd54b3671fcfed17b89eb79dd14db2ace0[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 22:49:33 2026 +0530
+
+    feat: refine hero section and balance intro loader
+
+[33mcommit 98dc4fbcf3e54664d2f5d5e3401b00930dda323e[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 22:30:22 2026 +0530
+
+    chore: clean up UI labels and standardize GDG branding
+
+[33mcommit 12a5d1deacfb95741029b15003be77e170ef5a9a[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 21:47:20 2026 +0530
+
+    Add website assets and GSAP files
+
+[33mcommit 9c4d5a0afbb55f825fb4b084ed69a20d61296e5c[m[33m ([m[1;33mtag: [m[1;33mgame-v1[m[33m)[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 21:10:13 2026 +0530
+
+    Replace butterfly game with Ship the Web
+
+[33mcommit 6e70e52f8b22a5ab40b8fb282f590966ad2885d3[m[33m ([m[1;33mtag: [m[1;33mintro-v4[m[33m)[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 20:14:06 2026 +0530
+
+    Polish intro motion continuity and logo emergence
+
+[33mcommit 8d9a79a8402cf507ef2114ac29d166e494034a06[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 19:59:30 2026 +0530
+
+    fix(intro): resolve ~1.8s-2.3s sticker transition hitch with continuous anticipation and asymmetric elastic recoil
+
+[33mcommit bf06fb79f6b660049665c9c899e0e6d46ecce7f8[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 19:51:28 2026 +0530
+
+    Refine intro animation choreography with GSAP
+
+[33mcommit 22345529823b7c7bbd458c8023924bdc631268aa[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 19:38:13 2026 +0530
+
+    Finalize GSAP intro animation checkpoint
+
+[33mcommit 7678c12f37c8cac7d344fb30b9b6645e66213632[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 18:53:01 2026 +0530
+
+    Implement GDG design system and UI
+
+[33mcommit 6bde18d448686a398ff7710c5992daf705e95213[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 07:18:42 2026 +0530
+
+    added git igmore
+
+[33mcommit 994538b4b5522bb93a63f50b9864d2d3913886c4[m
+Author: Puni <bsp03593@gmail.com>
+Date:   Fri Oct 9 02:17:04 2026 +0530
+
+    Initial commit
