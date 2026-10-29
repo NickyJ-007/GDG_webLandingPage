@@ -1,0 +1,287 @@
+- generic [ref=f1e1]:
+  - link "Skip to main content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f1e3]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e9]:
+        - generic [ref=f1e10]:
+          - generic [ref=f1e11]: OpenID
+          - textbox "OpenID" [ref=f1e12]
+        - generic [ref=f1e13]:
+          - generic [ref=f1e14]: Username or e-mail
+          - textbox "Username or e-mail" [ref=f1e15]
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]: Password
+          - textbox "Password" [ref=f1e18]
+        - button "Log in" [ref=f1e20]
+      - link "Register" [ref=f1e23] [cursor=pointer]:
+        - /url: "#"
+    - link [ref=f1e24] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f1e26]:
+      - list [ref=f1e30]:
+        - listitem [ref=f1e31]:
+          - link "Home" [ref=f1e32] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f1e33]:
+          - link "Browse" [ref=f1e34] [cursor=pointer]:
+            - /url: /latest
+        - listitem [ref=f1e35]:
+          - link "Submit Art" [ref=f1e36] [cursor=pointer]:
+            - /url: /node/add/art
+        - listitem [ref=f1e37]:
+          - link "Collect" [ref=f1e38] [cursor=pointer]:
+            - /url: /collections
+        - listitem [ref=f1e39]:
+          - link "Forums" [ref=f1e40] [cursor=pointer]:
+            - /url: /forums/art-discussion
+        - listitem [ref=f1e41]:
+          - link "FAQ" [ref=f1e42] [cursor=pointer]:
+            - /url: /content/faq
+        - listitem [ref=f1e43]:
+          - link "Leaderboards" [ref=f1e44] [cursor=pointer]:
+            - /url: /leaderboards/total
+        - listitem [ref=f1e45]:
+          - link "❤ Donate" [ref=f1e46] [cursor=pointer]:
+            - /url: https://www.patreon.com/opengameart
+      - link [ref=f1e49] [cursor=pointer]:
+        - /url: /
+        - img "Sara" [ref=f1e50]
+    - generic [ref=f1e51]:
+      - generic [ref=f1e53]:
+        - generic [ref=f1e54]:
+          - heading "Advanced Search" [level=2] [ref=f1e55]
+          - generic [ref=f1e60]:
+            - generic [ref=f1e61]:
+              - generic [ref=f1e62]: Search
+              - textbox "Search" [ref=f1e65]: soft pop
+            - generic [ref=f1e66]:
+              - generic [ref=f1e67]: Title
+              - textbox "Title" [ref=f1e70]
+            - generic [ref=f1e71]:
+              - generic [ref=f1e72]: Tags
+              - combobox [ref=f1e75]:
+                - option "Is one of" [selected]
+                - option "Is all of"
+                - option "Is none of"
+                - option "Is empty (NULL)"
+                - option "Is not empty (NOT NULL)"
+              - application [ref=f1e77]:
+                - textbox "Tags" [ref=f1e78]
+              - generic [ref=f1e79]: "Enter a COMMA SEPARATED list of tags. (example: \"sword, weapon, item\")"
+            - generic [ref=f1e80]:
+              - generic [ref=f1e81]: Submitter
+              - textbox "Submitter" [ref=f1e84]
+            - generic [ref=f1e85]:
+              - generic [ref=f1e86]: Art Type
+              - generic [ref=f1e89]:
+                - generic [ref=f1e90]:
+                  - checkbox [ref=f1e91]
+                  - text: 2D Art
+                - generic [ref=f1e92]:
+                  - checkbox [ref=f1e93]
+                  - text: 3D Art
+                - generic [ref=f1e94]:
+                  - checkbox [ref=f1e95]
+                  - text: Concept Art
+                - generic [ref=f1e96]:
+                  - checkbox [ref=f1e97]
+                  - text: Texture
+                - generic [ref=f1e98]:
+                  - checkbox [ref=f1e99]
+                  - text: Music
+                - generic [ref=f1e100]:
+                  - checkbox [checked] [ref=f1e101]
+                  - text: Sound Effect
+                - generic [ref=f1e102]:
+                  - checkbox [ref=f1e103]
+                  - text: Document
+            - generic [ref=f1e104]:
+              - generic [ref=f1e105]: License(s)
+              - generic [ref=f1e108]:
+                - generic [ref=f1e109]:
+                  - checkbox [ref=f1e110]
+                  - text: CC-BY 3.0
+                - generic [ref=f1e111]:
+                  - checkbox [ref=f1e112]
+                  - text: OGA-BY 3.0
+                - generic [ref=f1e113]:
+                  - checkbox [ref=f1e114]
+                  - text: OGA-BY 4.0
+                - generic [ref=f1e115]:
+                  - checkbox [ref=f1e116]
+                  - text: CC-BY 4.0
+                - generic [ref=f1e117]:
+                  - checkbox [ref=f1e118]
+                  - text: GPL 3.0
+                - generic [ref=f1e119]:
+                  - checkbox [ref=f1e120]
+                  - text: GPL 2.0
+                - generic [ref=f1e121]:
+                  - checkbox [checked] [ref=f1e122]
+                  - text: CC0
+                - generic [ref=f1e123]:
+                  - checkbox [ref=f1e124]
+                  - text: CC-BY-SA 4.0
+                - generic [ref=f1e125]:
+                  - checkbox [ref=f1e126]
+                  - text: CC-BY-SA 3.0
+            - generic [ref=f1e128]:
+              - generic [ref=f1e129]: Sort by
+              - combobox "Sort by" [ref=f1e130]:
+                - option "Search relevance"
+                - option "Post date"
+                - option "Favorites" [selected]
+            - generic [ref=f1e132]:
+              - generic [ref=f1e133]: Order
+              - combobox "Order" [ref=f1e134]:
+                - option "Asc"
+                - option "Desc" [selected]
+            - generic [ref=f1e136]:
+              - generic [ref=f1e137]: Items per page
+              - combobox "Items per page" [ref=f1e138]:
+                - option "24" [selected]
+                - option "48"
+                - option "72"
+                - option "96"
+                - option "120"
+                - option "144"
+            - generic [ref=f1e139]:
+              - generic [ref=f1e140]:
+                - generic [ref=f1e141]: Collect into...
+                - combobox [ref=f1e142]:
+                  - option "Select a collection" [selected]
+                  - option "ashepherd89's Download"
+              - button "Search" [ref=f1e143]
+        - generic [ref=f1e144]:
+          - heading "Chat with us!" [level=2] [ref=f1e145]
+          - generic [ref=f1e146]:
+            - paragraph [ref=f1e147]:
+              - strong [ref=f1e148]: "Discord:"
+              - link "OpenGameArt" [ref=f1e149] [cursor=pointer]:
+                - /url: https://discord.gg/yDaQ4NcCux
+              - link "discord.gg/yDaQ4NcCux" [ref=f1e150] [cursor=pointer]:
+                - /url: https://discord.gg/yDaQ4NcCux
+            - paragraph [ref=f1e151]:
+              - strong [ref=f1e152]: "IRC:"
+              - link "#OpenGameArt" [ref=f1e153] [cursor=pointer]:
+                - /url: https://freegamedev.net/irc/#opengameart
+              - text: "on"
+              - link "freegamedev.net/irc/#opengameart" [ref=f1e154] [cursor=pointer]:
+                - /url: https://freegamedev.net/irc/#opengameart
+        - generic [ref=f1e155]:
+          - heading "Art Challenge" [level=2] [ref=f1e156]
+          - generic [ref=f1e161]:
+            - strong [ref=f1e165]:
+              - link "October 2026 Art Challenge - Phobias" [ref=f1e166] [cursor=pointer]:
+                - /url: /content/october-2026-art-challenge-phobias
+            - paragraph [ref=f1e170]:
+              - text: Tag your submissions with
+              - strong [ref=f1e171]: Phobias
+              - text: and
+              - strong [ref=f1e172]: Challenge
+              - text: to be in the running.
+              - link "Here are the entries so far!" [ref=f1e173] [cursor=pointer]:
+                - /url: https://opengameart.org/art-search-advanced?field_art_tags_tid_op=and&field_art_tags_tid=Phobias%2C+Challenge
+              - text: Post a link to your submission in the
+              - link "October 2026 Art Challenge" [ref=f1e174] [cursor=pointer]:
+                - /url: https://opengameart.org/forumtopic/october-2026-art-challenge-phobias
+              - text: thread.
+            - generic [ref=f1e175]:
+              - generic [ref=f1e176]: "Status:"
+              - generic [ref=f1e177]: Accepting art submissions
+            - generic [ref=f1e179]:
+              - generic [ref=f1e180]: "Date Range:"
+              - generic [ref=f1e181]: 10/12/2026 to 11/01/2026
+        - generic [ref=f1e184]:
+          - heading [level=2] [ref=f1e185]:
+            - text: Active Forum Topics - (
+            - link "view more" [ref=f1e186] [cursor=pointer]:
+              - /url: /forum
+            - text: )
+          - generic [ref=f1e188]:
+            - list [ref=f1e191]:
+              - listitem [ref=f1e192]:
+                - link "Help, please." [ref=f1e195] [cursor=pointer]:
+                  - /url: /forumtopic/help-please#comment-113586
+                - generic [ref=f1e197]:
+                  - emphasis [ref=f1e198]: 1 hour 35 min
+                  - text: ago
+                - generic [ref=f1e199]:
+                  - text: by
+                  - link "MedicineStorm" [ref=f1e201] [cursor=pointer]:
+                    - /url: /users/medicinestorm
+              - listitem [ref=f1e202]:
+                - link "Big 3D libraries I haven't reposted to OGA for various reasons" [ref=f1e205] [cursor=pointer]:
+                  - /url: /forumtopic/big-3d-libraries-i-havent-reposted-to-oga-for-various-reasons#comment-113584
+                - generic [ref=f1e207]:
+                  - emphasis [ref=f1e208]: 2 hours 19 min
+                  - text: ago
+                - generic [ref=f1e209]:
+                  - text: by
+                  - link "MedicineStorm" [ref=f1e211] [cursor=pointer]:
+                    - /url: /users/medicinestorm
+              - listitem [ref=f1e212]:
+                - link "Sharing My Music and Sound FX - Over 2500 Tracks" [ref=f1e215] [cursor=pointer]:
+                  - /url: /forumtopic/sharing-my-music-and-sound-fx-over-2500-tracks#comment-113582
+                - generic [ref=f1e217]:
+                  - emphasis [ref=f1e218]: 2 hours 32 min
+                  - text: ago
+                - generic [ref=f1e219]:
+                  - text: by
+                  - link "Eric Matyas" [ref=f1e221] [cursor=pointer]:
+                    - /url: /users/eric-matyas
+              - listitem [ref=f1e222]:
+                - link "Just Uploaded Tons of MUSIC" [ref=f1e225] [cursor=pointer]:
+                  - /url: /forumtopic/just-uploaded-tons-of-music#comment-113579
+                - generic [ref=f1e227]:
+                  - emphasis [ref=f1e228]: 5 hours 20 min
+                  - text: ago
+                - generic [ref=f1e229]:
+                  - text: by
+                  - link "PitchTempoAndriy" [ref=f1e231] [cursor=pointer]:
+                    - /url: /users/pitchtempoandriy
+              - listitem [ref=f1e232]:
+                - link "3D Game Artist Available for Character Modeling and Game Assets" [ref=f1e235] [cursor=pointer]:
+                  - /url: /forumtopic/3d-game-artist-available-for-character-modeling-and-game-assets#comment-
+                - generic [ref=f1e237]:
+                  - emphasis [ref=f1e238]: 1 day 6 hours
+                  - text: ago
+                - generic [ref=f1e239]:
+                  - text: by
+                  - link "EchoNova" [ref=f1e241] [cursor=pointer]:
+                    - /url: /users/echonova
+              - listitem [ref=f1e242]:
+                - link "Building a Library of Images for Everyone" [ref=f1e245] [cursor=pointer]:
+                  - /url: /forumtopic/building-a-library-of-images-for-everyone#comment-113528
+                - generic [ref=f1e247]:
+                  - emphasis [ref=f1e248]: 3 days 6 hours
+                  - text: ago
+                - generic [ref=f1e249]:
+                  - text: by
+                  - link "Eric Matyas" [ref=f1e251] [cursor=pointer]:
+                    - /url: /users/eric-matyas
+              - listitem [ref=f1e252]:
+                - link "Tsorthan Grove Kick Streams" [ref=f1e255] [cursor=pointer]:
+                  - /url: /forumtopic/tsorthan-grove-kick-streams#comment-113526
+                - generic [ref=f1e257]:
+                  - emphasis [ref=f1e258]: 3 days 22 hours
+                  - text: ago
+                - generic [ref=f1e259]:
+                  - text: by
+                  - link "Tsorthan Grove" [ref=f1e261] [cursor=pointer]:
+                    - /url: /users/tsorthan-grove
+              - listitem [ref=f1e262]:
+                - link "October 2026 Art Challenge - Phobias" [ref=f1e265] [cursor=pointer]:
+                  - /url: /forumtopic/october-2026-art-challenge-phobias#comment-113491
+                - generic [ref=f1e267]:
+                  - emphasis [ref=f1e268]: 1 week 23 hours
+                  - text: ago
+                - generic [ref=f1e269]:
+                  - text: by
+                  - link "ZaninDevelopers" [ref=f1e271] [cursor=pointer]:
+                    - /url: /users/zanindevelopers
+            - link [ref=f1e273] [cursor=pointer]:
+              - /url: https://opengameart.org/active-forum-topics.xml?order=title&sort=asc
+              - img "Subscribe to Active Forum Topics" [ref=f1e274]
+      - heading "Search Art" [level=2] [ref=f1e277]

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Commit Rush — Mini Arcade</title>
+  <link rel="stylesheet" href="mini-arcade-tokens.css">
+</head>
+<body data-game="commit-rush">
+  <main class="arcade-page" id="game">
+    <div class="arcade-shell">
+      <nav class="arcade-nav" aria-label="Mini Arcade navigation"><a class="brand-mark" href="#game">GDG UVCE · MINI ARCADE</a><a class="nav-link" href="#claim-seat">CLAIM YOUR SEAT</a></nav>
+      <header class="hero"><div class="eyebrow">WORKSHOP WARM-UP · 01</div><h1>Ship it before the merge conflict.</h1><p>Two tiny practice loops for the developer brain. Grab the commits, clear the pipeline, and deploy the lesson.</p></header>
+      <section class="window-card commit-game" aria-labelledby="commit-title">
+        <div class="window-notch" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="window-body">
+          <div class="game-heading"><div><div class="eyebrow">GREEN LANE · RUNNER</div><h2 class="game-title" id="commit-title">Commit Rush</h2></div><div class="code-pill pill-green" id="commit-score">SCORE 000</div></div>
+          <p class="game-copy">Collect commit coins and jump merge conflicts and force-push lasers. You have three lives. The run climbs from Easy to Extreme Demon over two minutes, and your rank depends on how far you get: SSS only at maximum intensity.</p>
+          <div class="hud"><span class="status status-green" id="commit-status"><span class="status-dot"></span><span>IDLE</span></span><span class="code-pill pill-green" id="commit-level">EASY · 0%</span><span class="code-pill pill-yellow" id="commit-lives">LIVES 3/3</span><span class="code-pill pill-blue" id="commit-progress">RUN 0:00</span><button class="btn audio-toggle" id="commit-music" type="button" aria-pressed="true">♫ MUSIC ON</button><button class="btn audio-toggle" id="commit-trail" type="button">TRAIL · FLAME</button></div>
+          <div class="commit-stage" id="commit-stage" aria-label="Commit Rush game canvas. Tap the play button to start.">
+            <canvas id="commit-canvas"></canvas>
+            <div class="stage-start" id="commit-start"><span class="mono-label">ENDLESS RUN · 3 LIVES</span><button class="btn btn-green btn-featured" id="commit-play" type="button">Play Commit Rush</button></div>
+            <div class="stage-start stage-over" id="commit-over" role="dialog" aria-labelledby="commit-over-title" hidden><span class="mono-label">OUT OF LIVES</span><strong class="over-title" id="commit-over-title">GAME OVER!</strong><span class="code-pill pill-red" id="commit-over-rank">RANK F</span><div class="btn-row"><button class="btn btn-green btn-featured" id="commit-restart" type="button">Restart ↻</button><button class="btn" id="commit-see-rank" type="button">↓ Check your rank</button></div></div>
+            <div class="stage-toast" id="commit-toast" aria-live="polite"></div>
+          </div>
+          <div class="control-row" aria-label="Commit Rush controls"><button class="btn btn-green control-btn" id="jump-btn" type="button">⤒ JUMP</button><button class="btn control-btn down-btn" id="down-btn" type="button">⤓ DOWN / SLAM</button></div>
+          <div class="result-card round-result" id="commit-result" hidden>
+            <div class="round-rank" data-rank="F"><span class="mono-label">RANK</span><strong id="commit-rank">F</strong></div>
+            <div class="status status-red" id="commit-result-status"><span class="status-dot"></span><span>GAME OVER</span></div>
+            <h3 id="commit-result-title">Run complete</h3>
+            <p id="commit-result-copy"></p>
+            <div class="stat-grid">
+              <div class="stat-card"><span class="mono-label">SCORE</span><strong id="commit-final-score">0</strong></div>
+              <div class="stat-card"><span class="mono-label">COINS</span><strong id="commit-stat-coins">0</strong></div>
+              <div class="stat-card"><span class="mono-label">SURVIVED</span><strong id="commit-stat-time">0:00</strong></div>
+              <div class="stat-card"><span class="mono-label">PEAK INTENSITY</span><strong id="commit-stat-intensity">0%</strong></div>
+              <div class="stat-card"><span class="mono-label">PHASE REACHED</span><strong id="commit-stat-phase">EASY</strong></div>
+            </div>
+            <div class="learn"><div class="mono-label">WHAT YOU JUST LEARNED</div><strong class="learn-topic" id="commit-learn-topic">MERGE CONFLICT</strong><p id="commit-learn-copy"></p><ol class="learn-steps" id="commit-learn-steps"></ol></div>
+            <div class="btn-row"><button class="btn btn-green btn-featured" id="commit-again" type="button">Play again</button><a class="cta" id="claim-seat" href="#claim-seat">Claim your seat</a></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="commit-rush.js" defer></script>
+  <script>
+    (function () {
+      if (!new URLSearchParams(location.search).has('embed')) return;
+      document.body.classList.add('is-embed');
+      const page = document.querySelector('.arcade-page');
+      const report = () => parent.postMessage({ type: 'mini-arcade:height', game: document.body.dataset.game, height: Math.ceil(page.getBoundingClientRect().height) }, '*');
+      new ResizeObserver(report).observe(page);
+      report();
+    })();
+  </script>
+</body>
+</html>

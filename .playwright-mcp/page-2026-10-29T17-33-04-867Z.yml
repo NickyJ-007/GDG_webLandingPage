@@ -1,0 +1,33 @@
+- main [ref=f4e2]:
+  - generic [ref=f4e3]:
+    - navigation "Mini Arcade navigation" [ref=f4e4]:
+      - link "GDG UVCE · MINI ARCADE" [ref=f4e5] [cursor=pointer]:
+        - /url: "#game"
+      - link "CLAIM YOUR SEAT" [ref=f4e6] [cursor=pointer]:
+        - /url: "#claim-seat"
+    - generic [ref=f4e7]:
+      - generic [ref=f4e8]: WORKSHOP WARM-UP · 01
+      - heading "Ship it before the merge conflict." [level=1] [ref=f4e9]
+      - paragraph [ref=f4e10]: Two tiny practice loops for the developer brain. Grab the commits, clear the pipeline, and deploy the lesson.
+    - region [ref=f4e11]:
+      - generic [ref=f4e16]:
+        - generic [ref=f4e17]:
+          - generic [ref=f4e18]:
+            - generic [ref=f4e19]: GREEN LANE · RUNNER
+            - heading "Commit Rush" [level=2] [ref=f4e20]
+          - generic [ref=f4e21]: SCORE 0
+        - paragraph [ref=f4e22]: "Collect commit coins and jump merge conflicts and force-push lasers. You have three lives. The run climbs from Easy to Extreme Demon over two minutes, and your rank depends on how far you get: SSS only at maximum intensity."
+        - generic [ref=f4e23]:
+          - generic [ref=f4e24]: IDLE
+          - generic [ref=f4e27]: EASY · 0%
+          - generic [ref=f4e28]: LIVES 3/3
+          - generic [ref=f4e29]: RUN 0:00
+          - button "♫ MUSIC ON" [pressed] [ref=f4e30] [cursor=pointer]
+          - button "TRAIL · FLAME" [ref=f4e31] [cursor=pointer]
+        - generic "Commit Rush game canvas. Tap the play button to start." [ref=f4e32]:
+          - generic [ref=f4e34]:
+            - generic [ref=f4e35]: ENDLESS RUN · 3 LIVES
+            - button "Play Commit Rush" [ref=f4e36] [cursor=pointer]
+        - generic "Commit Rush controls" [ref=f4e37]:
+          - button "⤒ JUMP" [ref=f4e38] [cursor=pointer]
+          - button "⤓ DOWN / SLAM" [ref=f4e39] [cursor=pointer]

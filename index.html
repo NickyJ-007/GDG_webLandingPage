@@ -130,7 +130,7 @@
     <nav class="site-nav__links" aria-label="Quick navigation">
       <a href="#learn" class="nav-link">Curriculum</a>
       <a href="#speakers" class="nav-link">Speakers</a>
-      <a href="#game" class="nav-link">Mini-game</a>
+      <a href="#game" class="nav-link">Mini Arcade</a>
       <a href="#about" class="nav-link">About</a>
     </nav>
     <a class="btn btn--primary js-register-btn site-nav__cta" href="#" target="_blank" rel="noopener noreferrer">
@@ -471,18 +471,35 @@
 </section>
 
 <!-- ============================ GAME ============================ -->
-<!-- ============================ GAME: SHIP THE WEB ============================ -->
-<section id="game" aria-label="Ship the Web mini-game">
+<!-- ============================ GAME: MINI ARCADE ============================ -->
+<section id="game" aria-label="Mini Arcade">
   <div class="container game-module">
     <div class="section-header reveal">
       <div class="section-header__tag">
         <span class="code-pill code-pill--green">ARCADE_CHALLENGE</span>
       </div>
-      <p class="eyebrow">{ SHIP THE WEB }</p>
-      <h2 class="section-title type-headline-lg">Ship the Web</h2>
-      <p class="section-sub type-body-md">Catch the stack. Build the web. Ship it.</p>
+      <p class="eyebrow">{ MINI ARCADE }</p>
+      <h2 class="section-title type-headline-lg">Mini Arcade</h2>
+      <p class="section-sub type-body-md">Pick a game. Three quick challenges, one arcade.</p>
     </div>
 
+    <div class="arcade-bar reveal">
+      <div class="arcade-picker" role="tablist" aria-label="Choose a mini-game">
+        <button class="arcade-choice is-active" type="button" role="tab" id="tab-ship" aria-controls="panel-ship" aria-selected="true" tabindex="0" data-arcade="ship" data-title="Ship the Web" data-time="18 SEC" data-blurb="Catch the stack before time runs out. Build the complete web." data-controls="Arrow keys or A D to move · drag on mobile">Ship the Web</button>
+        <button class="arcade-choice" type="button" role="tab" id="tab-commit" aria-controls="panel-commit" aria-selected="false" tabindex="-1" data-arcade="commit" data-title="Commit Rush" data-time="ENDLESS" data-blurb="Endless run from Easy to Extreme Demon. Three lives, ranks F to SSS, and SSS only at max intensity." data-controls="Space or ↑ to jump · ↓ to slam">Commit Rush</button>
+        <button class="arcade-choice" type="button" role="tab" id="tab-bug" aria-controls="panel-bug" aria-selected="false" tabindex="-1" data-arcade="bug" data-title="Bug Smasher" data-time="30 SEC" data-blurb="Whack the bugs before they retreat. Spare the friendly packets." data-controls="Tap bugs · drag to aim the hammer">Bug Smasher</button>
+      </div>
+      <div class="arcade-info" aria-live="polite">
+        <div class="arcade-info__head">
+          <strong class="arcade-info__title" id="arcade-title">Ship the Web</strong>
+          <span class="code-pill code-pill--green" id="arcade-time">18 SEC</span>
+        </div>
+        <p class="arcade-info__blurb" id="arcade-blurb">Catch the stack before time runs out. Build the complete web.</p>
+        <span class="arcade-info__controls" id="arcade-controls">Arrow keys or A D to move · drag on mobile</span>
+      </div>
+    </div>
+
+    <div class="arcade-panel" data-arcade-panel="ship" role="tabpanel" id="panel-ship" aria-labelledby="tab-ship">
     <div class="window-card game-window reveal">
       <div class="card-window-header">
         <div class="window-controls" aria-hidden="true">
@@ -563,7 +580,54 @@
 
       <div class="card-window-footer">
         <span class="card-window-chapter">GDG ON CAMPUS · UVCE</span>
-        <span class="card-window-track">WEB_STACK_ARCADE</span>
+        <span class="game-footer-actions">
+          <button class="arcade-restart" type="button" id="game-music-btn" aria-pressed="true">♫ Music on</button>
+          <button class="arcade-restart" type="button" id="game-restart-btn">Restart ↻</button>
+        </span>
+        <span class="card-window-track game-footer-track">WEB_STACK_ARCADE</span>
+      </div>
+    </div>
+    </div>
+    <div class="arcade-panel" data-arcade-panel="commit" role="tabpanel" id="panel-commit" aria-labelledby="tab-commit" hidden>
+      <div class="window-card arcade-window">
+        <div class="card-window-header">
+          <div class="window-controls" aria-hidden="true">
+            <span class="window-dot window-dot--red"></span>
+            <span class="window-dot window-dot--yellow"></span>
+            <span class="window-dot window-dot--green"></span>
+          </div>
+          <span class="card-window-tag">commit_rush.exe</span>
+        </div>
+        <div class="arcade-stage">
+          <iframe class="arcade-frame" data-game="commit-rush" data-src="mini-arcade/commit-rush.html?embed=1" title="Commit Rush mini-game"></iframe>
+          <div class="arcade-loader" role="status" hidden><span>Loading Commit Rush</span></div>
+        </div>
+        <div class="card-window-footer">
+          <span class="card-window-chapter">GDG ON CAMPUS · UVCE</span>
+          <button class="arcade-restart" type="button" data-restart="commit">Restart ↻</button>
+          <span class="card-window-track">COMMIT_RUSH</span>
+        </div>
+      </div>
+    </div>
+    <div class="arcade-panel" data-arcade-panel="bug" role="tabpanel" id="panel-bug" aria-labelledby="tab-bug" hidden>
+      <div class="window-card arcade-window">
+        <div class="card-window-header">
+          <div class="window-controls" aria-hidden="true">
+            <span class="window-dot window-dot--red"></span>
+            <span class="window-dot window-dot--yellow"></span>
+            <span class="window-dot window-dot--green"></span>
+          </div>
+          <span class="card-window-tag">bug_smasher.exe</span>
+        </div>
+        <div class="arcade-stage">
+          <iframe class="arcade-frame" data-game="bug-vacuum" data-src="mini-arcade/bug-vacuum.html?embed=1" title="Bug Smasher mini-game"></iframe>
+          <div class="arcade-loader" role="status" hidden><span>Loading Bug Smasher</span></div>
+        </div>
+        <div class="card-window-footer">
+          <span class="card-window-chapter">GDG ON CAMPUS · UVCE</span>
+          <button class="arcade-restart" type="button" data-restart="bug">Restart ↻</button>
+          <span class="card-window-track">BUG_SMASHER</span>
+        </div>
       </div>
     </div>
   </div>
@@ -658,7 +722,7 @@
         <h4>Workshop</h4>
         <a href="#learn">What you'll learn</a>
         <a href="#speakers">Meet the speakers</a>
-        <a href="#game">Arcade mini-game</a>
+        <a href="#game">Mini Arcade</a>
       </div>
       <div class="site-footer__col">
         <h4>Community</h4>
@@ -685,5 +749,6 @@
 <script src="js/intro.js?v=20261010-speaker-cards"></script>
 <script src="js/main.js?v=20261010-speaker-cards"></script>
 <script src="js/game.js?v=20261010-speakers"></script>
+<script src="js/arcade.js?v=20261013-arcade"></script>
 </body>
 </html>
