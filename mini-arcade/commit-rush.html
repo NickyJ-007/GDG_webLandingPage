@@ -20,6 +20,7 @@
           <div class="commit-stage" id="commit-stage" aria-label="Commit Rush game canvas. Tap the play button to start.">
             <canvas id="commit-canvas"></canvas>
             <div class="stage-start" id="commit-start"><span class="mono-label">ENDLESS RUN · 3 LIVES</span><button class="btn btn-green btn-featured" id="commit-play" type="button">Play Commit Rush</button></div>
+            <div class="stage-start stage-over" id="commit-over" role="dialog" aria-labelledby="commit-over-title" hidden><span class="mono-label">OUT OF LIVES</span><strong class="over-title" id="commit-over-title">GAME OVER!</strong><span class="code-pill pill-red" id="commit-over-rank">RANK F</span><div class="btn-row"><button class="btn btn-green btn-featured" id="commit-restart" type="button">Restart ↻</button><button class="btn" id="commit-see-rank" type="button">↓ Check your rank</button></div></div>
             <div class="stage-toast" id="commit-toast" aria-live="polite"></div>
           </div>
           <div class="control-row" aria-label="Commit Rush controls"><button class="btn btn-green control-btn" id="jump-btn" type="button">⤒ JUMP</button><button class="btn control-btn down-btn" id="down-btn" type="button">⤓ DOWN / SLAM</button></div>

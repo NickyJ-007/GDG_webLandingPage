@@ -1870,9 +1870,14 @@ section {
   background-color: var(--surface, #FCF9F8);
   background-image: radial-gradient(#d3c4bc 1.2px, transparent 1.2px);
   background-size: 18px 18px;
-  touch-action: none;
+  touch-action: pan-y; /* let the page scroll past the idle game */
   user-select: none;
   -webkit-user-select: none;
+}
+
+/* Only capture touches while a round is running (basket drag) */
+#game-stage.is-playing {
+  touch-action: none;
 }
 
 #game-canvas {
@@ -1963,7 +1968,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center; /* tall end screen scrolls from the top instead of clipping on phones */
   gap: 0.75rem;
   text-align: center;
   background: rgba(252, 249, 248, 0.96);

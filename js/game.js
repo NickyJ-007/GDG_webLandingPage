@@ -111,7 +111,9 @@
      - Zero autoplay (unlocked strictly on user gesture).
      - Controlled concurrency pool with Web Audio synthesis fallback.
      ============================================================================ */
+  const SFX_VOLUME = 0.25; // master level for every sound effect (was too loud at full gain)
   let audioCtx = null;
+  let sfxOut = null;
   let catchAudioPool = [];
   let catchPoolIdx = 0;
   let lastCatchSoundTime = 0;
@@ -122,6 +124,10 @@
       const AudioContextClass = window.AudioContext || window.webkitAudioContext;
       if (AudioContextClass) {
         audioCtx = new AudioContextClass();
+        // Synth sounds route through one master gain so they match the catch sample's level
+        sfxOut = audioCtx.createGain();
+        sfxOut.gain.value = SFX_VOLUME;
+        sfxOut.connect(audioCtx.destination);
         if (audioCtx.state === "suspended") {
           audioCtx.resume();
         }
@@ -133,7 +139,7 @@
     // Prepare HTML5 Audio voice pool for the extracted reference audio
     for (let i = 0; i < 4; i++) {
       const a = new Audio("assets/catch.mp3");
-      a.volume = 0.65;
+      a.volume = SFX_VOLUME;
       a.preload = "auto";
       catchAudioPool.push(a);
     }
@@ -152,7 +158,7 @@
       gain1.gain.setValueAtTime(0.25, now);
       gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
       osc1.connect(gain1);
-      gain1.connect(audioCtx.destination);
+      gain1.connect(sfxOut);
       osc1.start(now);
       osc1.stop(now + 0.08);
 
@@ -164,7 +170,7 @@
       gain2.gain.setValueAtTime(0.3, now + 0.06);
       gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
       osc2.connect(gain2);
-      gain2.connect(audioCtx.destination);
+      gain2.connect(sfxOut);
       osc2.start(now + 0.06);
       osc2.stop(now + 0.22);
     } catch (e) {
@@ -210,7 +216,7 @@
       gain.gain.setValueAtTime(0.2, now);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
       osc.connect(gain);
-      gain.connect(audioCtx.destination);
+      gain.connect(sfxOut);
       osc.start(now);
       osc.stop(now + 0.18);
     } catch (e) {}
@@ -227,7 +233,7 @@
       gain.gain.setValueAtTime(0.18, now);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
       osc.connect(gain);
-      gain.connect(audioCtx.destination);
+      gain.connect(sfxOut);
       osc.start(now);
       osc.stop(now + 0.2);
     } catch (e) {}
@@ -247,7 +253,7 @@
         gain.gain.setValueAtTime(0.22, start);
         gain.gain.exponentialRampToValueAtTime(0.001, start + 0.35);
         osc.connect(gain);
-        gain.connect(audioCtx.destination);
+        gain.connect(sfxOut);
         osc.start(start);
         osc.stop(start + 0.35);
       });
@@ -334,6 +340,7 @@
     onPointerMove(e);
   }, { passive: true });
   canvas.addEventListener("touchmove", function (e) {
+    if (!running) return; // Idle stage must let the page scroll
     onPointerMove(e);
     e.preventDefault(); // Prevent page scroll while dragging basket
   }, { passive: false });
@@ -368,7 +375,7 @@
 
       this.x = Math.random() * (W - this.w - 24) + 12;
       this.y = -this.h - 10;
-      this.vy = speed;
+      this.vy = speed * Math.max(0.8, H / 450); // same fall time on short mobile stages
       this.wobblePhase = Math.random() * Math.PI * 2;
       this.wobbleSpeed = 1.8 + Math.random() * 1.5;
       this.rotation = (Math.random() - 0.5) * 0.12;
@@ -651,9 +658,9 @@
     // Clamp target within stage
     basket.targetX = Math.max(0, Math.min(W - basket.w, basket.targetX));
 
-    // Smooth position interpolation
+    // Smooth position interpolation, frame-rate independent so 60Hz/120Hz phones feel the same
     const prevX = basket.x;
-    basket.x += (basket.targetX - basket.x) * 0.22;
+    basket.x += (basket.targetX - basket.x) * (1 - Math.pow(0.6, dt / 16.67));
     basket.vx = basket.x - prevX;
 
     // Subtle tilt based on velocity
@@ -804,6 +811,7 @@
      START & END SEQUENCES
      ============================================================================ */
   function startRound() {
+    if (rafId) cancelAnimationFrame(rafId); // restart mid-round without doubling the loop
     initAudio();
     resize();
 
@@ -829,6 +837,7 @@
     startScreen.hidden = true;
     endScreen.hidden = true;
     hud.hidden = false;
+    stage.classList.add("is-playing");
 
     running = true;
     roundStart = performance.now();
@@ -843,6 +852,7 @@
     if (rafId) cancelAnimationFrame(rafId);
     ctx.clearRect(0, 0, W, H);
     hud.hidden = true;
+    stage.classList.remove("is-playing");
 
     playCompleteSound();
 
@@ -873,11 +883,14 @@
     keys.left = false;
     keys.right = false;
     hud.hidden = true;
+    stage.classList.remove("is-playing");
     startScreen.hidden = false;
   });
 
   // Event Listeners
   startBtn.addEventListener("click", startRound);
   replayBtn.addEventListener("click", startRound);
+  const restartBtn = document.getElementById("game-restart-btn");
+  if (restartBtn) restartBtn.addEventListener("click", startRound);
 
 })();

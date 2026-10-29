@@ -1,0 +1,303 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - region "Intro animation" [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]: "[ GDG_UVCE // BOOT ]"
+      - button "Skip intro animation" [ref=f1e8] [cursor=pointer]: Skip ›
+    - generic:
+      - generic:
+        - generic: // INITIALIZING WORKSHOP_CORE
+        - generic: "{ GDG_ON_CAMPUS_UVCE }"
+        - generic: "* SYSTEM CONNECTED"
+      - generic:
+        - generic:
+          - generic: "[ GDG ON CAMPUS · UVCE ]"
+          - generic: // WEB DEVELOPMENT WORKSHOP
+  - banner [ref=f1e9]:
+    - generic [ref=f1e10]:
+      - link "GDG UVCE logo GDG UVCE" [ref=f1e11] [cursor=pointer]:
+        - /url: "#hero"
+        - img "GDG UVCE logo" [ref=f1e12]
+        - generic [ref=f1e13]: GDG UVCE
+      - link "Register" [ref=f1e14] [cursor=pointer]:
+        - /url: PASTE_REGISTRATION_LINK_HERE
+  - main [ref=f1e15]:
+    - region "Workshop hero" [ref=f1e16]:
+      - generic [ref=f1e17]:
+        - generic [ref=f1e18]:
+          - generic [ref=f1e19]: OPEN
+          - generic [ref=f1e22]: GDG ON CAMPUS · UVCE
+        - img "GDG UVCE logo" [ref=f1e23]
+        - paragraph [ref=f1e24]: STUDENT COMMUNITY INITIATIVE
+        - heading "Web Development Workshop" [level=1] [ref=f1e25]:
+          - generic [ref=f1e26]: Web Development
+          - generic [ref=f1e27]: Workshop
+        - generic [ref=f1e28]:
+          - generic [ref=f1e29]: event_meta.config
+          - generic [ref=f1e35]:
+            - generic [ref=f1e40]:
+              - generic [ref=f1e41]: DATE
+              - strong [ref=f1e42]: Sat, Nov 7, 2026
+            - generic [ref=f1e48]:
+              - generic [ref=f1e49]: TIME
+              - strong [ref=f1e50]: 10:00 AM onwards
+            - generic [ref=f1e55]:
+              - generic [ref=f1e56]: LOCATION
+              - strong [ref=f1e57]: Online
+          - generic [ref=f1e58]:
+            - generic [ref=f1e59]: GDG ON CAMPUS · UVCE
+            - generic [ref=f1e60]: EVENT_METADATA
+        - generic "What you will learn" [ref=f1e61]:
+          - generic [ref=f1e62]: "> $ learn --track"
+          - generic [ref=f1e63]: HTM_
+        - generic "Countdown to workshop" [ref=f1e65]:
+          - generic [ref=f1e66]:
+            - generic [ref=f1e67]: "01"
+            - generic [ref=f1e68]: "00"
+            - generic [ref=f1e69]: Days
+          - generic [ref=f1e70]:
+            - generic [ref=f1e71]: "02"
+            - generic [ref=f1e72]: "00"
+            - generic [ref=f1e73]: Hours
+          - generic [ref=f1e74]:
+            - generic [ref=f1e75]: "03"
+            - generic [ref=f1e76]: "00"
+            - generic [ref=f1e77]: Mins
+          - generic [ref=f1e78]:
+            - generic [ref=f1e79]: "04"
+            - generic [ref=f1e80]: "00"
+            - generic [ref=f1e81]: Secs
+        - generic [ref=f1e82]:
+          - link "Claim your seat" [ref=f1e83] [cursor=pointer]:
+            - /url: PASTE_REGISTRATION_LINK_HERE
+            - text: Claim your seat
+            - generic [ref=f1e84]: →
+          - link "Join on WhatsApp" [ref=f1e85] [cursor=pointer]:
+            - /url: PASTE_WHATSAPP_LINK_HERE
+            - text: Join on WhatsApp
+            - generic [ref=f1e86]: ↗
+        - generic [ref=f1e87]: SCROLL TO EXPLORE
+    - generic [ref=f1e92]:
+      - generic [ref=f1e93]:
+        - text: INTERACTIVE CHALLENGE
+        - heading "Can You Build a Website in 60 Seconds?" [level=2] [ref=f1e94]
+        - paragraph [ref=f1e95]: Never coded before? Step into the GDG WebStudio, customize your first live webpage, and share your screenshot for an exclusive shoutout!
+      - link "🚀 Launch WebStudio ›" [ref=f1e96] [cursor=pointer]:
+        - /url: builder.html
+    - region "What you'll learn" [ref=f1e97]:
+      - generic [ref=f1e98]:
+        - generic [ref=f1e99]:
+          - generic [ref=f1e100]: 04_MODULES
+          - paragraph [ref=f1e102]: "{ CURRICULUM }"
+          - heading "What you'll learn" [level=2] [ref=f1e103]
+          - paragraph [ref=f1e104]: Four hands-on tracks mapped directly to Google's 4-quadrant chromatic foundation — from a blank file to a live URL.
+        - generic [ref=f1e105]:
+          - generic [ref=f1e107]:
+            - generic [ref=f1e108]: 01_structure.html
+            - generic [ref=f1e114]:
+              - generic [ref=f1e115]:
+                - generic [ref=f1e116]: 01 / BLUE
+                - generic [ref=f1e117]: "{ markup }"
+              - heading "HTML5 Semantic Structure" [level=3] [ref=f1e118]
+              - paragraph [ref=f1e119]: Structure real, accessible web pages using modern HTML5 tags, semantic document hierarchy, forms, and accessibility primitives.
+              - code [ref=f1e121]: <main class="app">
+            - generic [ref=f1e122]:
+              - generic [ref=f1e123]: GDG UVCE
+              - generic [ref=f1e124]: 01 / HTML
+          - generic [ref=f1e126]:
+            - generic [ref=f1e127]: 02_styles.css
+            - generic [ref=f1e133]:
+              - generic [ref=f1e134]:
+                - generic [ref=f1e135]: 02 / RED
+                - generic [ref=f1e136]: "{ layout }"
+              - heading "Modern CSS & Responsive Layouts" [level=3] [ref=f1e137]
+              - paragraph [ref=f1e138]: Master Flexbox, CSS Grid, custom properties, and fluid typography so your sites look crisp on phones, tablets, and desktops.
+              - code [ref=f1e140]: "display: grid; gap: 1.5rem;"
+            - generic [ref=f1e141]:
+              - generic [ref=f1e142]: GDG UVCE
+              - generic [ref=f1e143]: 02 / CSS
+          - generic [ref=f1e145]:
+            - generic [ref=f1e146]: 03_logic.js
+            - generic [ref=f1e152]:
+              - generic [ref=f1e153]:
+                - generic [ref=f1e154]: 03 / YELLOW
+                - generic [ref=f1e155]: "{ logic }"
+              - heading "JavaScript Interactivity & DOM" [level=3] [ref=f1e156]
+              - paragraph [ref=f1e157]: Bring pages to life with user events, DOM manipulation, timers, state management, and responsive interactive logic.
+              - code [ref=f1e159]: btn.addEventListener("click", run);
+            - generic [ref=f1e160]:
+              - generic [ref=f1e161]: GDG UVCE
+              - generic [ref=f1e162]: 03 / JS
+          - generic [ref=f1e164]:
+            - generic [ref=f1e165]: 04_deploy.sh
+            - generic [ref=f1e171]:
+              - generic [ref=f1e172]:
+                - generic [ref=f1e173]: 04 / GREEN
+                - generic [ref=f1e174]: "{ deploy }"
+              - heading "Version Control & Live Deployment" [level=3] [ref=f1e175]
+              - paragraph [ref=f1e176]: Push your code to GitHub and ship a live, production URL that you can share with friends and add to your portfolio.
+              - code [ref=f1e178]: git push origin main → live 🚀
+            - generic [ref=f1e179]:
+              - generic [ref=f1e180]: GDG UVCE
+              - generic [ref=f1e181]: 04 / DEPLOY
+    - region "Speakers" [ref=f1e182]:
+      - generic [ref=f1e183]:
+        - generic [ref=f1e184]:
+          - generic [ref=f1e185]: MENTORS
+          - paragraph [ref=f1e187]: "{ INSTRUCTORS }"
+          - heading "Meet the speakers" [level=2] [ref=f1e188]
+          - paragraph [ref=f1e189]: Learn directly from community builders and peers who have shipped real projects.
+        - generic [ref=f1e190]:
+          - generic [ref=f1e191]:
+            - generic [ref=f1e192]: speaker_01
+            - generic [ref=f1e198]:
+              - img "Nikhil, speaker for HTML track" [ref=f1e201]
+              - generic [ref=f1e202]:
+                - paragraph [ref=f1e204]: Learn the foundations of HTML by building a real web page from scratch. Explore the basic HTML document structure, headings, paragraphs, links, images, and lists. Then put it into practice by creating the content for an About Me page.
+                - generic [ref=f1e205]:
+                  - generic [ref=f1e206]:
+                    - heading "Nikhil" [level=3] [ref=f1e207]
+                    - generic [ref=f1e208]: AI-DS · Semester 3
+                  - generic [ref=f1e209]: HTML
+            - generic [ref=f1e211]:
+              - generic [ref=f1e212]: GDG UVCE
+              - generic [ref=f1e213]: HTML
+          - generic [ref=f1e214]:
+            - generic [ref=f1e215]: speaker_02
+            - generic [ref=f1e221]:
+              - img "Goutham, speaker for CSS track" [ref=f1e224]
+              - generic [ref=f1e225]:
+                - paragraph [ref=f1e227]: Bring your HTML page to life with CSS. Learn how to connect a stylesheet, use element, class, and ID selectors, style text and backgrounds, and control spacing with padding, margin, and borders. Finish by creating a clean, centred card layout with rounded corners and simple shadows.
+                - generic [ref=f1e228]:
+                  - generic [ref=f1e229]:
+                    - heading "Goutham" [level=3] [ref=f1e230]
+                    - generic [ref=f1e231]: CSE · Semester 3
+                  - generic [ref=f1e232]: CSS
+            - generic [ref=f1e234]:
+              - generic [ref=f1e235]: GDG UVCE
+              - generic [ref=f1e236]: CSS
+          - generic [ref=f1e237]:
+            - generic [ref=f1e238]: speaker_03
+            - generic [ref=f1e244]:
+              - img "Chinmay, speaker for JavaScript track" [ref=f1e247]
+              - generic [ref=f1e248]:
+                - paragraph [ref=f1e250]: Make your web page interactive with JavaScript. Learn how to select an element, listen for a click event, and update page content or toggle a CSS class. Put these concepts into practice by building a button that changes the greeting or toggles dark mode.
+                - generic [ref=f1e251]:
+                  - generic [ref=f1e252]:
+                    - heading "Chinmay" [level=3] [ref=f1e253]
+                    - generic [ref=f1e254]: CSE · Semester 3
+                  - generic [ref=f1e255]: JavaScript
+            - generic [ref=f1e257]:
+              - generic [ref=f1e258]: GDG UVCE
+              - generic [ref=f1e259]: JAVASCRIPT
+          - generic [ref=f1e260]:
+            - generic [ref=f1e261]: speaker_04
+            - generic [ref=f1e267]:
+              - img "Nandhini, speaker for Deployment track" [ref=f1e270]
+              - generic [ref=f1e271]:
+                - paragraph [ref=f1e273]: Take your website live and share it with the world. Learn what deployment means, explore hosting options such as Netlify, GitHub Pages, and Vercel, and publish your project using the beginner-friendly Netlify Drop workflow. Finish with a public URL you can open and share.
+                - generic [ref=f1e274]:
+                  - generic [ref=f1e275]:
+                    - heading "Nandhini" [level=3] [ref=f1e276]
+                    - generic [ref=f1e277]: CSE · Semester 3
+                  - generic [ref=f1e278]: Deployment
+            - generic [ref=f1e280]:
+              - generic [ref=f1e281]: GDG UVCE
+              - generic [ref=f1e282]: DEPLOYMENT
+    - region "Mini Arcade" [ref=f1e283]:
+      - generic [ref=f1e284]:
+        - generic [ref=f1e285]:
+          - generic [ref=f1e286]: ARCADE_CHALLENGE
+          - paragraph [ref=f1e288]: "{ MINI ARCADE }"
+          - heading "Mini Arcade" [level=2] [ref=f1e289]
+          - paragraph [ref=f1e290]: Pick a game. Three quick challenges, one arcade.
+        - generic [ref=f1e291]:
+          - tablist "Choose a mini-game" [ref=f1e292]:
+            - tab "Ship the Web" [selected] [ref=f1e293] [cursor=pointer]
+            - tab "Commit Rush" [ref=f1e294] [cursor=pointer]
+            - tab "Bug Smasher" [ref=f1e295] [cursor=pointer]
+          - generic [ref=f1e296]:
+            - generic [ref=f1e297]:
+              - strong [ref=f1e298]: Ship the Web
+              - generic [ref=f1e299]: 18 SEC
+            - paragraph [ref=f1e300]: Catch the stack before time runs out. Build the complete web.
+            - generic [ref=f1e301]: Arrow keys or A D to move · drag on mobile
+        - tabpanel "Ship the Web" [ref=f1e302]:
+          - generic [ref=f1e303]:
+            - generic [ref=f1e304]: ship_the_web.exe
+            - generic [ref=f1e312]:
+              - generic [ref=f1e313]: 18-SEC SPEED CHALLENGE
+              - heading "SHIP THE WEB" [level=3] [ref=f1e314]
+              - paragraph [ref=f1e315]: Catch falling HTML, CSS, JavaScript, Git & Deploy tags. Avoid bugs. Build the complete stack!
+              - generic [ref=f1e316]: "← → / A D or Mouse · Mobile: Drag Basket"
+              - button "Start the build ›" [ref=f1e317] [cursor=pointer]
+            - generic [ref=f1e318]:
+              - generic [ref=f1e319]: GDG ON CAMPUS · UVCE
+              - button "Restart ↻" [ref=f1e320] [cursor=pointer]
+              - generic [ref=f1e321]: WEB_STACK_ARCADE
+    - region "About GDG UVCE" [ref=f1e322]:
+      - generic [ref=f1e324]:
+        - generic [ref=f1e325]: gdg_uvce_chapter.md
+        - generic [ref=f1e331]:
+          - generic [ref=f1e332]:
+            - img "GDG UVCE logo" [ref=f1e333]
+            - generic [ref=f1e334]:
+              - generic [ref=f1e335]: CHAPTER OVERVIEW
+              - heading "About GDG on Campus UVCE" [level=2] [ref=f1e336]
+          - paragraph [ref=f1e337]: GDG on Campus, UVCE is a student-led chapter of Google Developer Groups at University Visvesvaraya College of Engineering. We run hands-on workshops, talks and build nights across web, mobile, cloud and AI, so students learn by shipping real projects, not just reading about them.
+          - generic [ref=f1e338]:
+            - generic [ref=f1e339]: "{ Web Development }"
+            - generic [ref=f1e340]: "{ Cloud & DevOps }"
+            - generic [ref=f1e341]: "{ AI & Machine Learning }"
+            - generic [ref=f1e342]: "{ Open Source }"
+        - generic [ref=f1e343]:
+          - generic [ref=f1e344]: GDG ON CAMPUS · UVCE
+          - generic [ref=f1e345]: CHAPTER_PROFILE
+    - region "Join us" [ref=f1e346]:
+      - generic [ref=f1e348]:
+        - generic [ref=f1e349]: register_now.sh
+        - generic [ref=f1e355]:
+          - generic [ref=f1e356]: LAST STEP
+          - heading "Ready to build your first website?" [level=2] [ref=f1e357]
+          - paragraph [ref=f1e358]: Claim your seat today, bring your laptop, and walk away with your own deployed website.
+          - generic [ref=f1e359]:
+            - link "Claim your seat" [ref=f1e360] [cursor=pointer]:
+              - /url: PASTE_REGISTRATION_LINK_HERE
+              - text: Claim your seat
+              - generic [ref=f1e361]: →
+            - link "Join on WhatsApp" [ref=f1e362] [cursor=pointer]:
+              - /url: PASTE_WHATSAPP_LINK_HERE
+              - text: Join on WhatsApp
+              - generic [ref=f1e363]: ↗
+        - generic [ref=f1e364]:
+          - generic [ref=f1e365]: GDG ON CAMPUS · UVCE
+          - generic [ref=f1e366]: REGISTRATION_PORTAL
+  - contentinfo [ref=f1e367]:
+    - generic [ref=f1e368]:
+      - generic [ref=f1e369]:
+        - generic [ref=f1e370]:
+          - img "GDG UVCE logo" [ref=f1e371]
+          - generic [ref=f1e372]: GDG UVCE
+        - paragraph [ref=f1e373]: The student-led chapter of Google Developer Groups at University Visvesvaraya College of Engineering.
+        - generic [ref=f1e374]: Bengaluru, Karnataka
+      - generic [ref=f1e376]:
+        - generic [ref=f1e377]:
+          - heading "Workshop" [level=4] [ref=f1e378]
+          - link "What you'll learn" [ref=f1e379] [cursor=pointer]:
+            - /url: "#learn"
+          - link "Meet the speakers" [ref=f1e380] [cursor=pointer]:
+            - /url: "#speakers"
+          - link "Mini Arcade" [ref=f1e381] [cursor=pointer]:
+            - /url: "#game"
+        - generic [ref=f1e382]:
+          - heading "Community" [level=4] [ref=f1e383]
+          - link "Register for workshop" [ref=f1e384] [cursor=pointer]:
+            - /url: PASTE_REGISTRATION_LINK_HERE
+          - link "WhatsApp community" [ref=f1e385] [cursor=pointer]:
+            - /url: PASTE_WHATSAPP_LINK_HERE
+          - link "About GDG UVCE" [ref=f1e386] [cursor=pointer]:
+            - /url: "#about"
+    - generic [ref=f1e387]:
+      - paragraph [ref=f1e388]: © 2026 GDG on Campus, UVCE. All rights reserved.
+      - paragraph [ref=f1e389]: Website developed by Punith B S

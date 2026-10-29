@@ -8,6 +8,10 @@
   const start = document.querySelector('#commit-start');
   const play = document.querySelector('#commit-play');
   const again = document.querySelector('#commit-again');
+  const over = document.querySelector('#commit-over');
+  const overRank = document.querySelector('#commit-over-rank');
+  const restart = document.querySelector('#commit-restart');
+  const seeRank = document.querySelector('#commit-see-rank');
   const jump = document.querySelector('#jump-btn');
   const down = document.querySelector('#down-btn');
   const musicToggle = document.querySelector('#commit-music');
@@ -46,7 +50,10 @@
   const MARGIN = .02;                    // safety padding around every hazard: about one frame at 60fps
   const REACT = .25;                     // a jump is never needed sooner than this after its obstacle appears
   const JUMP_BUFFER = .12, SLAM_GRAVITY = 2.5, INVULN = 1.2, CHARGE = .22;
-  const SONG = 'commit-rush-bg.mp3';
+  // "Fever Stadium" by MintoDog, CC0 (opengameart.org/content/fever-stadium); the climax version takes over from Demon.
+  const SONGS = ['commit-rush-music.mp3', 'commit-rush-music-climax.mp3'];
+  const CLIMAX_AT = .7;
+  const BEAM_WIDTHS = [100, 138, 176];   // force-push lasers come short, normal and long
   const TRAILS = ['FLAME', 'OFF'];
   const LEARN = {
     'MERGE CONFLICT': {
@@ -88,10 +95,14 @@
     return lerp(.88, 1, (I - .9) / .1);
   }
   const phaseAt = I => PHASES.reduce((found, phase) => (I >= phase.at ? phase : found), PHASES[0]);
-  const pitPx = t => lerp(190, 430, difficultyAt(t));      // pixels per second
-  const beamPx = t => lerp(520, 1250, difficultyAt(t));
+  // Speed surges, like Geometry Dash speed portals: every few seconds the world runs up to 22% faster, more so in later phases.
+  // A smooth function of run time, so the planner predicts it exactly.
+  const surge = t => 1 + .22 * difficultyAt(t) * Math.max(0, Math.sin(t * .25) + Math.sin(t * .17 + 1) - 1);
+  const pitPx = t => lerp(190, 430, difficultyAt(t)) * surge(t);      // pixels per second
+  const beamPx = t => lerp(520, 1250, difficultyAt(t)) * surge(t);
   const pitShare = t => lerp(.5, .75, difficultyAt(t));    // share of hazards that are holes
-  const restGap = t => lerp(1.9, .3, difficultyAt(t));     // breathing room between obstacle runs
+  const restGap = t => lerp(1.5, .3, difficultyAt(t));     // breathing room between obstacle runs
+  const pick = list => list[Math.floor(Math.random() * list.length)];
   // Timing room each jump gets on top of the safety padding. With the padding, the player's window is about
   // ±120ms in Easy, ±55ms entering Insane, ±40ms entering Demon, ±28ms in Extreme Demon and ±20ms at 100%.
   function timingSlack(t) {
@@ -105,7 +116,7 @@
   // Obstacles that arrive back to back, like a Geometry Dash spike run.
   function patternSize(t) {
     const d = difficultyAt(t); const extra = Math.random() < .5 ? 1 : 0;
-    if (d < .12) return 1;
+    if (d < .12) return Math.random() < .25 ? 2 : 1;
     if (d < .35) return 1 + extra;
     if (d < .6) return 2 + extra;
     if (d < .85) return 3 + extra;
@@ -152,8 +163,9 @@
   let currentPhase = null; let flashText = ''; let flashSub = ''; let flashLeft = 0; let maxAnnounced = false; let deathRank = null;
   let jumpY = 0; let jumpV = 0; let jumpAge = 0; let jumpDuration = .82; let jumpG = 1450; let runnerAngle = 0; let jumpStartAngle = 0; let jumpBuffer = 0; let slamming = false;
   let trailHistory = []; let trailAge = 0; let trailStyle = 0;
-  let toastTimer = 0; let failureAge = 0; let countRaf = 0; let audioCtx = null; let musicOn = true; let musicTrack = 0;
-  const music = new Audio(SONG); music.loop = true; music.volume = .16;
+  let toastTimer = 0; let failureAge = 0; let countRaf = 0; let audioCtx = null; let musicOn = true;
+  const tracks = SONGS.map(src => { const a = new Audio(src); a.loop = true; a.volume = .16; return a; });
+  let music = tracks[0];
 
   function setStatus(text, tone) { statusEl.querySelector('span:last-child').textContent = text; statusEl.className = `status ${tone ? `status-${tone}` : ''}`; }
   function fmt(seconds) { return `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`; }
@@ -166,30 +178,29 @@
   function playFallSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'sine'; osc.frequency.setValueAtTime(440, now); osc.frequency.exponentialRampToValueAtTime(180, now + .3); gain.gain.setValueAtTime(.18, now); gain.gain.exponentialRampToValueAtTime(.001, now + .35); osc.connect(gain).connect(ctx.destination); osc.start(now); osc.stop(now + .35); } catch (err) { /* audio is optional */ } }
   function playWarningSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; [0, .13].forEach((offset, index) => { const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'square'; osc.frequency.setValueAtTime(index ? 740 : 620, now + offset); gain.gain.setValueAtTime(.001, now + offset); gain.gain.exponentialRampToValueAtTime(.1, now + offset + .015); gain.gain.exponentialRampToValueAtTime(.001, now + offset + .1); osc.connect(gain).connect(ctx.destination); osc.start(now + offset); osc.stop(now + offset + .12); }); } catch (err) { /* audio is optional */ } }
   function playErrorSound() { try { const ctx = getAudioCtx(); const now = ctx.currentTime; const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.type = 'sawtooth'; osc.frequency.setValueAtTime(190, now); osc.frequency.exponentialRampToValueAtTime(70, now + .28); gain.gain.setValueAtTime(.14, now); gain.gain.exponentialRampToValueAtTime(.001, now + .32); osc.connect(gain).connect(ctx.destination); osc.start(now); osc.stop(now + .35); } catch (err) { /* audio is optional */ } }
-  // One song, a different part for each difficulty phase: phase k starts k/N of the way through the track.
-  function seekPhase(index) {
-    const seek = () => { if (Number.isFinite(music.duration)) music.currentTime = index * music.duration / PHASES.length; };
-    if (music.readyState >= 1) seek(); else music.addEventListener('loadedmetadata', seek, { once: true });
-  }
+  // The main track plays until Demon, then the faster climax version takes over.
   function updateMusic(I) {
-    const index = PHASES.indexOf(phaseAt(I));
-    if (index === musicTrack) return;
-    musicTrack = index;
-    seekPhase(index);
+    const next = tracks[I >= CLIMAX_AT ? 1 : 0];
+    if (next === music) return;
+    music.pause(); music = next; music.currentTime = 0;
+    if (musicOn && state === 'playing') music.play().catch(() => {});
   }
 
   // ---------- obstacle planner: every obstacle is covered by a jump the planner has already committed to ----------
   // Committed takeoffs never move, so a schedule the player can follow stays valid as new obstacles arrive.
   // Each jump keeps at least timingSlack() of room, which is what makes later phases demand precise timing.
-  let commits = []; let patternLeft = 0;
+  let commits = []; let patternLeft = 0; let patternMode = 'mix'; let patternGap = .05; let patternIndex = 0;
   function placeObstacle(type, earliest, w) {
+    // Half the holes are the widest this phase allows, the rest smaller; lasers come in three lengths.
+    const scale = Math.random() < .5 ? 1 : lerp(.6, 1, Math.random());
+    const beamW = pick(BEAM_WIDTHS);
     let t = earliest;
     for (let tries = 0; tries < 200; tries += 1, t += .03) {
       const speed = type === 'beam' ? beamPx(t) : pitPx(t);
       const rough = jumpProfile(t + 1.5)[type];
       const span = rough.t2 - rough.t1 - 2 * MARGIN;
       // Holes widen until clearing one takes exactly the timing this phase allows (long jumps, Geometry Dash style).
-      const width = type === 'pit' ? Math.max(50, Math.min(230, speed * (span - timingSlack(t)) - 18)) : EW.beam;
+      const width = type === 'pit' ? Math.max(50, Math.min(230, scale * (speed * (span - timingSlack(t)) - 18))) : beamW;
       const need = Math.max(0, Math.min(timingSlack(t), .9 * (span - (width + 18) / speed))); // never ask for more room than the hazard allows
       const win = hazardWindow(type, t, w, width);
       if (!win) continue;
@@ -207,14 +218,22 @@
     plan = plan.filter(item => !item.spawned || item.win.b > elapsed - 1);
     commits = commits.filter(s => s > elapsed - 2);
     while (nextSpawnAt < elapsed + 4) {
-      if (patternLeft <= 0) patternLeft = patternSize(nextSpawnAt);
-      const type = Math.random() < pitShare(nextSpawnAt) ? 'pit' : 'beam';
+      if (patternLeft <= 0) {
+        // Each run gets its own shape: all holes, all lasers (from Hard), alternating, or mixed;
+        // and its own rhythm: back to back, short hops, or a staggered beat.
+        const d = difficultyAt(nextSpawnAt);
+        patternLeft = patternSize(nextSpawnAt); patternIndex = 0;
+        patternMode = pick(d < .35 ? ['mix', 'pit', 'alt'] : ['mix', 'pit', 'beam', 'alt', 'alt']);
+        patternGap = pick([.05, .05, .2, .35]);
+      }
+      const random = Math.random() < pitShare(nextSpawnAt) ? 'pit' : 'beam';
+      const type = patternMode === 'mix' ? random : patternMode === 'alt' ? (patternIndex % 2 ? 'beam' : 'pit') : patternMode;
       const placed = placeObstacle(type, Math.max(nextSpawnAt, elapsed), w);
-      if (!placed) break;
+      if (!placed) { patternLeft = 0; break; } // e.g. lasers can't fit on a narrow phone: roll a new pattern next frame
       if (placed.takeoff !== null) commits.push(placed.takeoff);
       plan.push(placed);
-      patternLeft -= 1;
-      nextSpawnAt = placed.t + (patternLeft > 0 ? .05 : restGap(placed.t) * (.85 + Math.random() * .4));
+      patternLeft -= 1; patternIndex += 1;
+      nextSpawnAt = placed.t + (patternLeft > 0 ? patternGap * (.8 + Math.random() * .4) : restGap(placed.t) * (.85 + Math.random() * .4));
     }
   }
   // `lead` is how far past its planned spawn time this frame already is, minus the step it will move this frame,
@@ -226,16 +245,18 @@
   }
   function spawnDue(w, dt) {
     plan.forEach(item => { if (!item.spawned && item.t <= elapsed) { item.spawned = true; spawnEntity(item.type, item.width, (elapsed - item.t) - dt, w); } });
-    if (elapsed >= nextCoinAt) { nextCoinAt = elapsed + lerp(1.1, 2.2, Math.random()); entities.push({ type: 'pickup', x: 1.08, collected: false, hit: false, charge: 0, trail: [], trailAge: 0 }); }
+    // Some coins float at jump height: grabbing them means a risky extra jump.
+    if (elapsed >= nextCoinAt) { nextCoinAt = elapsed + lerp(1.1, 2.2, Math.random()); entities.push({ type: 'pickup', x: 1.08, high: Math.random() < .4, collected: false, hit: false, charge: 0, trail: [], trailAge: 0 }); }
   }
 
   // ---------- collisions ----------
+  const coinLift = entity => (entity.high ? 104 : 38); // coin centre height above the ground
   function collides(entity, w) {
     const rx = runner.x * w + 5; const rw = runner.w - 10; const rh = runner.h;
     const ry = runner.ground - rh - jumpY + 4;
     const ex = entity.x * w;
-    const ew = entity.type === 'pickup' ? 32 : entity.type === 'beam' ? EW.beam : (entity.width || EW.pit);
-    const ey = entity.type === 'pickup' ? runner.ground - 54 : entity.type === 'beam' ? runner.ground - 20 : runner.ground - 18;
+    const ew = entity.type === 'pickup' ? 32 : (entity.width || EW[entity.type]);
+    const ey = entity.type === 'pickup' ? runner.ground - coinLift(entity) - 16 : entity.type === 'beam' ? runner.ground - 20 : runner.ground - 18;
     const eh = entity.type === 'pickup' ? 32 : entity.type === 'beam' ? 20 : 18;
     return rx < ex + ew && rx + rw > ex && ry < ey + eh && ry + rh > ey;
   }
@@ -244,7 +265,7 @@
     if (entity.type === 'pickup') {
       if (!collides(entity, w)) return;
       entity.collected = true; coins += 1; score += 25;
-      for (let i = 0; i < 5; i += 1) effects.push({ type: 'particle', x: entity.x * w + 16, y: runner.ground - 38, age: 0, duration: .3, dx: Math.cos(i * 1.256) * 24, dy: Math.sin(i * 1.256) * 24 });
+      for (let i = 0; i < 5; i += 1) effects.push({ type: 'particle', x: entity.x * w + 16, y: runner.ground - coinLift(entity), age: 0, duration: .3, dx: Math.cos(i * 1.256) * 24, dy: Math.sin(i * 1.256) * 24 });
       playCoinSound(); showToast('✓ COMMIT +25');
       return;
     }
@@ -375,7 +396,7 @@
     ctx.strokeStyle = colors.black; ctx.lineWidth = 1.5;
     if (e.type === 'pickup') {
       const scaleX = Math.abs(Math.cos(elapsed * 4 + e.x * 10));
-      drawCoin(x + 16, runner.ground - 38, colors.green, Math.max(.08, scaleX));
+      drawCoin(x + 16, runner.ground - coinLift(e), colors.green, Math.max(.08, scaleX));
     } else if (e.type === 'pit') {
       const holeW = e.width || EW.pit;
       ctx.fillStyle = colors.black; ctx.beginPath(); ctx.roundRect(x, runner.ground - 1, holeW, 82, 5); ctx.fill(); ctx.stroke();
@@ -390,12 +411,12 @@
         ctx.beginPath(); ctx.arc(x + 5, runner.ground - 10, 9, 0, Math.PI * 2); ctx.fill(); ctx.globalAlpha = 1;
         ctx.fillStyle = colors.black; ctx.font = '600 9px monospace'; ctx.fillText('git push --force', x - 38, runner.ground - 28);
       } else {
-        const laserW = EW.beam;
+        const laserW = e.width || EW.beam;
         drawRocketTrail(e, w, laserW);
         ctx.fillStyle = colors.yellow; ctx.fillRect(x, runner.ground - 20, laserW, 20); ctx.strokeRect(x, runner.ground - 20, laserW, 20);
         ctx.fillStyle = colors.white; ctx.fillRect(x + 4, runner.ground - 15, laserW - 8, 4);
         ctx.strokeStyle = colors.black; ctx.beginPath();
-        [22, 58, 94].forEach(offset => { ctx.moveTo(x + offset, runner.ground - 17); ctx.lineTo(x + offset + 8, runner.ground - 3); });
+        for (let offset = 22; offset < laserW - 20; offset += 36) { ctx.moveTo(x + offset, runner.ground - 17); ctx.lineTo(x + offset + 8, runner.ground - 3); }
         ctx.stroke();
         ctx.fillStyle = colors.black; ctx.font = '600 9px monospace'; ctx.fillText('git push --force', x + 7, runner.ground - 25);
       }
@@ -455,11 +476,11 @@
   // ---------- run lifecycle ----------
   function reset() {
     cancelAnimationFrame(rafId); clearTimeout(toastTimer); cancelAnimationFrame(countRaf);
-    music.pause(); musicTrack = 0; music.currentTime = 0;
+    tracks.forEach(track => track.pause()); music = tracks[0]; music.currentTime = 0;
     state = 'idle'; last = 0; elapsed = 0; score = 0; coins = 0; lives = MAX_LIVES; peak = 0; lastHit = null; invulnLeft = 0;
-    entities = []; effects = []; plan = []; commits = []; patternLeft = 0; currentPhase = null; flashText = ''; flashSub = ''; flashLeft = 0; maxAnnounced = false; deathRank = null; nextSpawnAt = 2; nextCoinAt = 1.5; trailHistory = []; trailAge = 0;
+    entities = []; effects = []; plan = []; commits = []; patternLeft = 0; patternIndex = 0; currentPhase = null; flashText = ''; flashSub = ''; flashLeft = 0; maxAnnounced = false; deathRank = null; nextSpawnAt = 2; nextCoinAt = 1.5; trailHistory = []; trailAge = 0;
     jumpY = 0; jumpV = 0; jumpAge = 0; jumpBuffer = 0; slamming = false; runnerAngle = 0; jumpStartAngle = 0; failureAge = 0;
-    result.hidden = true; result.classList.remove('is-revealed'); start.hidden = false;
+    result.hidden = true; result.classList.remove('is-revealed'); start.hidden = false; over.hidden = true;
     setStatus('IDLE', ''); scoreEl.textContent = 'SCORE 0'; livesEl.textContent = `LIVES ${MAX_LIVES}/${MAX_LIVES}`;
     intensityEl.textContent = 'EASY · 0%'; intensityEl.className = 'code-pill pill-green'; progressEl.textContent = 'RUN 0:00';
     musicToggle.textContent = musicOn ? '♫ MUSIC ON' : '♫ MUSIC OFF';
@@ -506,6 +527,8 @@
     learnStepsEl.replaceChildren(...LEARN[topic].steps.map(step => { const li = document.createElement('li'); li.textContent = step; return li; }));
     result.hidden = false; void result.offsetWidth; result.classList.add('is-revealed');
     countUp(finalScoreEl, Math.floor(score));
+    overRank.textContent = `RANK ${rank.rank} · ${phaseAt(peak).name}`;
+    over.hidden = false; restart.focus({ preventScroll: true });
   }
 
   // ---------- input ----------
@@ -516,6 +539,9 @@
   musicToggle.addEventListener('pointerdown', e => { e.preventDefault(); musicOn = !musicOn; if (musicOn && state === 'playing') music.play().catch(() => {}); else music.pause(); musicToggle.textContent = musicOn ? '♫ MUSIC ON' : '♫ MUSIC OFF'; }, { passive: false });
   play.addEventListener('pointerdown', begin, { passive: false });
   again.addEventListener('pointerdown', begin, { passive: false });
+  restart.addEventListener('click', begin);
+  // Scrolls the parent page too when embedded, so the rank card comes into view.
+  seeRank.addEventListener('click', () => result.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   window.addEventListener('keydown', onKeyDown);
   window.addEventListener('resize', resize);
   if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
