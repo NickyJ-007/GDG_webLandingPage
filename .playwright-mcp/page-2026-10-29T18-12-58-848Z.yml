@@ -1,0 +1,1150 @@
+- generic [ref=f5e1]:
+  - link "Skip to main content" [ref=f5e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f5e3]:
+    - generic [ref=f5e5]:
+      - generic [ref=f5e9]:
+        - generic [ref=f5e10]:
+          - generic [ref=f5e11]: OpenID
+          - textbox "OpenID" [ref=f5e12]
+        - generic [ref=f5e13]:
+          - generic [ref=f5e14]: Username or e-mail
+          - textbox "Username or e-mail" [ref=f5e15]
+        - generic [ref=f5e16]:
+          - generic [ref=f5e17]: Password
+          - textbox "Password" [ref=f5e18]
+        - button "Log in" [ref=f5e20]
+      - link "Register" [ref=f5e23] [cursor=pointer]:
+        - /url: "#"
+    - link [ref=f5e24] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f5e25]:
+      - generic [ref=f5e26]:
+        - list [ref=f5e30]:
+          - listitem [ref=f5e31]:
+            - link "Home" [ref=f5e32] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f5e33]:
+            - link "Browse" [ref=f5e34] [cursor=pointer]:
+              - /url: /latest
+          - listitem [ref=f5e35]:
+            - link "Submit Art" [ref=f5e36] [cursor=pointer]:
+              - /url: /node/add/art
+          - listitem [ref=f5e37]:
+            - link "Collect" [ref=f5e38] [cursor=pointer]:
+              - /url: /collections
+          - listitem [ref=f5e39]:
+            - link "Forums" [ref=f5e40] [cursor=pointer]:
+              - /url: /forums/art-discussion
+          - listitem [ref=f5e41]:
+            - link "FAQ" [ref=f5e42] [cursor=pointer]:
+              - /url: /content/faq
+          - listitem [ref=f5e43]:
+            - link "Leaderboards" [ref=f5e44] [cursor=pointer]:
+              - /url: /leaderboards/total
+          - listitem [ref=f5e45]:
+            - link "❤ Donate" [ref=f5e46] [cursor=pointer]:
+              - /url: https://www.patreon.com/opengameart
+        - link [ref=f5e49] [cursor=pointer]:
+          - /url: /
+          - img "Sara" [ref=f5e50]
+      - generic [ref=f5e58]:
+        - textbox "Search" [ref=f5e62]
+        - button "Search" [ref=f5e64]
+    - generic:
+      - generic [ref=f5e66]:
+        - generic [ref=f5e67]:
+          - heading "Chat with us!" [level=2] [ref=f5e68]
+          - generic [ref=f5e69]:
+            - paragraph [ref=f5e70]:
+              - strong [ref=f5e71]: "Discord:"
+              - link "OpenGameArt" [ref=f5e72] [cursor=pointer]:
+                - /url: https://discord.gg/yDaQ4NcCux
+              - link "discord.gg/yDaQ4NcCux" [ref=f5e73] [cursor=pointer]:
+                - /url: https://discord.gg/yDaQ4NcCux
+            - paragraph [ref=f5e74]:
+              - strong [ref=f5e75]: "IRC:"
+              - link "#OpenGameArt" [ref=f5e76] [cursor=pointer]:
+                - /url: https://freegamedev.net/irc/#opengameart
+              - text: "on"
+              - link "freegamedev.net/irc/#opengameart" [ref=f5e77] [cursor=pointer]:
+                - /url: https://freegamedev.net/irc/#opengameart
+        - generic [ref=f5e78]:
+          - heading "Art Challenge" [level=2] [ref=f5e79]
+          - generic [ref=f5e84]:
+            - strong [ref=f5e88]:
+              - link "October 2026 Art Challenge - Phobias" [ref=f5e89] [cursor=pointer]:
+                - /url: /content/october-2026-art-challenge-phobias
+            - paragraph [ref=f5e93]:
+              - text: Tag your submissions with
+              - strong [ref=f5e94]: Phobias
+              - text: and
+              - strong [ref=f5e95]: Challenge
+              - text: to be in the running.
+              - link "Here are the entries so far!" [ref=f5e96] [cursor=pointer]:
+                - /url: https://opengameart.org/art-search-advanced?field_art_tags_tid_op=and&field_art_tags_tid=Phobias%2C+Challenge
+              - text: Post a link to your submission in the
+              - link "October 2026 Art Challenge" [ref=f5e97] [cursor=pointer]:
+                - /url: https://opengameart.org/forumtopic/october-2026-art-challenge-phobias
+              - text: thread.
+            - generic [ref=f5e98]:
+              - generic [ref=f5e99]: "Status:"
+              - generic [ref=f5e100]: Accepting art submissions
+            - generic [ref=f5e102]:
+              - generic [ref=f5e103]: "Date Range:"
+              - generic [ref=f5e104]: 10/12/2026 to 11/01/2026
+        - generic [ref=f5e107]:
+          - heading [level=2] [ref=f5e108]:
+            - text: Active Forum Topics - (
+            - link "view more" [ref=f5e109] [cursor=pointer]:
+              - /url: /forum
+            - text: )
+          - generic [ref=f5e111]:
+            - list [ref=f5e114]:
+              - listitem [ref=f5e115]:
+                - link "Help, please." [ref=f5e118] [cursor=pointer]:
+                  - /url: /forumtopic/help-please#comment-113586
+                - generic [ref=f5e120]:
+                  - emphasis [ref=f5e121]: 1 hour 41 min
+                  - text: ago
+                - generic [ref=f5e122]:
+                  - text: by
+                  - link "MedicineStorm" [ref=f5e124] [cursor=pointer]:
+                    - /url: /users/medicinestorm
+              - listitem [ref=f5e125]:
+                - link "Big 3D libraries I haven't reposted to OGA for various reasons" [ref=f5e128] [cursor=pointer]:
+                  - /url: /forumtopic/big-3d-libraries-i-havent-reposted-to-oga-for-various-reasons#comment-113584
+                - generic [ref=f5e130]:
+                  - emphasis [ref=f5e131]: 2 hours 25 min
+                  - text: ago
+                - generic [ref=f5e132]:
+                  - text: by
+                  - link "MedicineStorm" [ref=f5e134] [cursor=pointer]:
+                    - /url: /users/medicinestorm
+              - listitem [ref=f5e135]:
+                - link "Sharing My Music and Sound FX - Over 2500 Tracks" [ref=f5e138] [cursor=pointer]:
+                  - /url: /forumtopic/sharing-my-music-and-sound-fx-over-2500-tracks#comment-113582
+                - generic [ref=f5e140]:
+                  - emphasis [ref=f5e141]: 2 hours 38 min
+                  - text: ago
+                - generic [ref=f5e142]:
+                  - text: by
+                  - link "Eric Matyas" [ref=f5e144] [cursor=pointer]:
+                    - /url: /users/eric-matyas
+              - listitem [ref=f5e145]:
+                - link "Just Uploaded Tons of MUSIC" [ref=f5e148] [cursor=pointer]:
+                  - /url: /forumtopic/just-uploaded-tons-of-music#comment-113579
+                - generic [ref=f5e150]:
+                  - emphasis [ref=f5e151]: 5 hours 26 min
+                  - text: ago
+                - generic [ref=f5e152]:
+                  - text: by
+                  - link "PitchTempoAndriy" [ref=f5e154] [cursor=pointer]:
+                    - /url: /users/pitchtempoandriy
+              - listitem [ref=f5e155]:
+                - link "3D Game Artist Available for Character Modeling and Game Assets" [ref=f5e158] [cursor=pointer]:
+                  - /url: /forumtopic/3d-game-artist-available-for-character-modeling-and-game-assets#comment-
+                - generic [ref=f5e160]:
+                  - emphasis [ref=f5e161]: 1 day 6 hours
+                  - text: ago
+                - generic [ref=f5e162]:
+                  - text: by
+                  - link "EchoNova" [ref=f5e164] [cursor=pointer]:
+                    - /url: /users/echonova
+              - listitem [ref=f5e165]:
+                - link "Building a Library of Images for Everyone" [ref=f5e168] [cursor=pointer]:
+                  - /url: /forumtopic/building-a-library-of-images-for-everyone#comment-113528
+                - generic [ref=f5e170]:
+                  - emphasis [ref=f5e171]: 3 days 6 hours
+                  - text: ago
+                - generic [ref=f5e172]:
+                  - text: by
+                  - link "Eric Matyas" [ref=f5e174] [cursor=pointer]:
+                    - /url: /users/eric-matyas
+              - listitem [ref=f5e175]:
+                - link "Tsorthan Grove Kick Streams" [ref=f5e178] [cursor=pointer]:
+                  - /url: /forumtopic/tsorthan-grove-kick-streams#comment-113526
+                - generic [ref=f5e180]:
+                  - emphasis [ref=f5e181]: 3 days 22 hours
+                  - text: ago
+                - generic [ref=f5e182]:
+                  - text: by
+                  - link "Tsorthan Grove" [ref=f5e184] [cursor=pointer]:
+                    - /url: /users/tsorthan-grove
+              - listitem [ref=f5e185]:
+                - link "October 2026 Art Challenge - Phobias" [ref=f5e188] [cursor=pointer]:
+                  - /url: /forumtopic/october-2026-art-challenge-phobias#comment-113491
+                - generic [ref=f5e190]:
+                  - emphasis [ref=f5e191]: 1 week 23 hours
+                  - text: ago
+                - generic [ref=f5e192]:
+                  - text: by
+                  - link "ZaninDevelopers" [ref=f5e194] [cursor=pointer]:
+                    - /url: /users/zanindevelopers
+            - link [ref=f5e196] [cursor=pointer]:
+              - /url: https://opengameart.org/active-forum-topics.xml?returnto=User%20talk%3A159.138.150.55&title=Special%3AUserLogin
+              - img "Subscribe to Active Forum Topics" [ref=f5e197]
+        - generic [ref=f5e198]:
+          - heading [level=2] [ref=f5e199]:
+            - text: Recent Comments - (
+            - link "view more" [ref=f5e200] [cursor=pointer]:
+              - /url: /comments/recent
+            - text: )
+          - generic [ref=f5e202]:
+            - list [ref=f5e205]:
+              - listitem [ref=f5e206]:
+                - generic [ref=f5e208]:
+                  - link "Re:" [ref=f5e209] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40#comment-113588
+                  - link "[Music] Volcanic Incantation - 155 BPM Fast Death Metal Boss Fight (CC-BY 4.0)" [ref=f5e210] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40
+                - generic [ref=f5e211]:
+                  - text: by
+                  - link "MedicineStorm" [ref=f5e213] [cursor=pointer]:
+                    - /url: /users/medicinestorm
+              - listitem [ref=f5e214]:
+                - generic [ref=f5e216]:
+                  - link "Re:" [ref=f5e217] [cursor=pointer]:
+                    - /url: /content/battle-theme-a#comment-113587
+                  - link "Battle Theme A" [ref=f5e218] [cursor=pointer]:
+                    - /url: /content/battle-theme-a
+                - generic [ref=f5e219]:
+                  - text: by
+                  - link "matthatrick" [ref=f5e221] [cursor=pointer]:
+                    - /url: /users/matthatrick
+              - listitem [ref=f5e222]:
+                - generic [ref=f5e224]:
+                  - link "Re:" [ref=f5e225] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40#comment-113583
+                  - link "[Music] Volcanic Incantation - 155 BPM Fast Death Metal Boss Fight (CC-BY 4.0)" [ref=f5e226] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40
+                - generic [ref=f5e227]:
+                  - text: by
+                  - link "MedicineStorm" [ref=f5e229] [cursor=pointer]:
+                    - /url: /users/medicinestorm
+              - listitem [ref=f5e230]:
+                - generic [ref=f5e232]:
+                  - link "Re:" [ref=f5e233] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40#comment-113572
+                  - link "[Music] Volcanic Incantation - 155 BPM Fast Death Metal Boss Fight (CC-BY 4.0)" [ref=f5e234] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40
+                - generic [ref=f5e235]:
+                  - text: by
+                  - link "MedicineStorm" [ref=f5e237] [cursor=pointer]:
+                    - /url: /users/medicinestorm
+              - listitem [ref=f5e238]:
+                - generic [ref=f5e240]:
+                  - link "Re:" [ref=f5e241] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40#comment-113585
+                  - link "[Music] Volcanic Incantation - 155 BPM Fast Death Metal Boss Fight (CC-BY 4.0)" [ref=f5e242] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40
+                - generic [ref=f5e243]:
+                  - text: by
+                  - link "hazarmavethrec" [ref=f5e245] [cursor=pointer]:
+                    - /url: /users/hazarmavethrec
+              - listitem [ref=f5e246]:
+                - generic [ref=f5e248]:
+                  - link "Re:" [ref=f5e249] [cursor=pointer]:
+                    - /url: /content/moms-workout-cd#comment-113581
+                  - link "Mom's Workout CD" [ref=f5e250] [cursor=pointer]:
+                    - /url: /content/moms-workout-cd
+                - generic [ref=f5e251]:
+                  - text: by
+                  - link "Bryon Thur" [ref=f5e253] [cursor=pointer]:
+                    - /url: /users/bryon-thur
+              - listitem [ref=f5e254]:
+                - generic [ref=f5e256]:
+                  - link "Re:" [ref=f5e257] [cursor=pointer]:
+                    - /url: /content/5-chiptunes-action#comment-113580
+                  - link "5 Chiptunes (Action)" [ref=f5e258] [cursor=pointer]:
+                    - /url: /content/5-chiptunes-action
+                - generic [ref=f5e259]:
+                  - text: by
+                  - link "PitchTempoAndriy" [ref=f5e261] [cursor=pointer]:
+                    - /url: /users/pitchtempoandriy
+              - listitem [ref=f5e262]:
+                - generic [ref=f5e264]:
+                  - link "Re:" [ref=f5e265] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40#comment-113578
+                  - link "[Music] Volcanic Incantation - 155 BPM Fast Death Metal Boss Fight (CC-BY 4.0)" [ref=f5e266] [cursor=pointer]:
+                    - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40
+                - generic [ref=f5e267]:
+                  - text: by
+                  - link "hazarmavethrec" [ref=f5e269] [cursor=pointer]:
+                    - /url: /users/hazarmavethrec
+            - link [ref=f5e271] [cursor=pointer]:
+              - /url: https://opengameart.org/recent-comments.xml?title=Special%3ARecentChangesLinked&from=20180427130656&target=Talk%3AWasp
+              - img "Subscribe to Recent comments" [ref=f5e272]
+      - generic [ref=f5e274]:
+        - generic [ref=f5e275]:
+          - heading [level=2] [ref=f5e276]:
+            - text: Popular This Week - (
+            - link "view more" [ref=f5e277] [cursor=pointer]:
+              - /url: /popular
+            - text: )
+          - generic [ref=f5e279]:
+            - generic [ref=f5e280]:
+              - link "Nintendo-esque Music 2" [ref=f5e287] [cursor=pointer]:
+                - /url: /content/nintendo-esque-music-2
+              - link "Strange Enemy" [ref=f5e301] [cursor=pointer]:
+                - /url: /content/strange-enemy
+              - link "It Was Just a Dream" [ref=f5e315] [cursor=pointer]:
+                - /url: /content/it-was-just-a-dream
+              - generic [ref=f5e324]:
+                - link "Good CC0 Pixel Game Backgrounds" [ref=f5e329] [cursor=pointer]:
+                  - /url: /content/good-cc0-pixel-game-backgrounds
+                - link [ref=f5e333] [cursor=pointer]:
+                  - /url: /content/good-cc0-pixel-game-backgrounds
+                  - img "Preview" [ref=f5e334]
+              - link "A Kingdom of tears battle theme(REMAKE) (finished version)" [ref=f5e341] [cursor=pointer]:
+                - /url: /content/a-kingdom-of-tears-battle-themeremake-finished-version
+              - link "Corrupt Data Stream (tcarisland & Tsorthan Grove & IndieDevs (American Made Media) & migfus20)" [ref=f5e355] [cursor=pointer]:
+                - /url: /content/corrupt-data-stream-tcarisland-tsorthan-grove-indiedevs-american-made-media-migfus20
+              - link "Purrple Cat - Indigo Dreams (Lofi Album)" [ref=f5e369] [cursor=pointer]:
+                - /url: /content/purrple-cat-indigo-dreams-lofi-album
+              - link "ElectroFunk Therapy (Hello 80s)" [ref=f5e383] [cursor=pointer]:
+                - /url: /content/electrofunk-therapy-hello-80s
+              - generic [ref=f5e392]:
+                - link "Mico Font | 2D Handwritten Display Font" [ref=f5e397] [cursor=pointer]:
+                  - /url: /content/mico-font-2d-handwritten-display-font
+                - link [ref=f5e401] [cursor=pointer]:
+                  - /url: /content/mico-font-2d-handwritten-display-font
+                  - img "Preview" [ref=f5e402]
+              - link "Skeleton Climber | Background music" [ref=f5e409] [cursor=pointer]:
+                - /url: /content/skeleton-climber-background-music
+              - link "Stories of Long Ago (Looping)" [ref=f5e423] [cursor=pointer]:
+                - /url: /content/stories-of-long-ago-looping
+              - link "Subtlety" [ref=f5e437] [cursor=pointer]:
+                - /url: /content/subtlety
+              - generic [ref=f5e446]:
+                - link "Character Base RPG 2D" [ref=f5e451] [cursor=pointer]:
+                  - /url: /content/character-base-rpg-2d
+                - link [ref=f5e455] [cursor=pointer]:
+                  - /url: /content/character-base-rpg-2d
+                  - img "Preview" [ref=f5e456]
+              - link "My Cookie Fell Apart" [ref=f5e463] [cursor=pointer]:
+                - /url: /content/my-cookie-fell-apart
+            - link [ref=f5e472] [cursor=pointer]:
+              - /url: https://opengameart.org/popular-this-week.xml
+              - img "Subscribe to Latest Art" [ref=f5e473]
+        - generic [ref=f5e474]:
+          - heading [level=2] [ref=f5e475]:
+            - text: Latest Art - (
+            - link "view more" [ref=f5e476] [cursor=pointer]:
+              - /url: /latest
+            - text: )
+          - generic [ref=f5e478]:
+            - generic [ref=f5e479]:
+              - link "Technological Antarctica" [ref=f5e486] [cursor=pointer]:
+                - /url: /content/technological-antarctica
+              - link "Squeaky Computer Chair" [ref=f5e500] [cursor=pointer]:
+                - /url: /content/squeaky-computer-chair
+              - link "Strange Enemy" [ref=f5e514] [cursor=pointer]:
+                - /url: /content/strange-enemy
+              - link "[Music] Volcanic Incantation - 155 BPM Fast Death Metal Boss Fight (CC-BY 4.0)" [ref=f5e528] [cursor=pointer]:
+                - /url: /content/music-volcanic-incantation-155-bpm-fast-death-metal-boss-fight-cc-by-40
+              - link "Eerie Title Theme" [ref=f5e542] [cursor=pointer]:
+                - /url: /content/eerie-title-theme
+              - generic [ref=f5e551]:
+                - link "Mico Font | 2D Handwritten Display Font" [ref=f5e556] [cursor=pointer]:
+                  - /url: /content/mico-font-2d-handwritten-display-font
+                - link [ref=f5e560] [cursor=pointer]:
+                  - /url: /content/mico-font-2d-handwritten-display-font
+                  - img "Preview" [ref=f5e561]
+              - link "Secret dissonance (version 2) (DavidBKD & Fupi & Zodik)" [ref=f5e568] [cursor=pointer]:
+                - /url: /content/secret-dissonance-version-2-davidbkd-fupi-zodik
+              - link "Up All Night" [ref=f5e582] [cursor=pointer]:
+                - /url: /content/up-all-night-0
+              - generic [ref=f5e591]:
+                - link "Lava Waves" [ref=f5e596] [cursor=pointer]:
+                  - /url: /content/lava-waves
+                - link [ref=f5e600] [cursor=pointer]:
+                  - /url: /content/lava-waves
+                  - img "Preview" [ref=f5e601]
+              - link "Skeleton Climber | Background music" [ref=f5e608] [cursor=pointer]:
+                - /url: /content/skeleton-climber-background-music
+              - link "Stories of Long Ago (Looping)" [ref=f5e622] [cursor=pointer]:
+                - /url: /content/stories-of-long-ago-looping
+              - link "150 Combat Sound Effects" [ref=f5e636] [cursor=pointer]:
+                - /url: /content/150-combat-sound-effects
+              - link "Jumpscare sound" [ref=f5e650] [cursor=pointer]:
+                - /url: /content/jumpscare-sound
+              - link "Cold & Rainy" [ref=f5e664] [cursor=pointer]:
+                - /url: /content/cold-rainy
+            - link [ref=f5e673] [cursor=pointer]:
+              - /url: https://opengameart.org/latest/rss.xml?action=edit&redlink=1&title=User_talk%3A159.138.157.62
+              - img "Subscribe to Latest Submissions (RSS)" [ref=f5e674]
+        - heading [level=2] [ref=f5e676]:
+          - text: Latest Art by my Friends - (
+          - link "view more" [ref=f5e677] [cursor=pointer]:
+            - /url: /latest-friends
+          - text: )
+        - generic [ref=f5e678]:
+          - heading [level=2] [ref=f5e679]:
+            - text: Featured Art - (
+            - link "view more" [ref=f5e680] [cursor=pointer]:
+              - /url: /popular
+            - text: )
+          - generic [ref=f5e683]:
+            - generic [ref=f5e685]:
+              - link "2D Game Knight Character Sprite" [ref=f5e690] [cursor=pointer]:
+                - /url: /content/2d-game-knight-character-sprite
+              - link [ref=f5e694] [cursor=pointer]:
+                - /url: /content/2d-game-knight-character-sprite
+                - img "Preview" [ref=f5e695]
+            - link "Thrust Sequence" [ref=f5e702] [cursor=pointer]:
+              - /url: /content/thrust-sequence
+            - generic [ref=f5e711]:
+              - link "2D Nature Platformer Tileset [16x16]" [ref=f5e716] [cursor=pointer]:
+                - /url: /content/2d-nature-platformer-tileset-16x16
+              - link [ref=f5e720] [cursor=pointer]:
+                - /url: /content/2d-nature-platformer-tileset-16x16
+                - img "Preview" [ref=f5e721]
+            - link "Lively Meadow (Victory Fanfare and Song)" [ref=f5e728] [cursor=pointer]:
+              - /url: /content/lively-meadow-victory-fanfare-and-song
+            - generic [ref=f5e737]:
+              - link "Katana" [ref=f5e742] [cursor=pointer]:
+                - /url: /content/katana-2
+              - link [ref=f5e746] [cursor=pointer]:
+                - /url: /content/katana-2
+                - img "Preview" [ref=f5e747]
+            - link "4 Chiptunes (Adventure)" [ref=f5e754] [cursor=pointer]:
+              - /url: /content/4-chiptunes-adventure
+            - generic [ref=f5e763]:
+              - link "3d walls props" [ref=f5e768] [cursor=pointer]:
+                - /url: /content/3d-walls-props
+              - link [ref=f5e772] [cursor=pointer]:
+                - /url: /content/3d-walls-props
+                - img "Preview" [ref=f5e773]
+        - generic [ref=f5e776]:
+          - generic [ref=f5e777]:
+            - generic [ref=f5e779]:
+              - heading [level=2] [ref=f5e783]:
+                - link "OpenGameArt.org Spring Game Jam 2026 - Fresh" [ref=f5e784] [cursor=pointer]:
+                  - /url: /content/opengameartorg-spring-game-jam-2026-fresh
+              - generic [ref=f5e788]:
+                - text: By
+                - link "Ragnar Random" [ref=f5e789] [cursor=pointer]:
+                  - /url: https://opengameart.org/users/ragnar-random
+                - text: on 9 February 2026 - 11:26am
+              - generic [ref=f5e792]:
+                - paragraph [ref=f5e793]:
+                  - link "Click here to visit Game Jam page" [ref=f5e794] [cursor=pointer]:
+                    - /url: https://itch.io/jam/opengameartorg-spring-jam-2026
+                - paragraph [ref=f5e795]:
+                  - text: Jam starts on
+                  - strong [ref=f5e796]: March 20th 2026 at 5:00 AM [GMT]
+                - paragraph [ref=f5e797]:
+                  - text: Submissions due by
+                  - strong [ref=f5e798]: April 21st 2026 at 5:00 AM [GMT]
+                - paragraph [ref=f5e799]:
+                  - text: Voting ends
+                  - strong [ref=f5e800]: May 5th 2026 at 5:00 AM [GMT]
+                - paragraph [ref=f5e801]:
+                  - text: "Theme: \""
+                  - strong [ref=f5e802]: Fresh
+                  - text: "\""
+                - paragraph [ref=f5e803]:
+                  - text: "Visit the Official Game Jam itch page:"
+                  - link "https://itch.io/jam/opengameartorg-spring-jam-2026" [ref=f5e804] [cursor=pointer]:
+                    - /url: https://itch.io/jam/opengameartorg-spring-jam-2026
+                - paragraph [ref=f5e805]:
+                  - text: "Chat with us on the Game Jam Discord Channel:"
+                  - link "https://discord.com/channels/694961698272051281/1470438627589754982" [ref=f5e806] [cursor=pointer]:
+                    - /url: https://discord.com/channels/694961698272051281/1470438627589754982
+              - link "0 comments" [ref=f5e811] [cursor=pointer]:
+                - /url: https://opengameart.org/content/opengameartorg-spring-game-jam-2026-fresh
+              - list [ref=f5e812]:
+                - listitem [ref=f5e813]:
+                  - link "Ragnar Random's blog" [ref=f5e814] [cursor=pointer]:
+                    - /url: /blog/90326
+              - link [ref=f5e818] [cursor=pointer]:
+                - /url: /users/ragnar-random
+                - img "Ragnar Random's picture" [ref=f5e819]
+            - generic [ref=f5e821]:
+              - heading [level=2] [ref=f5e825]:
+                - link "Art marketplace cross-promotion?" [ref=f5e826] [cursor=pointer]:
+                  - /url: /content/art-marketplace-cross-promotion
+              - generic [ref=f5e830]:
+                - text: By
+                - link "MedicineStorm" [ref=f5e831] [cursor=pointer]:
+                  - /url: https://opengameart.org/users/medicinestorm
+                - text: on 23 July 2025 - 4:30pm
+              - generic [ref=f5e834]:
+                - paragraph [ref=f5e835]: "We're experimenting with cross-promotion with our various sister marketplaces, including:"
+                - paragraph [ref=f5e836]:
+                  - link "itch.io" [ref=f5e837] [cursor=pointer]:
+                    - /url: https://itch.io/
+                  - text: "|"
+                  - link "Sketchfab" [ref=f5e838] [cursor=pointer]:
+                    - /url: https://sketchfab.com/
+                  - text: "|"
+                  - link "Freesound.org" [ref=f5e839] [cursor=pointer]:
+                    - /url: https://freesound.org/
+                  - text: "|"
+                  - link "Godot asset store" [ref=f5e840] [cursor=pointer]:
+                    - /url: https://store-beta.godotengine.org/
+                  - text: BETA
+                - paragraph [ref=f5e841]: The following OGA artists host content on some of these other platforms. Check them out!
+                - table [ref=f5e842]:
+                  - rowgroup [ref=f5e843]:
+                    - row [ref=f5e844]:
+                      - columnheader [ref=f5e845]:
+                        - link "2DPIXX on Godot store!" [ref=f5e846] [cursor=pointer]:
+                          - /url: https://store-beta.godotengine.org/publisher/twodpixx/
+                      - columnheader [ref=f5e847]:
+                        - link "Tsorthan Grove on Godot store!" [ref=f5e848] [cursor=pointer]:
+                          - /url: https://store-beta.godotengine.org/publisher/tsorthan-grove/
+                      - columnheader [ref=f5e849]:
+                        - link "Screaming Brain Studios on Itch.io!" [ref=f5e850] [cursor=pointer]:
+                          - /url: https://screamingbrainstudios.itch.io/
+                      - columnheader [ref=f5e851]:
+                        - link "Croomfolk on Itch.io!" [ref=f5e852] [cursor=pointer]:
+                          - /url: https://croomfolk.itch.io/
+                      - columnheader [ref=f5e853]:
+                        - link "GloryToTheMachine on Itch.io!" [ref=f5e854] [cursor=pointer]:
+                          - /url: https://glorytothemachine.itch.io/d4t4-h3m0rrh4g3
+                      - columnheader [ref=f5e855]:
+                        - link "Sprint Enterprises on Bandcamp!" [ref=f5e856] [cursor=pointer]:
+                          - /url: https://springenterprises.bandcamp.com/
+                    - row [ref=f5e857]:
+                      - cell [ref=f5e858]:
+                        - link [ref=f5e859] [cursor=pointer]:
+                          - /url: https://store-beta.godotengine.org/publisher/twodpixx/
+                      - cell [ref=f5e860]:
+                        - link [ref=f5e861] [cursor=pointer]:
+                          - /url: https://store-beta.godotengine.org/publisher/tsorthan-grove/
+                      - cell [ref=f5e862]:
+                        - link [ref=f5e863] [cursor=pointer]:
+                          - /url: https://screamingbrainstudios.itch.io/
+                      - cell [ref=f5e864]:
+                        - link [ref=f5e865] [cursor=pointer]:
+                          - /url: https://croomfolk.itch.io/
+                      - cell [ref=f5e866]:
+                        - link [ref=f5e867] [cursor=pointer]:
+                          - /url: https://glorytothemachine.itch.io/l0st-f1l3s
+                      - cell [ref=f5e868]:
+                        - link [ref=f5e869] [cursor=pointer]:
+                          - /url: https://the13ruin.itch.io/dress-up-illustration-set-lin-tongze
+                      - cell [ref=f5e870]:
+                        - link [ref=f5e871] [cursor=pointer]:
+                          - /url: https://springenterprises.bandcamp.com/
+                - paragraph [ref=f5e872]: "If you would like to cross-promote your content, just follow these steps:"
+                - list [ref=f5e873]:
+                  - listitem [ref=f5e874]:
+                    - strong [ref=f5e875]: Have some assets hosted here on OGA.
+                  - listitem [ref=f5e876]:
+                    - strong [ref=f5e877]: Submit some of your assets to one of the platforms listed above.
+                    - text: "The assets don't need to be the same as your stuff on OGA, but they must be shared under one of the free licenses accepted on OGA (or be compatible with such licenses): CC0, OGA-BY, CC-BY, CC-BY-SA, WTFPL, Public Domain, et cetera. This doesn't mean"
+                    - emphasis [ref=f5e878]: all
+                    - text: of your content on those platforms must be under a free and open license, but the ones featuring a banner (below) must be.
+                  - listitem [ref=f5e879]:
+                    - strong [ref=f5e880]: Display one of the banner images below and link back to Opengameart.org
+                    - text: . When submitting assets to one of the above platforms, add a link to OGA's main page (https://opengameart.org), your OGA profile page, or one of your OGA submission pages. Display one of the banner images below as one of the media previews or in the asset page's description.
+                  - listitem [ref=f5e881]:
+                    - strong [ref=f5e882]: Let us know!
+                    - text: Post a comment below linking to your asset on the other platform(s). We'll add your information above and promote you here!
+                - paragraph [ref=f5e883]:
+                  - link [ref=f5e884] [cursor=pointer]:
+                    - /url: https://opengameart.org/sites/default/files/archive/ogabacklinkinggodotassetstorev2.png
+                    - img "Godot Asset Store banner" [ref=f5e885]
+                  - link [ref=f5e886] [cursor=pointer]:
+                    - /url: https://opengameart.org/sites/default/files/archive/ogabacklinkingitchiov2.png
+                    - img "itch.io banner" [ref=f5e887]
+                - paragraph [ref=f5e888]:
+                  - generic [ref=f5e889]: "NOTE: Due to the Terms-of-Use on these other platforms, you should only share assets where you have explicit permission from all contributing artists. If you plan to share assets derived from prior free works, you should obtain permission from the authors of all works that your asset was derived from before sharing it on the above platforms. If you are the sole author of your assets, no problem! Just give yourself permission to share your work! :D NOTE: OGA has no official affiliation or promotion with these platforms. Although we wouldn't mind that, this is just a friendly attempt to give well-deserved attention to some of our favorite artists and platforms."
+              - link "24 comments" [ref=f5e894] [cursor=pointer]:
+                - /url: https://opengameart.org/content/art-marketplace-cross-promotion
+              - list [ref=f5e895]:
+                - listitem [ref=f5e896]:
+                  - link "MedicineStorm's blog" [ref=f5e897] [cursor=pointer]:
+                    - /url: /blogs/medicinestorm
+                - listitem [ref=f5e898]:
+                  - generic [ref=f5e899]:
+                    - link "Log in" [ref=f5e900] [cursor=pointer]:
+                      - /url: /user/login?destination=node/178661%23comment-form
+                    - text: or
+                    - link "register" [ref=f5e901] [cursor=pointer]:
+                      - /url: /user/register?destination=node/178661%23comment-form
+                    - text: to post comments
+              - generic [ref=f5e904]:
+                - link "MedicineStorm's picture":
+                  - /url: /users/medicinestorm
+                  - img "MedicineStorm's picture"
+            - generic [ref=f5e906]:
+              - heading [level=2] [ref=f5e910]:
+                - link "OpenGameArt.org Spring Game Jam 2025 - Symbiosis" [ref=f5e911] [cursor=pointer]:
+                  - /url: /content/opengameartorg-spring-game-jam-2025-symbiosis
+              - generic [ref=f5e915]:
+                - text: By
+                - link "RUOK" [ref=f5e916] [cursor=pointer]:
+                  - /url: https://opengameart.org/users/ruok
+                - text: on 7 June 2025 - 1:01pm
+              - generic [ref=f5e919]:
+                - paragraph [ref=f5e920]:
+                  - link "Click here to visit Game Jam page" [ref=f5e921] [cursor=pointer]:
+                    - /url: https://itch.io/jam/opengameartorg-summer-jam-2025
+                - paragraph [ref=f5e922]:
+                  - text: "Jam starts on:"
+                  - strong [ref=f5e923]: July 21st 2025 at 11:00 AM [GMT]
+                - paragraph [ref=f5e924]:
+                  - text: "Submissions due by:"
+                  - strong [ref=f5e925]: August 21st 2025 at 11:00 AM [GMT]
+                - paragraph [ref=f5e926]:
+                  - text: "Theme: \""
+                  - strong [ref=f5e927]: Symbiosis
+                  - text: "\""
+                - paragraph [ref=f5e928]:
+                  - text: "Visit the Official Game Jam itch page:"
+                  - link "https://itch.io/jam/opengameartorg-summer-jam-2025" [ref=f5e929] [cursor=pointer]:
+                    - /url: https://itch.io/jam/opengameartorg-summer-jam-2025
+                - paragraph [ref=f5e930]:
+                  - text: "Chat with us on the Game Jam Discord Channel:"
+                  - link "https://discord.com/channels/694961698272051281/1381001128438927480" [ref=f5e931] [cursor=pointer]:
+                    - /url: https://discord.com/channels/694961698272051281/1381001128438927480
+              - link "0 comments" [ref=f5e936] [cursor=pointer]:
+                - /url: https://opengameart.org/content/opengameartorg-spring-game-jam-2025-symbiosis
+              - list [ref=f5e937]:
+                - listitem [ref=f5e938]:
+                  - link "RUOK's blog" [ref=f5e939] [cursor=pointer]:
+                    - /url: /blog/130239
+              - generic [ref=f5e942]:
+                - link "RUOK's picture":
+                  - /url: /users/ruok
+                  - img "RUOK's picture"
+            - generic [ref=f5e944]:
+              - heading [level=2] [ref=f5e948]:
+                - link "OpenGameArt.org's Fall Game Jam 2024 \"Festival\"" [ref=f5e949] [cursor=pointer]:
+                  - /url: /content/opengameartorgs-fall-game-jam-2024-festival
+              - generic [ref=f5e953]:
+                - text: By
+                - link "MedicineStorm" [ref=f5e954] [cursor=pointer]:
+                  - /url: https://opengameart.org/users/medicinestorm
+                - text: on 14 October 2024 - 12:00am
+              - generic [ref=f5e957]:
+                - paragraph [ref=f5e958]:
+                  - link [ref=f5e959] [cursor=pointer]:
+                    - /url: https://itch.io/jam/opengameartorgs-fall-game-jam-2024
+                    - img "Click here to visit Game Jam page" [ref=f5e960]
+                - paragraph [ref=f5e961]:
+                  - text: "Jam starts on:"
+                  - strong [ref=f5e962]: October 14th 2024 at 12:21 PM [GMT]
+                - paragraph [ref=f5e963]:
+                  - text: "Submissions due by:"
+                  - strong [ref=f5e964]: November 14th 2024 at 1:21 PM [GMT]
+                - paragraph [ref=f5e965]:
+                  - text: "Visit the Official Game Jam itch page:"
+                  - link "https://itch.io/jam/opengameartorgs-fall-game-jam-2024" [ref=f5e966] [cursor=pointer]:
+                    - /url: https://itch.io/jam/opengameartorgs-fall-game-jam-2024
+                - paragraph [ref=f5e967]:
+                  - text: "Chat with us on the Game Jam Discord Channel:"
+                  - link "https://discord.com/channels/694961698272051281/1295098293428162560" [ref=f5e968] [cursor=pointer]:
+                    - /url: https://discord.com/channels/694961698272051281/1295098293428162560
+                - paragraph [ref=f5e969]
+              - link "0 comments" [ref=f5e974] [cursor=pointer]:
+                - /url: https://opengameart.org/content/opengameartorgs-fall-game-jam-2024-festival
+              - list [ref=f5e975]:
+                - listitem [ref=f5e976]:
+                  - link "MedicineStorm's blog" [ref=f5e977] [cursor=pointer]:
+                    - /url: /blogs/medicinestorm
+              - generic [ref=f5e980]:
+                - link "MedicineStorm's picture":
+                  - /url: /users/medicinestorm
+                  - img "MedicineStorm's picture"
+            - generic [ref=f5e982]:
+              - heading [level=2] [ref=f5e986]:
+                - link "OpenGameArt.org Game Jam - March 2024" [ref=f5e987] [cursor=pointer]:
+                  - /url: /content/opengameartorg-game-jam-march-2024
+              - generic [ref=f5e991]:
+                - text: By
+                - link "food_please" [ref=f5e992] [cursor=pointer]:
+                  - /url: https://opengameart.org/users/foodplease
+                - text: on 20 February 2024 - 4:19pm
+              - generic [ref=f5e995]:
+                - paragraph [ref=f5e996]:
+                  - link [ref=f5e997] [cursor=pointer]:
+                    - /url: https://itch.io/jam/ogajam-2403
+                    - img "OpenGameArt.org's March 2024 game jam thumbnail" [ref=f5e998]
+                - paragraph [ref=f5e999]:
+                  - text: "Jam starts on:"
+                  - strong [ref=f5e1000]: February 29th, 2024
+                  - strong [ref=f5e1001]: at 8
+                  - strong [ref=f5e1002]: :00 AM [GMT]
+                - paragraph [ref=f5e1003]:
+                  - text: "Submissions due by:"
+                  - strong [ref=f5e1004]: April 2nd, 2024 at 8:00 AM [GMT]
+                - paragraph [ref=f5e1005]:
+                  - text: "Visit the Official Game Jam itch page:"
+                  - link "https://itch.io/jam/ogajam-2403" [ref=f5e1006] [cursor=pointer]:
+                    - /url: https://itch.io/jam/ogajam-2403
+                - paragraph [ref=f5e1007]:
+                  - text: "Chat with us on the Game Jam Discord Channel:"
+                  - link "https://discord.com/channels/694961698272051281/1209507505047212082" [ref=f5e1008] [cursor=pointer]:
+                    - /url: https://discord.com/channels/694961698272051281/1209507505047212082
+                  - text: "or the Game Jam's forum page:"
+                  - link "https://opengameart.org/forumtopic/opengameart-game-jam-march-2024" [ref=f5e1009] [cursor=pointer]:
+                    - /url: https://opengameart.org/forumtopic/opengameart-game-jam-march-2024
+              - link "0 comments" [ref=f5e1014] [cursor=pointer]:
+                - /url: https://opengameart.org/content/opengameartorg-game-jam-march-2024
+              - list [ref=f5e1015]:
+                - listitem [ref=f5e1016]:
+                  - link "food_please's blog" [ref=f5e1017] [cursor=pointer]:
+                    - /url: /blog/86734
+              - generic [ref=f5e1020]:
+                - link "food_please's picture":
+                  - /url: /users/foodplease
+                  - img "food_please's picture"
+          - heading "Pages" [level=2] [ref=f5e1021]
+          - list [ref=f5e1023]:
+            - listitem [ref=f5e1024]: "1"
+            - listitem [ref=f5e1025]:
+              - link "2" [ref=f5e1026] [cursor=pointer]:
+                - /url: /node?page=1
+            - listitem [ref=f5e1027]:
+              - link "3" [ref=f5e1028] [cursor=pointer]:
+                - /url: /node?page=2
+            - listitem [ref=f5e1029]:
+              - link "4" [ref=f5e1030] [cursor=pointer]:
+                - /url: /node?page=3
+            - listitem [ref=f5e1031]:
+              - link "5" [ref=f5e1032] [cursor=pointer]:
+                - /url: /node?page=4
+            - listitem [ref=f5e1033]:
+              - link "6" [ref=f5e1034] [cursor=pointer]:
+                - /url: /node?page=5
+            - listitem [ref=f5e1035]:
+              - link "7" [ref=f5e1036] [cursor=pointer]:
+                - /url: /node?page=6
+            - listitem [ref=f5e1037]:
+              - link "8" [ref=f5e1038] [cursor=pointer]:
+                - /url: /node?page=7
+            - listitem [ref=f5e1039]:
+              - link "9" [ref=f5e1040] [cursor=pointer]:
+                - /url: /node?page=8
+            - listitem [ref=f5e1041]: …
+            - listitem [ref=f5e1042]:
+              - link "next ›" [ref=f5e1043] [cursor=pointer]:
+                - /url: /node?page=1
+            - listitem [ref=f5e1044]:
+              - link "last »" [ref=f5e1045] [cursor=pointer]:
+                - /url: /node?page=52
+          - link [ref=f5e1047] [cursor=pointer]:
+            - /url: https://opengameart.org/blog-rss.xml
+            - img "Subscribe to Blog" [ref=f5e1048]
+        - generic [ref=f5e1049]:
+          - generic [ref=f5e1050]:
+            - link "MedicineStorm's picture":
+              - /url: /users/medicinestorm
+              - img "MedicineStorm's picture"
+          - heading [level=2] [ref=f5e1051]:
+            - link "October 2026 Art Challenge - Phobias" [ref=f5e1052] [cursor=pointer]:
+              - /url: /content/october-2026-art-challenge-phobias
+          - generic [ref=f5e1054]:
+            - text: Submitted by
+            - link "MedicineStorm" [ref=f5e1055] [cursor=pointer]:
+              - /url: /users/medicinestorm
+            - text: on 5 October 2026 - 8:44am
+          - generic [ref=f5e1056]:
+            - paragraph [ref=f5e1060]:
+              - text: Tag your submissions with
+              - strong [ref=f5e1061]: Phobias
+              - text: and
+              - strong [ref=f5e1062]: Challenge
+              - text: to be in the running.
+              - link "Here are the entries so far!" [ref=f5e1063] [cursor=pointer]:
+                - /url: https://opengameart.org/art-search-advanced?field_art_tags_tid_op=and&field_art_tags_tid=Phobias%2C+Challenge
+              - text: Post a link to your submission in the
+              - link "October 2026 Art Challenge" [ref=f5e1064] [cursor=pointer]:
+                - /url: https://opengameart.org/forumtopic/october-2026-art-challenge-phobias
+              - text: thread.
+            - generic [ref=f5e1065]:
+              - generic [ref=f5e1066]: "Date Range:"
+              - generic [ref=f5e1067]: Mon, 10/12/2026 to Sun, 11/01/2026
+          - list [ref=f5e1070]:
+            - listitem [ref=f5e1071]:
+              - link "Read more about October 2026 Art Challenge - Phobias" [ref=f5e1072] [cursor=pointer]:
+                - /url: /content/october-2026-art-challenge-phobias
+                - text: Read more
+                - generic [ref=f5e1073]: about October 2026 Art Challenge - Phobias
+        - generic [ref=f5e1074]:
+          - generic [ref=f5e1075]:
+            - link "Tsorthan Grove's picture":
+              - /url: /users/tsorthan-grove
+              - img "Tsorthan Grove's picture"
+          - heading [level=2] [ref=f5e1076]:
+            - link "October 2026 Art Challenge - Phobias" [ref=f5e1077] [cursor=pointer]:
+              - /url: /forumtopic/october-2026-art-challenge-phobias
+          - generic [ref=f5e1079]:
+            - text: Submitted by
+            - link "Tsorthan Grove" [ref=f5e1080] [cursor=pointer]:
+              - /url: /users/tsorthan-grove
+            - text: on 5 October 2026 - 4:13am
+          - generic [ref=f5e1081]:
+            - generic [ref=f5e1082]:
+              - generic [ref=f5e1083]: "Forums:"
+              - link "Weekly Challenge" [ref=f5e1086] [cursor=pointer]:
+                - /url: /forums/weekly-challenge
+            - generic [ref=f5e1089]:
+              - paragraph [ref=f5e1090]:
+                - strong [ref=f5e1091]: Phobias
+              - paragraph [ref=f5e1092]: Artists and musicians should explore the psychological landscapes of fear, anxiety, and the unknown.The theme should focus on how phobias distort familiar environments, transform ordinary objects into threats, and create tension between vulnerability and resilience.
+              - paragraph [ref=f5e1093]: Artists should illustrate unsettling worlds shaped by irrational fears, hidden dangers, and overwhelming sensations.Works should explore isolation, loss of control, distorted perception, and the struggle to confront what frightens us.
+          - list [ref=f5e1094]:
+            - listitem [ref=f5e1095]:
+              - link "Read more about October 2026 Art Challenge - Phobias" [ref=f5e1096] [cursor=pointer]:
+                - /url: /forumtopic/october-2026-art-challenge-phobias
+                - text: Read more
+                - generic [ref=f5e1097]: about October 2026 Art Challenge - Phobias
+            - listitem [ref=f5e1098]:
+              - link "5 comments" [ref=f5e1099] [cursor=pointer]:
+                - /url: /forumtopic/october-2026-art-challenge-phobias#comments
+            - listitem [ref=f5e1100]:
+              - generic [ref=f5e1101]:
+                - link "Log in" [ref=f5e1102] [cursor=pointer]:
+                  - /url: /user/login?destination=node/194255%23comment-form
+                - text: or
+                - link "register" [ref=f5e1103] [cursor=pointer]:
+                  - /url: /user/register?destination=node/194255%23comment-form
+                - text: to post comments
+        - generic [ref=f5e1104]:
+          - link [ref=f5e1106] [cursor=pointer]:
+            - /url: /users/ragnar-random
+            - img "Ragnar Random's picture" [ref=f5e1107]
+          - heading [level=2] [ref=f5e1108]:
+            - link "OpenGameArt.org Spring Game Jam 2026 - Fresh" [ref=f5e1109] [cursor=pointer]:
+              - /url: /content/opengameartorg-spring-game-jam-2026-fresh
+          - generic [ref=f5e1111]:
+            - text: Submitted by
+            - link "Ragnar Random" [ref=f5e1112] [cursor=pointer]:
+              - /url: /users/ragnar-random
+            - text: on 9 February 2026 - 11:26am
+          - generic [ref=f5e1116]:
+            - paragraph [ref=f5e1117]:
+              - link "Click here to visit Game Jam page" [ref=f5e1118] [cursor=pointer]:
+                - /url: https://itch.io/jam/opengameartorg-spring-jam-2026
+            - paragraph [ref=f5e1119]:
+              - text: Jam starts on
+              - strong [ref=f5e1120]: March 20th 2026 at 5:00 AM [GMT]
+            - paragraph [ref=f5e1121]:
+              - text: Submissions due by
+              - strong [ref=f5e1122]: April 21st 2026 at 5:00 AM [GMT]
+            - paragraph [ref=f5e1123]:
+              - text: Voting ends
+              - strong [ref=f5e1124]: May 5th 2026 at 5:00 AM [GMT]
+            - paragraph [ref=f5e1125]:
+              - text: "Theme: \""
+              - strong [ref=f5e1126]: Fresh
+              - text: "\""
+          - list [ref=f5e1127]:
+            - listitem [ref=f5e1128]:
+              - link "Read more about OpenGameArt.org Spring Game Jam 2026 - Fresh" [ref=f5e1129] [cursor=pointer]:
+                - /url: /content/opengameartorg-spring-game-jam-2026-fresh
+                - text: Read more
+                - generic [ref=f5e1130]: about OpenGameArt.org Spring Game Jam 2026 - Fresh
+            - listitem [ref=f5e1131]:
+              - link "Ragnar Random's blog" [ref=f5e1132] [cursor=pointer]:
+                - /url: /blog/90326
+        - generic [ref=f5e1133]:
+          - generic [ref=f5e1134]:
+            - link "MedicineStorm's picture":
+              - /url: /users/medicinestorm
+              - img "MedicineStorm's picture"
+          - heading [level=2] [ref=f5e1135]:
+            - link "July 2025 Art Challenge - Post-Apocalyptic Survival" [ref=f5e1136] [cursor=pointer]:
+              - /url: /content/july-2025-art-challenge-post-apocalyptic-survival
+          - generic [ref=f5e1138]:
+            - text: Submitted by
+            - link "MedicineStorm" [ref=f5e1139] [cursor=pointer]:
+              - /url: /users/medicinestorm
+            - text: on 12 June 2025 - 6:14pm
+          - generic [ref=f5e1140]:
+            - paragraph [ref=f5e1144]:
+              - text: Tag your submissions with
+              - strong [ref=f5e1145]: Post-Apocalyptic
+              - text: and
+              - strong [ref=f5e1146]: Challenge
+              - text: to be in the running.
+              - link "Here are the entries so far!" [ref=f5e1147] [cursor=pointer]:
+                - /url: https://opengameart.org/art-search-advanced?field_art_tags_tid_op=and&field_art_tags_tid=Post-Apocalyptic%2C+Challenge
+              - text: Post a link to your submission in the
+              - link "July 2025 Art Challenge" [ref=f5e1148] [cursor=pointer]:
+                - /url: https://opengameart.org/forumtopic/july-2025-art-challenge-post-apocalyptic-survival-0
+              - text: thread.
+            - generic [ref=f5e1149]:
+              - generic [ref=f5e1150]: "Date Range:"
+              - generic [ref=f5e1151]: Tue, 07/01/2025 to Tue, 07/22/2025
+          - list [ref=f5e1154]:
+            - listitem [ref=f5e1155]:
+              - link "Read more about July 2025 Art Challenge - Post-Apocalyptic Survival" [ref=f5e1156] [cursor=pointer]:
+                - /url: /content/july-2025-art-challenge-post-apocalyptic-survival
+                - text: Read more
+                - generic [ref=f5e1157]: about July 2025 Art Challenge - Post-Apocalyptic Survival
+        - generic [ref=f5e1158]:
+          - generic [ref=f5e1159]:
+            - link "RUOK's picture":
+              - /url: /users/ruok
+              - img "RUOK's picture"
+          - heading [level=2] [ref=f5e1160]:
+            - link "OpenGameArt.org Spring Game Jam 2025 - Symbiosis" [ref=f5e1161] [cursor=pointer]:
+              - /url: /content/opengameartorg-spring-game-jam-2025-symbiosis
+          - generic [ref=f5e1163]:
+            - text: Submitted by
+            - link "RUOK" [ref=f5e1164] [cursor=pointer]:
+              - /url: /users/ruok
+            - text: on 7 June 2025 - 1:01pm
+          - generic [ref=f5e1168]:
+            - paragraph [ref=f5e1169]:
+              - link "Click here to visit Game Jam page" [ref=f5e1170] [cursor=pointer]:
+                - /url: https://itch.io/jam/opengameartorg-summer-jam-2025
+            - paragraph [ref=f5e1171]:
+              - text: "Jam starts on:"
+              - strong [ref=f5e1172]: July 21st 2025 at 11:00 AM [GMT]
+            - paragraph [ref=f5e1173]:
+              - text: "Submissions due by:"
+              - strong [ref=f5e1174]: August 21st 2025 at 11:00 AM [GMT]
+            - paragraph [ref=f5e1175]:
+              - text: "Theme: \""
+              - strong [ref=f5e1176]: Symbiosis
+              - text: "\""
+          - list [ref=f5e1177]:
+            - listitem [ref=f5e1178]:
+              - link "Read more about OpenGameArt.org Spring Game Jam 2025 - Symbiosis" [ref=f5e1179] [cursor=pointer]:
+                - /url: /content/opengameartorg-spring-game-jam-2025-symbiosis
+                - text: Read more
+                - generic [ref=f5e1180]: about OpenGameArt.org Spring Game Jam 2025 - Symbiosis
+            - listitem [ref=f5e1181]:
+              - link "RUOK's blog" [ref=f5e1182] [cursor=pointer]:
+                - /url: /blog/130239
+        - generic [ref=f5e1183]:
+          - generic [ref=f5e1184]:
+            - link "MedicineStorm's picture":
+              - /url: /users/medicinestorm
+              - img "MedicineStorm's picture"
+          - heading [level=2] [ref=f5e1185]:
+            - link "OpenGameArt.org's Fall Game Jam 2024 \"Festival\"" [ref=f5e1186] [cursor=pointer]:
+              - /url: /content/opengameartorgs-fall-game-jam-2024-festival
+          - generic [ref=f5e1188]:
+            - text: Submitted by
+            - link "MedicineStorm" [ref=f5e1189] [cursor=pointer]:
+              - /url: /users/medicinestorm
+            - text: on 14 October 2024 - 12:00am
+          - generic [ref=f5e1193]:
+            - paragraph [ref=f5e1194]:
+              - link [ref=f5e1195] [cursor=pointer]:
+                - /url: https://itch.io/jam/opengameartorgs-fall-game-jam-2024
+                - img "Click here to visit Game Jam page" [ref=f5e1196]
+            - paragraph [ref=f5e1197]:
+              - text: "Jam starts on:"
+              - strong [ref=f5e1198]: October 14th 2024 at 12:21 PM [GMT]
+            - paragraph [ref=f5e1199]:
+              - text: "Submissions due by:"
+              - strong [ref=f5e1200]: November 14th 2024 at 1:21 PM [GMT]
+          - list [ref=f5e1201]:
+            - listitem [ref=f5e1202]:
+              - link "Read more about OpenGameArt.org's Fall Game Jam 2024 \"Festival\"" [ref=f5e1203] [cursor=pointer]:
+                - /url: /content/opengameartorgs-fall-game-jam-2024-festival
+                - text: Read more
+                - generic [ref=f5e1204]: about OpenGameArt.org's Fall Game Jam 2024 "Festival"
+            - listitem [ref=f5e1205]:
+              - link "MedicineStorm's blog" [ref=f5e1206] [cursor=pointer]:
+                - /url: /blogs/medicinestorm
+        - generic [ref=f5e1207]:
+          - generic [ref=f5e1208]:
+            - link "food_please's picture":
+              - /url: /users/foodplease
+              - img "food_please's picture"
+          - heading [level=2] [ref=f5e1209]:
+            - link "OpenGameArt.org Game Jam - March 2024" [ref=f5e1210] [cursor=pointer]:
+              - /url: /content/opengameartorg-game-jam-march-2024
+          - generic [ref=f5e1212]:
+            - text: Submitted by
+            - link "food_please" [ref=f5e1213] [cursor=pointer]:
+              - /url: /users/foodplease
+            - text: on 20 February 2024 - 4:19pm
+          - generic [ref=f5e1217]:
+            - paragraph [ref=f5e1218]:
+              - link [ref=f5e1219] [cursor=pointer]:
+                - /url: https://itch.io/jam/ogajam-2403
+                - img "OpenGameArt.org's March 2024 game jam thumbnail" [ref=f5e1220]
+            - paragraph [ref=f5e1221]:
+              - text: "Jam starts on:"
+              - strong [ref=f5e1222]: February 29th, 2024
+              - strong [ref=f5e1223]: at 8
+              - strong [ref=f5e1224]: :00 AM [GMT]
+            - paragraph [ref=f5e1225]:
+              - text: "Submissions due by:"
+              - strong [ref=f5e1226]: April 2nd, 2024 at 8:00 AM [GMT]
+            - paragraph [ref=f5e1227]:
+              - text: "Visit the Official Game Jam itch page:"
+              - link "https://itch.io/jam/ogajam-2403" [ref=f5e1228] [cursor=pointer]:
+                - /url: https://itch.io/jam/ogajam-2403
+          - list [ref=f5e1229]:
+            - listitem [ref=f5e1230]:
+              - link "Read more about OpenGameArt.org Game Jam - March 2024" [ref=f5e1231] [cursor=pointer]:
+                - /url: /content/opengameartorg-game-jam-march-2024
+                - text: Read more
+                - generic [ref=f5e1232]: about OpenGameArt.org Game Jam - March 2024
+            - listitem [ref=f5e1233]:
+              - link "food_please's blog" [ref=f5e1234] [cursor=pointer]:
+                - /url: /blog/86734
+        - generic [ref=f5e1235]:
+          - generic [ref=f5e1236]:
+            - link "withthelove's picture":
+              - /url: /users/withthelove
+              - img "withthelove's picture"
+          - heading [level=2] [ref=f5e1237]:
+            - link "Open Game Art’s Game Jam Summer 2023" [ref=f5e1238] [cursor=pointer]:
+              - /url: /content/open-game-art%E2%80%99s-game-jam-summer-2023
+          - generic [ref=f5e1240]:
+            - text: Submitted by
+            - link "withthelove" [ref=f5e1241] [cursor=pointer]:
+              - /url: /users/withthelove
+            - text: on 9 June 2023 - 8:54am
+          - generic [ref=f5e1245]:
+            - paragraph [ref=f5e1246]
+            - paragraph [ref=f5e1247]: Come one, come all! Another sensational OGA Game Jam begins June 1.
+            - paragraph [ref=f5e1248]:
+              - link "https://itch.io/jam/opengamearts-summer-game-jam-2023" [ref=f5e1249] [cursor=pointer]:
+                - /url: https://itch.io/jam/opengamearts-summer-game-jam-2023
+          - list [ref=f5e1250]:
+            - listitem [ref=f5e1251]:
+              - link "Read more about Open Game Art’s Game Jam Summer 2023" [ref=f5e1252] [cursor=pointer]:
+                - /url: /content/open-game-art%E2%80%99s-game-jam-summer-2023
+                - text: Read more
+                - generic [ref=f5e1253]: about Open Game Art’s Game Jam Summer 2023
+            - listitem [ref=f5e1254]:
+              - link "withthelove's blog" [ref=f5e1255] [cursor=pointer]:
+                - /url: /blog/11822
+        - generic [ref=f5e1256]:
+          - generic [ref=f5e1257]:
+            - link "MedicineStorm's picture":
+              - /url: /users/medicinestorm
+              - img "MedicineStorm's picture"
+          - heading [level=2] [ref=f5e1258]:
+            - link "OpenGameArt's Fall Game Jam 2022" [ref=f5e1259] [cursor=pointer]:
+              - /url: /content/opengamearts-fall-game-jam-2022
+          - generic [ref=f5e1261]:
+            - text: Submitted by
+            - link "MedicineStorm" [ref=f5e1262] [cursor=pointer]:
+              - /url: /users/medicinestorm
+            - text: on 6 October 2022 - 8:52pm
+          - generic [ref=f5e1266]:
+            - paragraph [ref=f5e1267]:
+              - strong [ref=f5e1268]: "Theme: \"Gourd(s)\""
+              - text: Make a video game tribute to your favorite cucurbitaceae!
+            - paragraph [ref=f5e1269]:
+              - link "Click here to visit Jam page!" [ref=f5e1270] [cursor=pointer]:
+                - /url: https://itch.io/jam/opengamearts-fall-game-jam-2022
+            - paragraph [ref=f5e1271]:
+              - text: "Jam starts on:"
+              - strong [ref=f5e1272]: September 30th 2022 at 5:00 AM [GMT]
+            - paragraph [ref=f5e1273]:
+              - text: "Submissions due by:"
+              - strong [ref=f5e1274]: October 31st 2022 at 4:59 AM [GMT]
+          - list [ref=f5e1275]:
+            - listitem [ref=f5e1276]:
+              - link "Read more about OpenGameArt's Fall Game Jam 2022" [ref=f5e1277] [cursor=pointer]:
+                - /url: /content/opengamearts-fall-game-jam-2022
+                - text: Read more
+                - generic [ref=f5e1278]: about OpenGameArt's Fall Game Jam 2022
+            - listitem [ref=f5e1279]:
+              - link "MedicineStorm's blog" [ref=f5e1280] [cursor=pointer]:
+                - /url: /blogs/medicinestorm
+        - generic [ref=f5e1281]:
+          - generic [ref=f5e1282]:
+            - link "MedicineStorm's picture":
+              - /url: /users/medicinestorm
+              - img "MedicineStorm's picture"
+          - heading [level=2] [ref=f5e1283]:
+            - link "[Concluded] OpenGameArt Spring Game Jam 2022" [ref=f5e1284] [cursor=pointer]:
+              - /url: /content/concluded-opengameart-spring-game-jam-2022
+          - generic [ref=f5e1286]:
+            - text: Submitted by
+            - link "MedicineStorm" [ref=f5e1287] [cursor=pointer]:
+              - /url: /users/medicinestorm
+            - text: on 6 April 2022 - 9:53am
+          - generic [ref=f5e1291]:
+            - paragraph [ref=f5e1292]:
+              - strong [ref=f5e1293]: "Theme: \"Philanthropy\""
+              - text: The object of the game is to NOT GAIN as much as possible, but to GIVE it away.
+            - paragraph [ref=f5e1294]:
+              - strong [ref=f5e1295]: "Winner:"
+              - link "Stan the Man" [ref=f5e1296] [cursor=pointer]:
+                - /url: https://hermdog.itch.io/stan-the-man
+              - text: by
+              - link "hermdog" [ref=f5e1297] [cursor=pointer]:
+                - /url: https://opengameart.org/users/hermdog
+              - text: "!"
+          - list [ref=f5e1298]:
+            - listitem [ref=f5e1299]:
+              - link "Read more about [Concluded] OpenGameArt Spring Game Jam 2022" [ref=f5e1300] [cursor=pointer]:
+                - /url: /content/concluded-opengameart-spring-game-jam-2022
+                - text: Read more
+                - generic [ref=f5e1301]: about [Concluded] OpenGameArt Spring Game Jam 2022
+            - listitem [ref=f5e1302]:
+              - link "MedicineStorm's blog" [ref=f5e1303] [cursor=pointer]:
+                - /url: /blogs/medicinestorm
+            - listitem [ref=f5e1304]:
+              - generic [ref=f5e1305]:
+                - link "Log in" [ref=f5e1306] [cursor=pointer]:
+                  - /url: /user/login?destination=node/138060%23comment-form
+                - text: or
+                - link "register" [ref=f5e1307] [cursor=pointer]:
+                  - /url: /user/register?destination=node/138060%23comment-form
+                - text: to post comments
+      - generic [ref=f5e1309]:
+        - generic [ref=f5e1310]:
+          - heading [level=2] [ref=f5e1311]:
+            - text: New Art Collections - (
+            - link "view more" [ref=f5e1312] [cursor=pointer]:
+              - /url: /collections
+            - text: )
+          - list [ref=f5e1317]:
+            - listitem [ref=f5e1318]:
+              - link "Purrple Cat - Now or Never" [ref=f5e1321] [cursor=pointer]:
+                - /url: /content/purrple-cat-now-or-never
+            - listitem [ref=f5e1322]:
+              - link "4K textures" [ref=f5e1325] [cursor=pointer]:
+                - /url: /content/4k-textures
+            - listitem [ref=f5e1326]:
+              - link "Manual Breathing" [ref=f5e1329] [cursor=pointer]:
+                - /url: /content/manual-breathing
+            - listitem [ref=f5e1330]:
+              - link "Purrple Cat - Up All Night" [ref=f5e1333] [cursor=pointer]:
+                - /url: /content/purrple-cat-up-all-night
+            - listitem [ref=f5e1334]:
+              - link "Anthropoid SFX" [ref=f5e1337] [cursor=pointer]:
+                - /url: /content/anthropoid-sfx
+            - listitem [ref=f5e1338]:
+              - link "Project Subspace" [ref=f5e1341] [cursor=pointer]:
+                - /url: /content/project-subspace
+            - listitem [ref=f5e1342]:
+              - link "Vampire Horror Jam 3D (#3)" [ref=f5e1345] [cursor=pointer]:
+                - /url: /content/vampire-horror-jam-3d-3
+            - listitem [ref=f5e1346]:
+              - link "Anthropoid" [ref=f5e1349] [cursor=pointer]:
+                - /url: /content/anthropoid
+            - listitem [ref=f5e1350]:
+              - link "DnD RPG Fantasy Music" [ref=f5e1353] [cursor=pointer]:
+                - /url: /content/dnd-rpg-fantasy-music
+            - listitem [ref=f5e1354]:
+              - link "Heroic Fantasy sounds" [ref=f5e1357] [cursor=pointer]:
+                - /url: /content/heroic-fantasy-sounds
+        - generic [ref=f5e1358]:
+          - heading "Affiliates" [level=2] [ref=f5e1359]
+          - list [ref=f5e1364]:
+            - listitem [ref=f5e1365]:
+              - link "FLARE" [ref=f5e1368] [cursor=pointer]:
+                - /url: http://flarerpg.org/
+            - listitem [ref=f5e1369]:
+              - link "FreeGameDev" [ref=f5e1372] [cursor=pointer]:
+                - /url: https://freegamedev.net/p/3-about
+            - listitem [ref=f5e1373]:
+              - link "Kenney" [ref=f5e1376] [cursor=pointer]:
+                - /url: https://kenney.nl/
+            - listitem [ref=f5e1377]:
+              - link "Liberated Pixel Cup" [ref=f5e1380] [cursor=pointer]:
+                - /url: http://lpc.opengameart.org
+            - listitem [ref=f5e1381]:
+              - link "Universal LPC Spritesheet Generator" [ref=f5e1384] [cursor=pointer]:
+                - /url: https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator

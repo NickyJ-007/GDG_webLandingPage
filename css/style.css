@@ -2588,6 +2588,13 @@ a[href*="builder.html"]:active {
   transform: translate(2px, 2px);
   box-shadow: none;
 }
+.game-footer-actions {
+  display: flex;
+  gap: 6px;
+}
+@media (max-width: 520px) {
+  .game-footer-track { display: none; }
+}
 @media (max-width: 480px) {
   .arcade-choice { padding: 8px 6px; font-size: 13px; }
 }

@@ -72,7 +72,7 @@ a { color: var(--on-surface); }
 .stage-toast { position: absolute; top: 12px; left: 50%; min-height: 28px; padding: 4px 10px; transform: translateX(-50%); border: 1px solid var(--black-02); border-radius: var(--radius-full); background: var(--surface-container-lowest); font-family: var(--font-mono); font-size: 11px; font-weight: 500; line-height: 14px; opacity: 0; transition: opacity .12s linear; pointer-events: none; }
 .stage-toast.show { opacity: 1; }
 .stage-over { gap: 8px; padding: 16px; background: color-mix(in srgb, var(--pastel-green) 92%, transparent); }
-.stage-over .btn-row { justify-content: center; }
+.stage-over .btn-row { justify-content: center; } .stage-over .btn { box-shadow: none; }
 .over-title { font: 700 30px/1.1 var(--font-mono); letter-spacing: -.02em; }
 .control-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
 .control-row.single-control { grid-template-columns: 1fr; }
