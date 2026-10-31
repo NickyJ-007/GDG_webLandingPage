@@ -1757,3 +1757,117 @@ body {
 .modal-backdrop.open {
     display: block !important;
 }
+
+/* ========================================================
+   Launch Preview Button - Optical Icon Centering
+   ======================================================== */
+.nav-ship-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-ship-btn .material-symbols-outlined {
+    font-size: 1.15em;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: -0.18em;
+    margin-right: 6px;
+}
+
+/* Picker buttons alignment */
+.sticker-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.sticker-btn .material-symbols-outlined {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* Badge on top of the preview card */
+#card-sticker,
+.card-badge,
+.card-sticker {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+#card-sticker .material-symbols-outlined,
+.card-badge .material-symbols-outlined,
+.card-sticker .material-symbols-outlined {
+    font-size: 1.25rem;
+    line-height: 1;
+    display: block;
+    margin: 0;
+}
+
+/* ========================================================
+   Modal Title - Optical Icon Centering
+   ======================================================== */
+.modal-title,
+#celebration-modal h2 {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.modal-title .material-symbols-outlined,
+#celebration-modal h2 .material-symbols-outlined {
+    font-size: 1.35em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    top: -1px;
+    /* Optical adjustment against heavy bold text */
+}
+
+/* Increase breathing room between subtitle and tech breakdown boxes */
+.modal-subtitle,
+#celebration-modal .modal-subtitle {
+    margin-bottom: 20px !important;
+    line-height: 1.5;
+}
+
+/* Ensure the tech stack list has consistent spacing */
+.modal-tech-stack,
+.modal-features,
+.breakdown-list {
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ========================================================
+   Celebration Modal - Subtitle & Stack Spacing Fix
+   ======================================================== */
+
+/* 1. Force spacing on whatever paragraph follows the modal heading */
+.modal-title+p,
+[id*="modal"] h2+p,
+[class*="modal"] h2+p,
+[class*="celebration"] h2+p {
+    margin-bottom: 5px !important;
+    line-height: 1.5 !important;
+}
+
+/* 2. In case the tech boxes are in a wrapper container right below that paragraph */
+[id*="modal"] h2+p+div,
+[class*="modal"] h2+p+div {
+    margin-top: 6px !important;
+    margin-bottom: 18px !important;
+}

@@ -18,7 +18,7 @@ const SPEAKERS = [
     alt: "Nikhil, speaker for HTML track",
     objectPosition: "center 20%",
     description:
-      "Learn the foundations of HTML by building a real web page from scratch. Explore the basic HTML document structure, headings, paragraphs, links, images, and lists. Then put it into practice by creating the content for an About Me page.",
+      "Learn the foundations of HTML by building a real web page from scratch. Explore document structure, headings, links, images, and lists, then put it into practice by structuring an interactive About Me developer card.",
   },
   {
     id: "goutham-css",
@@ -31,7 +31,7 @@ const SPEAKERS = [
     alt: "Goutham, speaker for CSS track",
     objectPosition: "center 15%",
     description:
-      "Bring your HTML page to life with CSS. Learn how to connect a stylesheet, use element, class, and ID selectors, style text and backgrounds, and control spacing with padding, margin, and borders. Finish by creating a clean, centred card layout with rounded corners and simple shadows.",
+      "Bring your HTML structure to life with CSS. Learn element and class selectors, custom color styling, and box-model spacing using padding, margins, and borders. Finish by assembling a clean, centered card container with rounded corners and custom drop shadows.",
   },
   {
     id: "chinmay-js",
@@ -44,7 +44,7 @@ const SPEAKERS = [
     alt: "Chinmay, speaker for JavaScript track",
     objectPosition: "center 25%",
     description:
-      "Make your web page interactive with JavaScript. Learn how to select an element, listen for a click event, and update page content or toggle a CSS class. Put these concepts into practice by building a button that changes the greeting or toggles dark mode.",
+      "Make your web page interactive using JavaScript. Learn how to select DOM elements, listen for user click events, and update content dynamically by building real-time greeting changes and a working dark mode toggle.",
   },
   {
     id: "nandhini-deployment",
@@ -57,7 +57,7 @@ const SPEAKERS = [
     alt: "Nandhini, speaker for Deployment track",
     objectPosition: "center 20%",
     description:
-      "Take your website live and share it with the world. Learn what deployment means, explore hosting options such as Netlify, GitHub Pages, and Vercel, and publish your project using the beginner-friendly Netlify Drop workflow. Finish with a public URL you can open and share.",
+      "Take your website live and share it with the world. Learn how modern web hosting works, explore platforms like GitHub Pages and Netlify, and launch your project with a live public URL you can add straight to your profile.",
   },
 ];
 

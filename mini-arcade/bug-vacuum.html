@@ -15,7 +15,30 @@
         <div class="window-notch" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="window-body">
           <div class="game-heading"><div><div class="eyebrow">TERMINAL LANE · CLEANUP</div><h2 class="game-title" id="vacuum-title">Bug Smasher</h2></div><div class="code-pill pill-blue" id="vacuum-score">SCORE 000</div></div>
-          <p class="game-copy">Tap a bug with the hammer before it retreats. Dangerous bugs are worth more, moderate bugs move steadily, and very easy bugs are quick wins. Friendly packets are green and marked ✓ — do not hit them. Grab the glowing power-ups: HOTFIX FREEZE stops the retreat, BUILD BOOST doubles points, ROLLBACK forgives one miss.</p>
+          <p class="game-copy"><ul class="arcade-rules">
+            <li>
+              <strong>Whack Bugs:</strong> Tap targets before they retreat. Tougher bugs award higher points.
+            </li>
+            <li>
+              <strong>Spare Green Packets:</strong> Friendly items are marked with <strong>✓</strong>. Do not hit them!
+            </li>
+            <li>
+              <strong>Grab Power-Ups:</strong>
+              <div class="powerup-grid">
+                <ul>
+                  <li>
+                    <span class="powerup-pill freeze"><strong>HOTFIX FREEZE</strong> Pauses retreat</span>
+                  </li>
+                  <li>
+                    <span class="powerup-pill boost"><strong>BUILD BOOST</strong> 2× Score</span>
+                  </li>
+                  <li>
+                    <span class="powerup-pill rollback"><strong>ROLLBACK</strong> Forgives 1 miss</span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul></p>
           <div class="hud challenge-hud"><span class="status" id="vacuum-status"><span class="status-dot"></span><span>IDLE</span></span><span class="code-pill pill-blue" id="vacuum-round">ROUND 00s</span><span class="code-pill pill-yellow" id="vacuum-caught">WHACKED 0</span><span class="code-pill pill-green" id="vacuum-streak">COMBO x0</span><span class="code-pill pill-red" id="vacuum-misses">MISSES 0</span><span class="code-pill pill-blue" id="vacuum-power">POWER —</span><button class="btn audio-toggle" id="vacuum-music" type="button" aria-pressed="true">♫ MUSIC ON</button></div>
           <div class="vacuum-stage" id="vacuum-stage" aria-label="Bug Vacuum play area. Tap a bug to whack it. Move your pointer or finger to move the nozzle.">
             <div class="circuit-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>

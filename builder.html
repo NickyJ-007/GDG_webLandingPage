@@ -11,6 +11,9 @@
         href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Mono:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/builder.css" />
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -27,8 +30,8 @@
         </div>
     
         <button id="ship-website-btn" class="nav-ship-btn">
-            <span class="desktop-label">🚀 Ship Website</span>
-            <span class="mobile-label">🚀 Ship</span>
+            <span class="desktop-label"><span class="material-symbols-outlined">rocket_launch</span> Launch Preview</span>
+            <span class="mobile-label"><span class="material-symbols-outlined">rocket_launch</span> Preview</span>
         </button>
     </header>
     
@@ -110,8 +113,8 @@
             <!-- 6. Button Text -->
             <div class="form-group">
                 <label for="input-btn-text">6. Call-to-Action Button Text</label>
-                <input type="text" id="input-btn-text" placeholder="Say Hello on Instagram 👋" maxlength="32"
-                    value="Say Hello on Instagram 👋" />
+                <input type="text" id="input-btn-text" placeholder="Connect on Instagram" maxlength="32"
+                    value="Connect on Instagram" />
             </div>
             
             <!-- 7. Social Profile Link -->
@@ -136,7 +139,7 @@
             
             <!-- Single Primary Green Ship Button -->
             <button type="button" id="ship-main-btn" class="ship-main-btn">
-                🚀 Ship My Website
+                Launch Preview
             </button>
 
         </section>
@@ -181,7 +184,7 @@
                     <!-- Social CTA Button -->
                     <div class="preview-cta-wrapper">
                         <a href="#" id="preview-button" class="preview-button">
-                            Say Hello on Instagram 👋
+                            Connect on Instagram
                         </a>
                     </div>
         
@@ -196,8 +199,10 @@
     <!-- Celebration & Contest Modal -->
     <div class="modal-backdrop" id="modal-backdrop">
         <div class="modal-card">
-            <div class="modal-emoji">🎉</div>
-            <h2>Website Successfully Shipped!</h2>
+            <h2 class="modal-title">
+                <span class="material-symbols-outlined modal-icon">verified</span>
+                <span>Developer Card Ready</span>
+            </h2>
             <p class="modal-lead">In less than a minute, you just designed, styled, and launched a responsive webpage.
             </p>
 
@@ -218,23 +223,22 @@
 
             <!-- Marketing & Contest Card -->
             <div class="contest-box">
-                <h3>📸 GDG UVCE Screenshot Challenge</h3>
-                <p>1. Take a screenshot of this card and your created website.</p>
-                <p>2. Post it on Instagram or WhatsApp, tag <strong>@gdguvce</strong> with <strong>#GDGWebDev</strong>.
-                </p>
-                <p>3. The best creations will be showcased <strong>live</strong> during the session</p>
+                <h3>GDG UVCE Screenshot Challenge</h3>
+                <p>1. Take a screenshot of your customized developer card.</p>
+                <p>2. Share it on your Instagram Story with <strong>#GDGWebDev</strong>.</p>
+                <p>3. Tag <strong>@gdg.uvce</strong> on Instagram and we will repost your build on our official story!</p>
             </div>
 
             <div class="modal-actions">
                 <!-- Google Form Link -->
                 <a href="https://forms.gle/PASTE_GOOGLE_FORM_LINK_HERE" id="direct-register-btn" class="claim-seat-btn"
                     target="_blank" rel="noopener noreferrer">
-                    🎟️ Claim Your Free Seat (Online) ›
+                    Claim Your Free Seat (Online) ›
                 </a>
             
                 <!-- WhatsApp Button -->
                 <a href="#" id="share-whatsapp-btn" class="whatsapp-share-btn" target="_blank" rel="noopener noreferrer">
-                    📲 Share with Classmates on WhatsApp
+                    Share with Classmates on WhatsApp
                 </a>
             
                 <button id="close-modal-btn" class="edit-again-btn">↻ Keep Editing My Site</button>

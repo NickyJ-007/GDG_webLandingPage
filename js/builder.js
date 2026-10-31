@@ -100,10 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!/^https?:\/\//i.test(url)) {
         url = 'https://' + url;
       }
-      showToast('🚀 Opening your link in a new tab!');
+      showToast('Opening your link in a new tab!');
       window.open(url, '_blank', 'noopener,noreferrer');
     } else {
-      showToast('💡 In real web development, this button opens your social profile or portfolio!');
+      showToast('In real web development, this button opens your social profile or portfolio!');
     }
   });
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 6. Sticker / Mascot Chips
-  const stickerChips = document.querySelectorAll('.sticker-chip');
+const stickerChips = document.querySelectorAll('.sticker-chip');
   stickerChips.forEach((chip) => {
     chip.addEventListener('click', () => {
       stickerChips.forEach((c) => c.classList.remove('active'));

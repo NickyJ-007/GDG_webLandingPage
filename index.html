@@ -26,6 +26,9 @@
 <link rel="preload" as="image" href="Playful SVGs and GIFs/Gifs/GDG-Sticker-Brackets.gif" />
 <link rel="preload" as="image" href="Logo/Logos/GDG-Main-Logo.png" />
 <link rel="stylesheet" href="css/style.css" />
+<!-- Google Material Symbols -->
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 
@@ -176,7 +179,7 @@
         <span class="hero-title__line">Workshop</span>
       </h1>
 
-      <p class="hero-lede">Press start on your dev journey. Go from a blank file to a <strong>live URL</strong> in a single day: learn HTML, CSS, JavaScript and Git, then ship a website you can actually show off.</p>
+      <p class="hero-lede">Press start on your dev journey. Go from a blank file to a <strong>live URL</strong> in a single day: learn HTML, CSS, JavaScript and Deployment, then ship a website you can actually show off.</p>
 
       <!-- Typewriter Command Line -->
       <div class="typewriter-box" aria-label="What you will learn">
@@ -364,15 +367,30 @@
           <h2 class="challenge-title">Can You Build a Website in <span class="challenge-title__accent">60 Seconds?</span></h2>
           <p class="challenge-sub">Never coded before? Perfect. Step into the GDG WebStudio, remix your first live webpage, and share your screenshot for an exclusive shoutout.</p>
 
-          <ul class="challenge-perks">
-            <li><span class="challenge-perk__icon challenge-perk__icon--blue" aria-hidden="true">⏱</span><span><strong>Beat the clock.</strong> One minute, one website, zero excuses.</span></li>
-            <li><span class="challenge-perk__icon challenge-perk__icon--green" aria-hidden="true">🎨</span><span><strong>Zero code. All vibes.</strong> Tap, tweak, done.</span></li>
-            <li><span class="challenge-perk__icon challenge-perk__icon--yellow" aria-hidden="true">📸</span><span><strong>Flex the build.</strong> Screenshot it and claim your shoutout.</span></li>
-          </ul>
+        <ul class="challenge-perks">
+          <li>
+            <span class="challenge-perk__icon challenge-perk__icon--blue" aria-hidden="true">
+              <span class="material-symbols-outlined">schedule</span>
+            </span>
+            <span><strong>60-Second Build.</strong> Configure your developer identity instantly.</span>
+          </li>
+          <li>
+            <span class="challenge-perk__icon challenge-perk__icon--green" aria-hidden="true">
+              <span class="material-symbols-outlined">palette</span>
+            </span>
+            <span><strong>Zero Coding Required.</strong> Customize themes, bio, and social links visually.</span>
+          </li>
+          <li>
+            <span class="challenge-perk__icon challenge-perk__icon--yellow" aria-hidden="true">
+              <span class="material-symbols-outlined">photo_camera</span>
+            </span>
+            <span><strong>Showcase Your Design.</strong> Capture a screenshot to share with the community.</span>
+          </li>
+        </ul>
 
           <div class="challenge-actions">
             <a href="builder.html" target="_blank" rel="noopener noreferrer" class="btn btn--primary challenge-launch">
-              🚀 Launch WebStudio <span class="btn-arrow" aria-hidden="true">›</span>
+              Launch WebStudio <span class="btn-arrow" aria-hidden="true">›</span>
             </a>
             <span class="challenge-note">No sign-up · works on your phone</span>
           </div>
@@ -456,7 +474,7 @@
               <span class="code-pill code-pill--neutral">{ markup }</span>
             </div>
             <h3 class="session-card__title">HTML5 Semantic Structure</h3>
-            <p class="session-card__desc">Structure real, accessible web pages using modern HTML5 tags, semantic document hierarchy, forms, and accessibility primitives.</p>
+            <p class="session-card__desc">Build real, structured web pages from scratch using modern semantic HTML5 tags, document hierarchy, links, and forms.</p>
             <div class="session-card__footer">
               <code>&lt;main class="app"&gt;</code>
             </div>
@@ -484,10 +502,10 @@
               <span class="code-pill code-pill--red">02 / RED</span>
               <span class="code-pill code-pill--neutral">{ layout }</span>
             </div>
-            <h3 class="session-card__title">Modern CSS &amp; Responsive Layouts</h3>
-            <p class="session-card__desc">Master Flexbox, CSS Grid, custom properties, and fluid typography so your sites look crisp on phones, tablets, and desktops.</p>
+            <h3 class="session-card__title">Modern CSS &amp; UI Styling</h3>
+            <p class="session-card__desc">Turn raw markup into clean UI using selectors, colors, typography, and the box model. Master padding, borders, and container spacing to build a polished profile card.</p>
             <div class="session-card__footer">
-              <code>display: grid; gap: 1.5rem;</code>
+              <code>max-width: 360px; margin: 0 auto;</code>
             </div>
           </div>
           <div class="card-window-footer">
@@ -514,9 +532,9 @@
               <span class="code-pill code-pill--neutral">{ logic }</span>
             </div>
             <h3 class="session-card__title">JavaScript Interactivity &amp; DOM</h3>
-            <p class="session-card__desc">Bring pages to life with user events, DOM manipulation, timers, state management, and responsive interactive logic.</p>
+            <p class="session-card__desc">Bring pages to life with user events, DOM manipulation, state management, and responsive interactive logic.</p>
             <div class="session-card__footer">
-              <code>btn.addEventListener("click", run);</code>
+              <code>btn.addEventListener("click", toggleTheme);</code>
             </div>
           </div>
           <div class="card-window-footer">
@@ -543,9 +561,10 @@
               <span class="code-pill code-pill--neutral">{ deploy }</span>
             </div>
             <h3 class="session-card__title">Version Control &amp; Live Deployment</h3>
-            <p class="session-card__desc">Push your code to GitHub and ship a live, production URL that you can share with friends and add to your portfolio.</p>
+            <p class="session-card__desc">Publish your project live to the web using free hosting platforms so you leave with a permanent public URL to share.
+            </p>
             <div class="session-card__footer">
-              <code>git push origin main → live 🚀</code>
+              <code>Deploy status: 200 OK [Live]</code>
             </div>
           </div>
           <div class="card-window-footer">
@@ -901,7 +920,9 @@
   </div>
   <div class="container site-footer__bottom">
     <p>&copy; 2026 GDG on Campus, UVCE. All rights reserved.</p>
-    <p class="site-footer__dev">Website developed by <span id="dev-name">Punith B S</span></p>
+    <p class="site-footer__dev">
+      Website developed by <span>Punith B S</span>, <span>Nikhil J</span> and <span>Rehan Ahmed</span>
+    </p>
   </div>
 </footer>
 

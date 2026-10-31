@@ -3531,3 +3531,56 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .is-next .cta-quest__box { animation: none; }
 }
+
+/* Material Symbols Alignment */
+.material-symbols-outlined {
+  font-size: 1.2em;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+/* Center icon and text inside the nav ship button */
+.nav-ship-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-ship-btn .desktop-label,
+.nav-ship-btn .mobile-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  line-height: 1;
+}
+
+.nav-ship-btn .material-symbols-outlined {
+  font-size: 1.25rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  /* Let flex gap handle spacing cleanly */
+  position: relative;
+  top: -1px;
+  /* Optical center adjustment against bold text */
+}
+
+.challenge-perk__icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.challenge-perk__icon .material-symbols-outlined {
+  font-size: 1.25rem;
+  line-height: 1;
+  display: block;
+  margin: 0;
+}
