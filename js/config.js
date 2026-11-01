@@ -3,17 +3,17 @@
 // =========================================================================
 const SITE_CONFIG = {
   // ISO 8601 date/time with timezone offset for the workshop start.
-  WORKSHOP_DATE: "2026-11-07T10:00:00+05:30",
+  WORKSHOP_DATE: "2026-11-08T18:00:00+05:30",
 
   // Displayed time label for event metadata.
-  WORKSHOP_TIME: "10:00 AM onwards",
+  WORKSHOP_TIME: "6:00 PM onwards",
 
   // Event location / venue.
   VENUE: "Online",
 
   // WhatsApp community invite link.
-  WHATSAPP_LINK: "PASTE_WHATSAPP_LINK_HERE",
+  WHATSAPP_LINK: "https://chat.whatsapp.com/IOAD6M5V18LCgGHn6j3VX7",
 
   // Registration form / page link.
-  REGISTRATION_LINK: "PASTE_REGISTRATION_LINK_HERE",
+  REGISTRATION_LINK: "https://gdg.community.dev/e/m5had6/",
 };
