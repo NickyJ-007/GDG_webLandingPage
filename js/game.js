@@ -116,43 +116,33 @@
   const SFX_VOLUME = 0.25; // master level for every sound effect (was too loud at full gain)
   const CATCH_VOLUME = 0.35; // pops are pre-normalized ~6dB quieter than the old chime, so this lands softer still
 
-  // Calm background loop: "First Light Particles" (CC0, opengameart.org), ambient piano.
-  // Routed through a Web Audio gain so fades and volume also work on iOS (where audio.volume is read-only).
-  const BGM_VOLUME = 0.08; // kept low: a quiet bed under the catch pops
+  const BGM_VOLUME = 0.25; // comfortable background volume
   const bgMusic = new Audio("assets/ship-bgm.mp3");
   bgMusic.loop = true;
-  bgMusic.preload = "none";
-  let bgmGain = null;
+  bgMusic.preload = "auto";
+  bgMusic.volume = BGM_VOLUME;
   let musicOn = true;
-  let musicTarget = 0;
-  let musicPauseTimer = 0;
 
-  function initMusic() {
-    if (bgmGain || !audioCtx) return;
-    try {
-      bgmGain = audioCtx.createGain();
-      bgmGain.gain.value = 0;
-      audioCtx.createMediaElementSource(bgMusic).connect(bgmGain).connect(audioCtx.destination);
-    } catch (e) {
-      bgmGain = null; // fall back to element volume below
-    }
+  function playMusic() {
+    if (!musicOn) return;
+    bgMusic.volume = BGM_VOLUME;
+    bgMusic.play().catch(() => {});
   }
 
-  // Ramp the music to `target` over `seconds`; pauses the element once fully faded out
+  function pauseMusic() {
+    bgMusic.pause();
+  }
+
+  function initMusic() {
+    // Keep Audio ready
+  }
+
+  // Fade or toggle music
   function fadeMusic(target, seconds) {
-    musicTarget = target;
-    clearTimeout(musicPauseTimer);
-    if (target > 0) bgMusic.play().catch(() => {});
-    if (bgmGain) {
-      const now = audioCtx.currentTime;
-      bgmGain.gain.cancelScheduledValues(now);
-      bgmGain.gain.setValueAtTime(bgmGain.gain.value, now);
-      bgmGain.gain.linearRampToValueAtTime(target, now + seconds);
+    if (target > 0) {
+      if (musicOn) playMusic();
     } else {
-      bgMusic.volume = target;
-    }
-    if (target === 0) {
-      musicPauseTimer = setTimeout(() => { if (musicTarget === 0) bgMusic.pause(); }, seconds * 1000 + 60);
+      pauseMusic();
     }
   }
   let audioCtx = null;
@@ -920,7 +910,7 @@
     keys.right = false;
     hud.hidden = true;
     stage.classList.remove("is-playing");
-    fadeMusic(0, 0.3);
+    pauseMusic();
     startScreen.hidden = false;
   });
 
@@ -935,8 +925,11 @@
       musicOn = !musicOn;
       musicBtn.textContent = musicOn ? "♫ Music on" : "♫ Music off";
       musicBtn.setAttribute("aria-pressed", String(musicOn));
-      if (musicOn && running) { initAudio(); initMusic(); }
-      fadeMusic(musicOn && running ? BGM_VOLUME : 0, 0.4);
+      if (musicOn) {
+        playMusic();
+      } else {
+        pauseMusic();
+      }
     });
   }
 

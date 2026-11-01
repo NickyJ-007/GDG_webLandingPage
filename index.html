@@ -25,7 +25,20 @@
 <link rel="preload" as="image" href="Playful SVGs and GIFs/Gifs/GDG-Sticker-Assembly.gif" />
 <link rel="preload" as="image" href="Playful SVGs and GIFs/Gifs/GDG-Sticker-Brackets.gif" />
 <link rel="preload" as="image" href="Logo/Logos/GDG-Main-Logo.png" />
-<link rel="stylesheet" href="css/style.css" />
+<style>
+  /* Prevent intro icons, SVGs, GIFs, and logo card from stacking before animation starts */
+  .intro-boot-line,
+  .intro-svg,
+  .intro-geom,
+  .intro-sticker,
+  #intro-sticker-assembly,
+  #intro-sticker-brackets,
+  #intro-logo-card,
+  .intro-identity {
+    opacity: 0;
+  }
+</style>
+<link rel="stylesheet" href="css/style.css?v=20261101" />
 <!-- Google Material Symbols -->
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -746,7 +759,7 @@
           <span class="card-window-tag">commit_rush.exe</span>
         </div>
         <div class="arcade-stage">
-          <iframe class="arcade-frame" data-game="commit-rush" data-src="mini-arcade/commit-rush.html?embed=1" title="Commit Rush mini-game"></iframe>
+          <iframe class="arcade-frame" data-game="commit-rush" data-src="mini-arcade/commit-rush.html?embed=1&amp;v=20261101" title="Commit Rush mini-game"></iframe>
           <div class="arcade-loader" role="status" hidden><span>Loading Commit Rush</span></div>
         </div>
         <div class="card-window-footer">
@@ -767,7 +780,7 @@
           <span class="card-window-tag">bug_smasher.exe</span>
         </div>
         <div class="arcade-stage">
-          <iframe class="arcade-frame" data-game="bug-vacuum" data-src="mini-arcade/bug-vacuum.html?embed=1" title="Bug Smasher mini-game"></iframe>
+          <iframe class="arcade-frame" data-game="bug-vacuum" data-src="mini-arcade/bug-vacuum.html?embed=1&amp;v=20261101" title="Bug Smasher mini-game"></iframe>
           <div class="arcade-loader" role="status" hidden><span>Loading Bug Smasher</span></div>
         </div>
         <div class="card-window-footer">

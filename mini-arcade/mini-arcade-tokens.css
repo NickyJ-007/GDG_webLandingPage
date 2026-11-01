@@ -189,6 +189,7 @@ a { color: var(--on-surface); }
 .is-embed .arcade-page { min-height: 0; padding: 0; }
 .is-embed .arcade-shell { width: 100%; }
 .is-embed .window-notch { display: none; }
+.is-embed .window-card { border: 0; border-radius: 0; box-shadow: none; }
 
 /* Bug Smasher round ending */
 .time-up { position: absolute; left: 50%; top: 50%; z-index: 9; display: grid; justify-items: center; gap: 4px; padding: 14px 22px; transform: translate(-50%, -50%); border: 2px solid var(--black-02); border-radius: var(--radius-sm); background: var(--pastel-yellow); box-shadow: 4px 4px 0 var(--black-02); text-align: center; pointer-events: none; animation: time-up-in .3s steps(3, end); }

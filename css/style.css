@@ -760,6 +760,18 @@ section {
   overflow: hidden;
 }
 
+/* Initial hidden state: prevent intro elements from flashing/stacking before animation starts */
+.intro-boot-line,
+.intro-svg,
+.intro-geom,
+.intro-sticker,
+#intro-sticker-assembly,
+#intro-sticker-brackets,
+#intro-logo-card,
+.intro-identity {
+  opacity: 0;
+}
+
 /* Scene 1: Boot Text */
 .intro-boot-text {
   position: absolute;
@@ -1668,7 +1680,7 @@ section {
   position: relative;
   z-index: 2;
   transform: rotate(1.5deg);
-  box-shadow: 7px 7px 0 var(--black-02);
+  box-shadow: var(--shadow-card);
 }
 
 .hero-stage__screen {
@@ -1679,8 +1691,6 @@ section {
   background-color: var(--crisp-white);
   background-image: radial-gradient(#d3c4bc 1.2px, transparent 1.2px);
   background-size: 18px 18px;
-  border-top: var(--border-structural);
-  border-bottom: var(--border-structural);
   overflow: hidden;
 }
 
