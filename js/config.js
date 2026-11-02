@@ -3,7 +3,7 @@
 // =========================================================================
 const SITE_CONFIG = {
   // ISO 8601 date/time with timezone offset for the workshop start.
-  WORKSHOP_DATE: "2026-11-08T18:00:00+05:30",
+  WORKSHOP_DATE: "2026-11-07T18:00:00+05:30",
 
   // Displayed time label for event metadata.
   WORKSHOP_TIME: "6:00 PM onwards",
