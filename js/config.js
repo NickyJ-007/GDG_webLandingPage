@@ -12,7 +12,7 @@ const SITE_CONFIG = {
   VENUE: "Online",
 
   // WhatsApp community invite link.
-  WHATSAPP_LINK: "https://chat.whatsapp.com/IOAD6M5V18LCgGHn6j3VX7",
+  WHATSAPP_LINK: "https://chat.whatsapp.com/H7mhuyQnN3a40Hlz83BT0g",
 
   // Registration form / page link.
   REGISTRATION_LINK: "https://gdg.community.dev/e/m5had6/",
